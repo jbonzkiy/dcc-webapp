@@ -1,0 +1,11 @@
+.red{background-color: #DF6565; color: #fff;}
+.orange{background-color: #F69656; color: #fff;}
+.btncontrol:hover{color:#2185D0;}
+
+#too-long{
+    display: block;
+    white-space: nowrap;
+    width: 30em;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}

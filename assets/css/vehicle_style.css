@@ -1,0 +1,55 @@
+body, html {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.vehicle-container{padding: 0 40px;}
+
+@media (max-width: 800px) {
+	.vehicle-container{padding: 0;}
+}
+
+#stat_loading{
+	height: 100%;width: 100%;
+	/*background-color: #fff;*/
+	position: absolute;
+	left: 0;top:0;
+	z-index: 9999;
+	backdrop-filter: blur(3px);
+	display: none;
+}
+#stat_loading > .ui.header{
+	position: absolute;
+	top: 50%;
+ 	left: 50%;
+ 	transform: translate(-50%, -50%);
+}
+.blurry-top{
+	height: 100%;width: 100%;
+	/*background-color: #fff;*/
+	position: absolute;
+	left: 0;top:0;
+	z-index: 99998;
+	backdrop-filter: grayscale(1) blur(3px);
+	/*border:1px solid #ccc;*/
+}
+.blurry-top > .ui.header{
+	position: absolute;
+	top: 50%;
+ 	left: 50%;
+ 	transform: translate(-50%, -50%);
+}
+#done_today_container .item{
+	padding: 10px;
+}
+
+#jqxPanel div form label{
+	color:#fff;
+}
+#jqxPanel div form input,#jqxPanel div form textarea,#jqxPanel div form .ui.search.dropdown,#jqxPanel div button{
+	border-radius: 0 !important;
+}

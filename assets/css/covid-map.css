@@ -1,0 +1,15 @@
+html, body, #map {
+   height:100%;
+   width:100%;
+   padding:0px;
+   margin:0px;
+} 
+#mainSplitter,#secondSplitter,#thirdSplitter{border:none !important;}
+#map{border-left: 1px solid #A6A6A6;border-right:1px solid #A6A6A6;}
+.center-loading{
+    left: 50%;
+    bottom: 50%;
+    transform: translate(-50%, 47%);
+    z-index: 9999;position: absolute;
+}
+.trans-blur{backdrop-filter: blur(5px) grayscale(1);}

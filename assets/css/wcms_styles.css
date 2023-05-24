@@ -1,0 +1,75 @@
+body, html {
+    width: 100%;
+    height: 100%;
+    /*overflow: hidden;*/
+    padding: 0;
+    margin: 0;
+    /*box-sizing: border-box;*/
+}
+.fillmeup{
+	display: flex;
+	flex-flow: column;
+	height: 100%;
+}
+.btn-group.special {
+  display: flex;
+}
+
+.special .btn {
+  flex: 1
+}
+
+.action-btn div:hover,.action-btn i:hover{
+	color:#17A2B8;
+	cursor: pointer;
+}
+.action-btn .action-delete:hover{
+	color:#DC3545;
+}
+.action-btn .action-edit:hover{
+	color:#FFC107;
+}
+.action-btn .action-add:hover{
+	color:#6FC483;
+}
+.action-btn .inline{
+	float: right;
+	font-size: 20px;
+}
+.eventtitle{
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	float: left;
+	width: 90%;
+}
+.eventdata{
+	height: 60px;
+}
+.eventdata:hover{
+	background-color: rgba(23, 162, 184,0.3);
+	cursor: pointer;
+}
+.eventdata .selected{
+	background-color: rgba(23, 162, 184,0.3);
+}
+#AddNewField:hover{
+	cursor: pointer;
+	color: #343A40;
+}
+.fremove:hover{
+	cursor: pointer;
+	color:#DC3545;
+}
+.tablefield input,.tablefield select{
+	font-size: 10px;
+}
+.tablefield input,.tablefield select,.tablefield i{
+	float: left;
+	margin-right: 2px; 
+}
+.grid-header{
+	font-weight: bold !important;
+}
+
+.cursor-pointer{cursor: pointer;}

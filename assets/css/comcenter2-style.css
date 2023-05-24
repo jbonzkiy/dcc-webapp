@@ -1,0 +1,55 @@
+label { 
+    font-size: 14px; 
+    color: #343a40; 
+}
+
+legend, legend > label { 
+    font-size: 0.8rem !important; 
+    color: #3c763d; 
+}
+
+.form-control { 
+    border: 1px solid #999999 !important; 
+}
+
+.custom-fieldset-border { 
+    border: 2px solid #13895f; 
+}
+
+.custom-clear-border, .custom-clear-border:hover { 
+    border: 1px solid #343a40; 
+}
+
+.custom-clear-border-2, .custom-clear-border-2:hover {
+    border: 1px solid #17a2b8; color: #17a2b8; 
+}
+
+.custom-clear-border-2:active {
+    color: #17a2b8 !important; 
+}
+
+.form-control:disabled {
+    opacity: 0.5; 
+}
+
+.date-filter-from-to {
+    display: block; font-size: 14px; height: 22px; font-weight: bold; 
+}
+
+.grid-cell-icon {
+    cursor: pointer;
+    font-size: 19px;
+}
+
+.grid-cell-icon:hover {
+    color: #007bff;
+}
+
+/* Change cursor when mousing over clickable layer */
+.leaflet-clickable {
+    cursor: crosshair !important;
+}
+/* Change cursor when over entire map */
+.leaflet-container {
+    cursor: help !important;
+}

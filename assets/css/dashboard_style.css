@@ -1,0 +1,56 @@
+body{
+	background-color: #2A3F54;/*#282923;*/
+}
+fieldset{
+	border-top: 1px solid #fff;
+}
+legend{
+	border:1px solid #fff;
+}
+.dloader{display: none;}
+fieldset.normal legend:first-of-type{
+	color:#fff;/*#282923;*/
+	text-align: center;
+	font-size: 1.5vw;
+	font-weight: bolder;
+	background-color: #2A3F54;/*#fff;*/
+}
+fieldset.normal div:first-of-type{
+	font-size: 3vw;
+	text-align: center;
+	font-weight: bold;
+}
+fieldset.main legend:first-of-type{
+	color:#fff;/*#282923;*/
+	text-align: center;
+	font-size: 1.5vw;
+	font-weight: bolder;
+	background-color: #2A3F54;/*#fff;*/
+}
+fieldset.sub legend:first-of-type{
+	color:#fff;/*#282923;*/
+	/*text-align: center;*/
+	font-size: 0.8vw;
+	background-color: #2A3F54;/*#fff;*/
+}
+fieldset.sub div:first-of-type, .sub-value{
+	font-size: 3vw;
+	text-align: center;
+	font-weight: bold;
+}
+fieldset.sub2 legend:first-of-type{
+	color:#282923;
+	/*text-align: center;*/
+	font-size: 0.8vw;
+	background-color: #fff;
+}
+fieldset.sub2 div:first-of-type{
+	font-size: 1.52vw;
+	text-align: center;
+	font-weight: bold;
+}
+.main-value{
+	font-size: 8vw;
+	text-align: center;
+	font-weight: bolder;
+}

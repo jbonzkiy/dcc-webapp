@@ -1,0 +1,5 @@
+html,body{overflow:auto !important;overflow-y: auto !important;padding-bottom: 20px;height: 100%;}
+
+@media screen and (min-width: 768px) {
+	#frmPanel{overflow-x: auto;height: 40vw;}
+}

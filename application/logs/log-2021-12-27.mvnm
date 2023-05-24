@@ -1,0 +1,21 @@
+ERROR - 2021-12-27 05:27:24 --> {"filterscount":"0","groupscount":"0","sortorder":"","pagenum":"0","pagesize":"50","recordstartindex":"0","recordendindex":"50","fdt":"","tdt":"","type":"default"}
+ERROR - 2021-12-27 05:27:24 --> SELECT did AS id,slnk,DATE(slnk_dt) AS sdate,TIME(slnk_dt) AS stime,clnk,DATE(clnk_dt) AS cdate,TIME(clnk_dt) AS ctime,type_post,type_advi,IF(cdo_affect LIKE "na","N/A",UPPER(cdo_affect)) AS cdo_affect,IF(affect_area LIKE "na","N/A", UPPER(affect_area)) AS affect_area,estat,IF(infocast = 1,"YES","NO") AS infocast,total_text,IF(missed_post = 1,"YES","NO") AS missed_post,missed_by,IF(xp_rain = 1,"YES","NO") AS xp_rain,remarks,a.uid AS userid,b.uname,a.dt_created,c.uname AS mname,(SELECT GROUP_CONCAT(name SEPARATOR ", ") FROM w_ws WHERE did = id AND lst_group = "cdo") AS ws_cdo,(SELECT GROUP_CONCAT(name SEPARATOR ", ") FROM w_ws WHERE did = id AND lst_group = "par") AS ws_par,(SELECT GROUP_CONCAT(CONCAT(type," ",IF(name LIKE "%others%",intr_name,name)) SEPARATOR ", ") FROM w_tc WHERE did = id AND lst_group = "cdo") AS tc_cdo,(SELECT GROUP_CONCAT(CONCAT(type," ",IF(name LIKE "%others%",intr_name,name)) SEPARATOR ", ") FROM w_tc WHERE did = id AND lst_group = "par") AS tc_par,offset_contact FROM w_data AS a LEFT JOIN w_user AS b ON b.uid = a.uid LEFT JOIN w_user c ON c.uid = a.missed_by WHERE clnk_dt BETWEEN CAST(CONCAT(DATE_ADD(CURDATE(), INTERVAL -1 DAY)," 19:00:00") AS DATETIME) AND CURRENT_TIMESTAMP() ORDER BY clnk_dt DESC
+ERROR - 2021-12-27 06:09:15 --> {"filterscount":"0","groupscount":"0","sortorder":"","pagenum":"0","pagesize":"50","recordstartindex":"0","recordendindex":"50","fdt":"","tdt":"","type":"default"}
+ERROR - 2021-12-27 06:09:15 --> SELECT did AS id,slnk,DATE(slnk_dt) AS sdate,TIME(slnk_dt) AS stime,clnk,DATE(clnk_dt) AS cdate,TIME(clnk_dt) AS ctime,type_post,type_advi,IF(cdo_affect LIKE "na","N/A",UPPER(cdo_affect)) AS cdo_affect,IF(affect_area LIKE "na","N/A", UPPER(affect_area)) AS affect_area,estat,IF(infocast = 1,"YES","NO") AS infocast,total_text,IF(missed_post = 1,"YES","NO") AS missed_post,missed_by,IF(xp_rain = 1,"YES","NO") AS xp_rain,remarks,a.uid AS userid,b.uname,a.dt_created,c.uname AS mname,(SELECT GROUP_CONCAT(name SEPARATOR ", ") FROM w_ws WHERE did = id AND lst_group = "cdo") AS ws_cdo,(SELECT GROUP_CONCAT(name SEPARATOR ", ") FROM w_ws WHERE did = id AND lst_group = "par") AS ws_par,(SELECT GROUP_CONCAT(CONCAT(type," ",IF(name LIKE "%others%",intr_name,name)) SEPARATOR ", ") FROM w_tc WHERE did = id AND lst_group = "cdo") AS tc_cdo,(SELECT GROUP_CONCAT(CONCAT(type," ",IF(name LIKE "%others%",intr_name,name)) SEPARATOR ", ") FROM w_tc WHERE did = id AND lst_group = "par") AS tc_par,offset_contact FROM w_data AS a LEFT JOIN w_user AS b ON b.uid = a.uid LEFT JOIN w_user c ON c.uid = a.missed_by WHERE clnk_dt BETWEEN CAST(CONCAT(DATE_ADD(CURDATE(), INTERVAL -1 DAY)," 19:00:00") AS DATETIME) AND CURRENT_TIMESTAMP() ORDER BY clnk_dt DESC
+ERROR - 2021-12-27 07:40:44 --> 404 Page Not Found: Dcc_project_final/img
+ERROR - 2021-12-27 07:40:44 --> 404 Page Not Found: Dcc_project_final/img
+ERROR - 2021-12-27 07:40:45 --> 404 Page Not Found: Dcc_project_final/img
+ERROR - 2021-12-27 07:40:45 --> 404 Page Not Found: Dcc_project_final/img
+ERROR - 2021-12-27 07:40:45 --> 404 Page Not Found: Dcc_project_final/img
+ERROR - 2021-12-27 07:57:26 --> 404 Page Not Found: Dcc_project_final/img
+ERROR - 2021-12-27 07:57:26 --> 404 Page Not Found: Dcc_project_final/img
+ERROR - 2021-12-27 07:57:26 --> 404 Page Not Found: Dcc_project_final/img
+ERROR - 2021-12-27 07:57:26 --> 404 Page Not Found: Dcc_project_final/img
+ERROR - 2021-12-27 07:57:26 --> 404 Page Not Found: Dcc_project_final/img
+ERROR - 2021-12-27 15:12:00 --> 404 Page Not Found: Dcc_project_final/img
+ERROR - 2021-12-27 15:12:00 --> 404 Page Not Found: Dcc_project_final/img
+ERROR - 2021-12-27 15:12:00 --> 404 Page Not Found: Dcc_project_final/img
+ERROR - 2021-12-27 15:12:01 --> 404 Page Not Found: Dcc_project_final/img
+ERROR - 2021-12-27 15:12:01 --> 404 Page Not Found: Dcc_project_final/img
+ERROR - 2021-12-27 15:36:20 --> 404 Page Not Found: 
+ERROR - 2021-12-27 15:36:23 --> 404 Page Not Found: 

@@ -1,0 +1,81 @@
+/*.labels {
+  color: white;
+  background-color: red;
+  font-family: "Lucida Grande", "Arial", sans-serif;
+  font-size: 10px;
+  text-align: center;
+  width: 30px;
+  white-space: nowrap;
+}*/
+#marker_legend {
+	/*font-family: Arial, sans-serif;*/
+	background: rgba(255,255,255,0.6);
+	padding: 10px;
+	margin: 0;
+	border-width: 0 1px 1px 0;
+	border-style: solid;
+	border-color: #666;
+	position: fixed;
+	top:0;
+	left:0;
+	color:#333;
+	font-weight: bold;
+	z-index: 9999;
+	/*text-shadow:
+	-1px -1px 0 #fff,  
+    1px -1px 0 #fff,
+    -1px 1px 0 #fff,
+     1px 1px 0 #fff;
+	/*border-radius: 0 0 10px 0;*/
+	/*box-shadow: 0 0 10px #000;*/
+}
+#marker_legend h3 {
+	margin-top: 0;
+	font-weight: bolder
+}
+#marker_legend img {
+	vertical-align: middle;
+}
+
+#incidents{
+	position:fixed;
+	top:0;
+	right:0;
+	width: 300px;
+	height: 100%;
+	background-color: #fff;
+}
+
+#team_content,#team_content2{
+	background: rgba(255,255,255,0.7);
+	padding: 10px;
+	margin: 0;
+	border-width: 1px 1px 0 0;
+	border-style: solid;
+	border-color: #666;
+	position: fixed;
+	bottom:0;
+	left:0;
+	color:#333;
+	font-weight: bold;
+	z-index: 9999;
+	/*text-shadow:
+	-1px -1px 0 #fff,  
+    1px -1px 0 #fff,
+    -1px 1px 0 #fff,
+     1px 1px 0 #fff;
+	/*border-radius: 0 0 10px 0;*/
+	/*box-shadow: 0 0 10px #000;*/
+}
+#team_content td,#team_content2 td{
+	padding: 0 5px;
+	font-weight: bold;
+	font-size: 26px;
+}
+#team_content td:nth-child(2),#team_content td:nth-child(4),#team_content td:nth-child(6),#team_content td:nth-child(8),#team_content td:nth-child(10){
+	border-right: 1px solid #666;
+}
+/*#incident_content div:hover{
+	background-color: #aaa;
+}*/
+.trans-blur{backdrop-filter: blur(10px);}

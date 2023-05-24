@@ -1,0 +1,45 @@
+body, html {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    background-color: #fff;
+}
+
+#map{
+    height: 100%;
+    width: 100%;
+}
+.center-element{
+    left: 50%;
+    top: 40%;
+    transform: translate(-50%, -40%);
+    z-index: 9999;position: absolute;
+}
+
+/*.emscrewinfo{
+	height: 100%;width: 100%;
+
+}*/
+.custom-fieldset{
+	border:1px solid #282923;
+	border-radius: 5px;
+
+}
+.custom-fieldset legend{
+	padding:0;
+	width: initial;
+	text-align: center;
+}
+.accordion-header button{
+	font-weight: bold !important;
+}
+
+#tbl tr td, #tbl tr th{
+    padding: .3rem;
+}
+#tbl{
+    width: 100%;
+    height: auto;
+}

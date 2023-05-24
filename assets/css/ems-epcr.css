@@ -1,0 +1,109 @@
+#menucontainer{background-color: #282923;position: fixed;top: 0;left: 0;padding: 10px; width: 100%;}
+#epcrformcontainer{background-color: #E6E6E6;height: 100%;width:100%;}
+#loading{height: 100%;width: 100%; position: fixed;z-index: 9999;top: 0;left: 0;background-color: rgba(255,255,255,0.7);display: none;}
+#loading div{
+	font-size: 5rem;
+	animation: loading_anim 5s infinite;
+}
+@keyframes loading_anim {
+	0% {font-size: 5rem;}
+	50% {font-size: 3rem;}
+	100% {font-size: 5rem;}
+}
+.f14{font-size: 14px;}
+.f15{font-size: 15px;}
+.f16{font-size: 17px;}
+.f17{font-size: 17px;}
+.f18{font-size: 18px;}
+.f21{font-size: 21px;}
+.f22{font-size: 22px;}
+.f25{font-size: 25px;}
+@media screen and (orientation: portrait){
+	#menucontainer, #epcrformcontainer{visibility: hidden;}
+}
+@media screen and (orientation: landscape){
+	#menucontainer, #epcrformcontainer{visibility: visible;}
+}
+@media print {
+	@page{
+		size: 8.5in 13in portrait;
+		margin: none;
+	}
+	/*f14,f15,f16,f17,f18,f21,f22,f25 minus 5*/
+	.f14{font-size: 9px;}
+	.f15{font-size: 10px;}
+	.f16{font-size: 11px;}
+	.f17{font-size: 12px;}
+	.f18{font-size: 13px;}
+	.f21{font-size: 16px;}
+	.f22{font-size: 17px;}
+	.f25{font-size: 20px;}
+	*{
+		visibility: hidden;
+		margin:0; 
+		padding:0;
+	}
+	/*#sig{z-index: 9999 !important;}*/
+	#epcrform *{visibility: visible;}
+	::-webkit-input-placeholder {color: transparent;}
+	select {
+	    -webkit-appearance: none;
+	    -moz-appearance: none;
+	    text-indent: 1px;
+	    text-overflow: '';
+	}
+
+	input,select,textarea{background-color: #fff;}
+	
+}
+
+table{border:1px solid #000;}
+table input,table textarea{
+	border:0;
+	width: 100%;
+}
+table textarea{resize: none;}
+table td{padding: 0 5px;}
+#forceportrait{
+	position: fixed;
+	height: 100%;
+	width: 100%;
+	z-index: -1;
+	top: 0;
+	left: 0;
+	background-color: #fff;
+	font-size: 4rem;
+	color:maroon;
+	text-align: center;
+}
+
+select {border: none;}
+input,select,textarea{background-color: #E6E6E6;}
+input:focus,select:focus,textarea:focus{background-color: #fff;}
+
+.bt-0{border-top: none;}
+.br-0{border-right:none; }
+.bb-0{border-bottom: none;}
+.bl-0{border-left: none;}
+.bx-0{border-left: none; border-right: none;}
+.by-0{border-top: none; border-bottom: none;}
+.b-0{border:none;}
+
+.avpu{
+	float:left;
+	padding:0 6px;
+	cursor:pointer;
+	border-radius:15px;
+}
+.avpu:hover{
+	border:1px solid #e6e6e6;
+}
+.avpu[data-active=true]{
+    border:1px solid #000;
+}
+.center-loading{
+    left: 50%;
+    bottom: 50%;
+    transform: translate(-50%, 47%);
+    z-index: 9999;position: absolute;
+}

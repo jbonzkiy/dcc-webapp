@@ -1,0 +1,140 @@
+ERROR - 2022-06-13 08:45:55 --> Query error: Unknown column 'res.uid' in 'on clause' - Invalid query: SELECT res.resp_id, res.id, res.Sub_id AS sub_id, res.unit AS response_unit, res.Sub_unit AS response_sub_unit, res.Call_origin AS response_call_origin, res.time_call AS response_time, res.Status AS acknowledge, res.receive_by AS acknowledge_by, u.email AS modified_by
+FROM `response_unit` `res`
+LEFT JOIN `users` `u` ON `u`.`admin_id` = `res`.`uid`
+WHERE `res`.`id` IN('66988', '66988')
+ERROR - 2022-06-13 08:50:13 --> Query error: Unknown column 'res.uid' in 'on clause' - Invalid query: SELECT res.resp_id, res.id, res.Sub_id AS sub_id, res.unit AS response_unit, res.Sub_unit AS response_sub_unit, res.Call_origin AS response_call_origin, res.time_call AS response_time, res.Status AS acknowledge, res.receive_by AS acknowledge_by, u.email AS modified_by
+FROM `response_unit` `res`
+LEFT JOIN `users` `u` ON `u`.`admin_id` = `res`.`uid`
+WHERE `res`.`id` IN('66991', '66991')
+ERROR - 2022-06-13 09:10:03 --> Query error: Unknown column 'res.uid' in 'on clause' - Invalid query: SELECT res.resp_id, res.id, res.Sub_id AS sub_id, res.unit AS response_unit, res.Sub_unit AS response_sub_unit, res.Call_origin AS response_call_origin, res.time_call AS response_time, res.Status AS acknowledge, res.receive_by AS acknowledge_by, u.email AS modified_by
+FROM `response_unit` `res`
+LEFT JOIN `users` `u` ON `u`.`admin_id` = `res`.`uid`
+WHERE `res`.`id` IN('66992', '66992')
+ERROR - 2022-06-13 09:34:18 --> Query error: Unknown column 'res.uid' in 'on clause' - Invalid query: SELECT res.resp_id, res.id, res.Sub_id AS sub_id, res.unit AS response_unit, res.Sub_unit AS response_sub_unit, res.Call_origin AS response_call_origin, res.time_call AS response_time, res.Status AS acknowledge, res.receive_by AS acknowledge_by, u.email AS modified_by
+FROM `response_unit` `res`
+LEFT JOIN `users` `u` ON `u`.`admin_id` = `res`.`uid`
+WHERE `res`.`id` IN('66995', '66995')
+ERROR - 2022-06-13 09:46:53 --> Query error: Unknown column 'res.uid' in 'on clause' - Invalid query: SELECT res.resp_id, res.id, res.Sub_id AS sub_id, res.unit AS response_unit, res.Sub_unit AS response_sub_unit, res.Call_origin AS response_call_origin, res.time_call AS response_time, res.Status AS acknowledge, res.receive_by AS acknowledge_by, u.email AS modified_by
+FROM `response_unit` `res`
+LEFT JOIN `users` `u` ON `u`.`admin_id` = `res`.`uid`
+WHERE `res`.`id` IN('67000', '67000')
+ERROR - 2022-06-13 09:57:09 --> {"filterscount":"0","groupscount":"0","sortorder":"","pagenum":"0","pagesize":"50","recordstartindex":"0","recordendindex":"50","fdt":"","tdt":"","type":"default"}
+ERROR - 2022-06-13 09:57:10 --> SELECT did AS id,slnk,DATE(slnk_dt) AS sdate,TIME(slnk_dt) AS stime,clnk,DATE(clnk_dt) AS cdate,TIME(clnk_dt) AS ctime,type_post,type_advi,IF(cdo_affect LIKE "na","N/A",UPPER(cdo_affect)) AS cdo_affect,IF(affect_area LIKE "na","N/A", UPPER(affect_area)) AS affect_area,estat,IF(infocast = 1,"YES","NO") AS infocast,total_text,IF(missed_post = 1,"YES","NO") AS missed_post,missed_by,IF(xp_rain = 1,"YES","NO") AS xp_rain,remarks,a.uid AS userid,b.uname,a.dt_created,c.uname AS mname,(SELECT GROUP_CONCAT(name SEPARATOR ", ") FROM w_ws WHERE did = id AND lst_group = "cdo") AS ws_cdo,(SELECT GROUP_CONCAT(name SEPARATOR ", ") FROM w_ws WHERE did = id AND lst_group = "par") AS ws_par,(SELECT GROUP_CONCAT(CONCAT(type," ",IF(name LIKE "%others%",intr_name,name)) SEPARATOR ", ") FROM w_tc WHERE did = id AND lst_group = "cdo") AS tc_cdo,(SELECT GROUP_CONCAT(CONCAT(type," ",IF(name LIKE "%others%",intr_name,name)) SEPARATOR ", ") FROM w_tc WHERE did = id AND lst_group = "par") AS tc_par,offset_contact FROM w_data AS a LEFT JOIN w_user AS b ON b.uid = a.uid LEFT JOIN w_user c ON c.uid = a.missed_by WHERE clnk_dt BETWEEN CAST(CONCAT(DATE_ADD(CURDATE(), INTERVAL -1 DAY)," 19:00:00") AS DATETIME) AND CURRENT_TIMESTAMP() ORDER BY clnk_dt DESC
+ERROR - 2022-06-13 09:58:44 --> {"filterscount":"0","groupscount":"0","sortorder":"","pagenum":"0","pagesize":"50","recordstartindex":"0","recordendindex":"50","fdt":"","tdt":"","type":"default"}
+ERROR - 2022-06-13 09:58:44 --> SELECT did AS id,slnk,DATE(slnk_dt) AS sdate,TIME(slnk_dt) AS stime,clnk,DATE(clnk_dt) AS cdate,TIME(clnk_dt) AS ctime,type_post,type_advi,IF(cdo_affect LIKE "na","N/A",UPPER(cdo_affect)) AS cdo_affect,IF(affect_area LIKE "na","N/A", UPPER(affect_area)) AS affect_area,estat,IF(infocast = 1,"YES","NO") AS infocast,total_text,IF(missed_post = 1,"YES","NO") AS missed_post,missed_by,IF(xp_rain = 1,"YES","NO") AS xp_rain,remarks,a.uid AS userid,b.uname,a.dt_created,c.uname AS mname,(SELECT GROUP_CONCAT(name SEPARATOR ", ") FROM w_ws WHERE did = id AND lst_group = "cdo") AS ws_cdo,(SELECT GROUP_CONCAT(name SEPARATOR ", ") FROM w_ws WHERE did = id AND lst_group = "par") AS ws_par,(SELECT GROUP_CONCAT(CONCAT(type," ",IF(name LIKE "%others%",intr_name,name)) SEPARATOR ", ") FROM w_tc WHERE did = id AND lst_group = "cdo") AS tc_cdo,(SELECT GROUP_CONCAT(CONCAT(type," ",IF(name LIKE "%others%",intr_name,name)) SEPARATOR ", ") FROM w_tc WHERE did = id AND lst_group = "par") AS tc_par,offset_contact FROM w_data AS a LEFT JOIN w_user AS b ON b.uid = a.uid LEFT JOIN w_user c ON c.uid = a.missed_by WHERE clnk_dt BETWEEN CAST(CONCAT(DATE_ADD(CURDATE(), INTERVAL -1 DAY)," 19:00:00") AS DATETIME) AND CURRENT_TIMESTAMP() ORDER BY clnk_dt DESC
+ERROR - 2022-06-13 10:06:37 --> {"filterscount":"0","groupscount":"0","sortorder":"","pagenum":"0","pagesize":"50","recordstartindex":"0","recordendindex":"50","fdt":"2022-06-09 10:06:00","tdt":"2022-06-09 10:06:00","type":"filtered"}
+ERROR - 2022-06-13 10:06:37 --> SELECT did AS id,slnk,DATE(slnk_dt) AS sdate,TIME(slnk_dt) AS stime,clnk,DATE(clnk_dt) AS cdate,TIME(clnk_dt) AS ctime,type_post,type_advi,IF(cdo_affect LIKE "na","N/A",UPPER(cdo_affect)) AS cdo_affect,IF(affect_area LIKE "na","N/A", UPPER(affect_area)) AS affect_area,estat,IF(infocast = 1,"YES","NO") AS infocast,total_text,IF(missed_post = 1,"YES","NO") AS missed_post,missed_by,IF(xp_rain = 1,"YES","NO") AS xp_rain,remarks,a.uid AS userid,b.uname,a.dt_created,c.uname AS mname,(SELECT GROUP_CONCAT(name SEPARATOR ", ") FROM w_ws WHERE did = id AND lst_group = "cdo") AS ws_cdo,(SELECT GROUP_CONCAT(name SEPARATOR ", ") FROM w_ws WHERE did = id AND lst_group = "par") AS ws_par,(SELECT GROUP_CONCAT(CONCAT(type," ",IF(name LIKE "%others%",intr_name,name)) SEPARATOR ", ") FROM w_tc WHERE did = id AND lst_group = "cdo") AS tc_cdo,(SELECT GROUP_CONCAT(CONCAT(type," ",IF(name LIKE "%others%",intr_name,name)) SEPARATOR ", ") FROM w_tc WHERE did = id AND lst_group = "par") AS tc_par,offset_contact FROM w_data AS a LEFT JOIN w_user AS b ON b.uid = a.uid LEFT JOIN w_user c ON c.uid = a.missed_by WHERE clnk_dt BETWEEN CAST("2022-06-09 10:06:00" AS DATETIME) AND CAST("2022-06-09 10:06:00" AS DATETIME) ORDER BY clnk_dt DESC
+ERROR - 2022-06-13 10:06:53 --> {"filterscount":"0","groupscount":"0","sortorder":"","pagenum":"0","pagesize":"50","recordstartindex":"0","recordendindex":"50","fdt":"2022-06-09 06:06:00","tdt":"2022-06-09 19:06:00","type":"filtered"}
+ERROR - 2022-06-13 10:06:53 --> SELECT did AS id,slnk,DATE(slnk_dt) AS sdate,TIME(slnk_dt) AS stime,clnk,DATE(clnk_dt) AS cdate,TIME(clnk_dt) AS ctime,type_post,type_advi,IF(cdo_affect LIKE "na","N/A",UPPER(cdo_affect)) AS cdo_affect,IF(affect_area LIKE "na","N/A", UPPER(affect_area)) AS affect_area,estat,IF(infocast = 1,"YES","NO") AS infocast,total_text,IF(missed_post = 1,"YES","NO") AS missed_post,missed_by,IF(xp_rain = 1,"YES","NO") AS xp_rain,remarks,a.uid AS userid,b.uname,a.dt_created,c.uname AS mname,(SELECT GROUP_CONCAT(name SEPARATOR ", ") FROM w_ws WHERE did = id AND lst_group = "cdo") AS ws_cdo,(SELECT GROUP_CONCAT(name SEPARATOR ", ") FROM w_ws WHERE did = id AND lst_group = "par") AS ws_par,(SELECT GROUP_CONCAT(CONCAT(type," ",IF(name LIKE "%others%",intr_name,name)) SEPARATOR ", ") FROM w_tc WHERE did = id AND lst_group = "cdo") AS tc_cdo,(SELECT GROUP_CONCAT(CONCAT(type," ",IF(name LIKE "%others%",intr_name,name)) SEPARATOR ", ") FROM w_tc WHERE did = id AND lst_group = "par") AS tc_par,offset_contact FROM w_data AS a LEFT JOIN w_user AS b ON b.uid = a.uid LEFT JOIN w_user c ON c.uid = a.missed_by WHERE clnk_dt BETWEEN CAST("2022-06-09 06:06:00" AS DATETIME) AND CAST("2022-06-09 19:06:00" AS DATETIME) ORDER BY clnk_dt DESC
+ERROR - 2022-06-13 10:08:48 --> {"filterscount":"0","groupscount":"0","sortorder":"","pagenum":"0","pagesize":"50","recordstartindex":"0","recordendindex":"50","fdt":"2022-06-09 06:06:00","tdt":"2022-06-09 19:06:00","type":"filtered"}
+ERROR - 2022-06-13 10:08:48 --> SELECT did AS id,slnk,DATE(slnk_dt) AS sdate,TIME(slnk_dt) AS stime,clnk,DATE(clnk_dt) AS cdate,TIME(clnk_dt) AS ctime,type_post,type_advi,IF(cdo_affect LIKE "na","N/A",UPPER(cdo_affect)) AS cdo_affect,IF(affect_area LIKE "na","N/A", UPPER(affect_area)) AS affect_area,estat,IF(infocast = 1,"YES","NO") AS infocast,total_text,IF(missed_post = 1,"YES","NO") AS missed_post,missed_by,IF(xp_rain = 1,"YES","NO") AS xp_rain,remarks,a.uid AS userid,b.uname,a.dt_created,c.uname AS mname,(SELECT GROUP_CONCAT(name SEPARATOR ", ") FROM w_ws WHERE did = id AND lst_group = "cdo") AS ws_cdo,(SELECT GROUP_CONCAT(name SEPARATOR ", ") FROM w_ws WHERE did = id AND lst_group = "par") AS ws_par,(SELECT GROUP_CONCAT(CONCAT(type," ",IF(name LIKE "%others%",intr_name,name)) SEPARATOR ", ") FROM w_tc WHERE did = id AND lst_group = "cdo") AS tc_cdo,(SELECT GROUP_CONCAT(CONCAT(type," ",IF(name LIKE "%others%",intr_name,name)) SEPARATOR ", ") FROM w_tc WHERE did = id AND lst_group = "par") AS tc_par,offset_contact FROM w_data AS a LEFT JOIN w_user AS b ON b.uid = a.uid LEFT JOIN w_user c ON c.uid = a.missed_by WHERE clnk_dt BETWEEN CAST("2022-06-09 06:06:00" AS DATETIME) AND CAST("2022-06-09 19:06:00" AS DATETIME) ORDER BY clnk_dt DESC
+ERROR - 2022-06-13 10:10:09 --> {"filterscount":"0","groupscount":"0","sortorder":"","pagenum":"0","pagesize":"50","recordstartindex":"0","recordendindex":"50","fdt":"2022-06-09 06:06:00","tdt":"2022-06-09 19:06:00","type":"filtered"}
+ERROR - 2022-06-13 10:10:09 --> SELECT did AS id,slnk,DATE(slnk_dt) AS sdate,TIME(slnk_dt) AS stime,clnk,DATE(clnk_dt) AS cdate,TIME(clnk_dt) AS ctime,type_post,type_advi,IF(cdo_affect LIKE "na","N/A",UPPER(cdo_affect)) AS cdo_affect,IF(affect_area LIKE "na","N/A", UPPER(affect_area)) AS affect_area,estat,IF(infocast = 1,"YES","NO") AS infocast,total_text,IF(missed_post = 1,"YES","NO") AS missed_post,missed_by,IF(xp_rain = 1,"YES","NO") AS xp_rain,remarks,a.uid AS userid,b.uname,a.dt_created,c.uname AS mname,(SELECT GROUP_CONCAT(name SEPARATOR ", ") FROM w_ws WHERE did = id AND lst_group = "cdo") AS ws_cdo,(SELECT GROUP_CONCAT(name SEPARATOR ", ") FROM w_ws WHERE did = id AND lst_group = "par") AS ws_par,(SELECT GROUP_CONCAT(CONCAT(type," ",IF(name LIKE "%others%",intr_name,name)) SEPARATOR ", ") FROM w_tc WHERE did = id AND lst_group = "cdo") AS tc_cdo,(SELECT GROUP_CONCAT(CONCAT(type," ",IF(name LIKE "%others%",intr_name,name)) SEPARATOR ", ") FROM w_tc WHERE did = id AND lst_group = "par") AS tc_par,offset_contact FROM w_data AS a LEFT JOIN w_user AS b ON b.uid = a.uid LEFT JOIN w_user c ON c.uid = a.missed_by WHERE clnk_dt BETWEEN CAST("2022-06-09 06:06:00" AS DATETIME) AND CAST("2022-06-09 19:06:00" AS DATETIME) ORDER BY clnk_dt DESC
+ERROR - 2022-06-13 10:11:23 --> {"filterscount":"0","groupscount":"0","sortorder":"","pagenum":"0","pagesize":"50","recordstartindex":"0","recordendindex":"50","fdt":"2022-06-09 06:06:00","tdt":"2022-06-09 19:06:00","type":"filtered"}
+ERROR - 2022-06-13 10:11:23 --> SELECT did AS id,slnk,DATE(slnk_dt) AS sdate,TIME(slnk_dt) AS stime,clnk,DATE(clnk_dt) AS cdate,TIME(clnk_dt) AS ctime,type_post,type_advi,IF(cdo_affect LIKE "na","N/A",UPPER(cdo_affect)) AS cdo_affect,IF(affect_area LIKE "na","N/A", UPPER(affect_area)) AS affect_area,estat,IF(infocast = 1,"YES","NO") AS infocast,total_text,IF(missed_post = 1,"YES","NO") AS missed_post,missed_by,IF(xp_rain = 1,"YES","NO") AS xp_rain,remarks,a.uid AS userid,b.uname,a.dt_created,c.uname AS mname,(SELECT GROUP_CONCAT(name SEPARATOR ", ") FROM w_ws WHERE did = id AND lst_group = "cdo") AS ws_cdo,(SELECT GROUP_CONCAT(name SEPARATOR ", ") FROM w_ws WHERE did = id AND lst_group = "par") AS ws_par,(SELECT GROUP_CONCAT(CONCAT(type," ",IF(name LIKE "%others%",intr_name,name)) SEPARATOR ", ") FROM w_tc WHERE did = id AND lst_group = "cdo") AS tc_cdo,(SELECT GROUP_CONCAT(CONCAT(type," ",IF(name LIKE "%others%",intr_name,name)) SEPARATOR ", ") FROM w_tc WHERE did = id AND lst_group = "par") AS tc_par,offset_contact FROM w_data AS a LEFT JOIN w_user AS b ON b.uid = a.uid LEFT JOIN w_user c ON c.uid = a.missed_by WHERE clnk_dt BETWEEN CAST("2022-06-09 06:06:00" AS DATETIME) AND CAST("2022-06-09 19:06:00" AS DATETIME) ORDER BY clnk_dt DESC
+ERROR - 2022-06-13 10:15:44 --> Query error: Unknown column 'uid' in 'field list' - Invalid query: INSERT INTO `response_unit` (`id`, `Sub_id`, `unit`, `Sub_unit`, `Call_origin`, `time_call`, `Status`, `receive_by`, `uid`) VALUES (67003, 1, 'Others', 'MRO', 'Radio', '10:03', 'Negative Acknowledge', '', '4321')
+ERROR - 2022-06-13 10:19:02 --> Query error: Unknown column 'res.uid' in 'on clause' - Invalid query: SELECT res.resp_id, res.id, res.Sub_id AS sub_id, res.unit AS response_unit, res.Sub_unit AS response_sub_unit, res.Call_origin AS response_call_origin, res.time_call AS response_time, res.Status AS acknowledge, res.receive_by AS acknowledge_by, u.email AS modified_by
+FROM `response_unit` `res`
+LEFT JOIN `users` `u` ON `u`.`admin_id` = `res`.`uid`
+WHERE `res`.`id` IN('67001', '67001')
+ERROR - 2022-06-13 10:19:39 --> Query error: Unknown column 'res.uid' in 'on clause' - Invalid query: SELECT res.resp_id, res.id, res.Sub_id AS sub_id, res.unit AS response_unit, res.Sub_unit AS response_sub_unit, res.Call_origin AS response_call_origin, res.time_call AS response_time, res.Status AS acknowledge, res.receive_by AS acknowledge_by, u.email AS modified_by
+FROM `response_unit` `res`
+LEFT JOIN `users` `u` ON `u`.`admin_id` = `res`.`uid`
+WHERE `res`.`id` IN('66996', '66996')
+ERROR - 2022-06-13 11:46:43 --> 404 Page Not Found: Assets/images
+ERROR - 2022-06-13 11:47:19 --> Query error: Unknown column 'res.uid' in 'on clause' - Invalid query: SELECT res.resp_id, res.id, res.Sub_id AS sub_id, res.unit AS response_unit, res.Sub_unit AS response_sub_unit, res.Call_origin AS response_call_origin, res.time_call AS response_time, res.Status AS acknowledge, res.receive_by AS acknowledge_by, u.email AS modified_by
+FROM `response_unit` `res`
+LEFT JOIN `users` `u` ON `u`.`admin_id` = `res`.`uid`
+WHERE `res`.`id` IN('67005', '67005')
+ERROR - 2022-06-13 11:48:48 --> 404 Page Not Found: Assets/images
+ERROR - 2022-06-13 13:21:02 --> 404 Page Not Found: Assets/images
+ERROR - 2022-06-13 13:25:05 --> Query error: Unknown column 'uid' in 'field list' - Invalid query: INSERT INTO `response_unit` (`id`, `Sub_id`, `unit`, `Sub_unit`, `Call_origin`, `time_call`, `Status`, `receive_by`, `uid`) VALUES (67010, 1, 'RTA', 'N/A', 'Radio', '13:17', 'Acknowledged', 'BUFFER', '12345')
+ERROR - 2022-06-13 13:51:56 --> 404 Page Not Found: Assets/js
+ERROR - 2022-06-13 13:51:56 --> 404 Page Not Found: Assets/css
+ERROR - 2022-06-13 13:53:28 --> 404 Page Not Found: Assets/js
+ERROR - 2022-06-13 13:53:28 --> 404 Page Not Found: Assets/css
+ERROR - 2022-06-13 13:55:29 --> 404 Page Not Found: Assets/js
+ERROR - 2022-06-13 13:55:30 --> 404 Page Not Found: Assets/css
+ERROR - 2022-06-13 14:21:08 --> 404 Page Not Found: Resource-monitoring/maps
+ERROR - 2022-06-13 14:51:01 --> Query error: Unknown column 'res.uid' in 'on clause' - Invalid query: SELECT res.resp_id, res.id, res.Sub_id AS sub_id, res.unit AS response_unit, res.Sub_unit AS response_sub_unit, res.Call_origin AS response_call_origin, res.time_call AS response_time, res.Status AS acknowledge, res.receive_by AS acknowledge_by, u.email AS modified_by
+FROM `response_unit` `res`
+LEFT JOIN `users` `u` ON `u`.`admin_id` = `res`.`uid`
+WHERE `res`.`id` IN('67010', '67010')
+ERROR - 2022-06-13 15:37:39 --> Query error: Unknown column 'res.uid' in 'on clause' - Invalid query: SELECT res.resp_id, res.id, res.Sub_id AS sub_id, res.unit AS response_unit, res.Sub_unit AS response_sub_unit, res.Call_origin AS response_call_origin, res.time_call AS response_time, res.Status AS acknowledge, res.receive_by AS acknowledge_by, u.email AS modified_by
+FROM `response_unit` `res`
+LEFT JOIN `users` `u` ON `u`.`admin_id` = `res`.`uid`
+WHERE `res`.`id` IN('67011', '67011')
+ERROR - 2022-06-13 17:12:28 --> 404 Page Not Found: Assets/images
+ERROR - 2022-06-13 17:22:56 --> 404 Page Not Found: Assets/images
+ERROR - 2022-06-13 17:35:34 --> Query error: Unknown column 'res.uid' in 'on clause' - Invalid query: SELECT res.resp_id, res.id, res.Sub_id AS sub_id, res.unit AS response_unit, res.Sub_unit AS response_sub_unit, res.Call_origin AS response_call_origin, res.time_call AS response_time, res.Status AS acknowledge, res.receive_by AS acknowledge_by, u.email AS modified_by
+FROM `response_unit` `res`
+LEFT JOIN `users` `u` ON `u`.`admin_id` = `res`.`uid`
+WHERE `res`.`id` IN('67020', '67020')
+ERROR - 2022-06-13 17:48:01 --> Query error: Unknown column 'res.uid' in 'on clause' - Invalid query: SELECT res.resp_id, res.id, res.Sub_id AS sub_id, res.unit AS response_unit, res.Sub_unit AS response_sub_unit, res.Call_origin AS response_call_origin, res.time_call AS response_time, res.Status AS acknowledge, res.receive_by AS acknowledge_by, u.email AS modified_by
+FROM `response_unit` `res`
+LEFT JOIN `users` `u` ON `u`.`admin_id` = `res`.`uid`
+WHERE `res`.`id` IN('67020', '67020', '67021')
+ERROR - 2022-06-13 17:58:48 --> Query error: Unknown column 'res.uid' in 'on clause' - Invalid query: SELECT res.resp_id, res.id, res.Sub_id AS sub_id, res.unit AS response_unit, res.Sub_unit AS response_sub_unit, res.Call_origin AS response_call_origin, res.time_call AS response_time, res.Status AS acknowledge, res.receive_by AS acknowledge_by, u.email AS modified_by
+FROM `response_unit` `res`
+LEFT JOIN `users` `u` ON `u`.`admin_id` = `res`.`uid`
+WHERE `res`.`id` IN('67023', '67023')
+ERROR - 2022-06-13 18:06:56 --> 404 Page Not Found: Assets/images
+ERROR - 2022-06-13 18:17:09 --> Query error: Unknown column 'uid' in 'field list' - Invalid query: INSERT INTO `response_unit` (`id`, `Sub_id`, `unit`, `Sub_unit`, `Call_origin`, `time_call`, `Status`, `receive_by`, `uid`) VALUES (67024, 1, 'BFP', 'N/A', 'Radio', '17:48', 'Acknowledged', 'Alpha base', '4321')
+ERROR - 2022-06-13 18:17:49 --> Query error: Unknown column 'res.uid' in 'on clause' - Invalid query: SELECT res.resp_id, res.id, res.Sub_id AS sub_id, res.unit AS response_unit, res.Sub_unit AS response_sub_unit, res.Call_origin AS response_call_origin, res.time_call AS response_time, res.Status AS acknowledge, res.receive_by AS acknowledge_by, u.email AS modified_by
+FROM `response_unit` `res`
+LEFT JOIN `users` `u` ON `u`.`admin_id` = `res`.`uid`
+WHERE `res`.`id` IN('67022', '67022')
+ERROR - 2022-06-13 18:18:02 --> Query error: Unknown column 'res.uid' in 'on clause' - Invalid query: SELECT res.resp_id, res.id, res.Sub_id AS sub_id, res.unit AS response_unit, res.Sub_unit AS response_sub_unit, res.Call_origin AS response_call_origin, res.time_call AS response_time, res.Status AS acknowledge, res.receive_by AS acknowledge_by, u.email AS modified_by
+FROM `response_unit` `res`
+LEFT JOIN `users` `u` ON `u`.`admin_id` = `res`.`uid`
+WHERE `res`.`id` IN('67020', '67020', '67021', '67022')
+ERROR - 2022-06-13 18:28:58 --> Query error: Unknown column 'res.uid' in 'on clause' - Invalid query: SELECT res.resp_id, res.id, res.Sub_id AS sub_id, res.unit AS response_unit, res.Sub_unit AS response_sub_unit, res.Call_origin AS response_call_origin, res.time_call AS response_time, res.Status AS acknowledge, res.receive_by AS acknowledge_by, u.email AS modified_by
+FROM `response_unit` `res`
+LEFT JOIN `users` `u` ON `u`.`admin_id` = `res`.`uid`
+WHERE `res`.`id` IN('67023', '67023')
+ERROR - 2022-06-13 18:29:09 --> Query error: Unknown column 'res.uid' in 'on clause' - Invalid query: SELECT res.resp_id, res.id, res.Sub_id AS sub_id, res.unit AS response_unit, res.Sub_unit AS response_sub_unit, res.Call_origin AS response_call_origin, res.time_call AS response_time, res.Status AS acknowledge, res.receive_by AS acknowledge_by, u.email AS modified_by
+FROM `response_unit` `res`
+LEFT JOIN `users` `u` ON `u`.`admin_id` = `res`.`uid`
+WHERE `res`.`id` IN('67020', '67020', '67021', '67022')
+ERROR - 2022-06-13 18:42:42 --> Query error: Unknown column 'res.uid' in 'on clause' - Invalid query: SELECT res.resp_id, res.id, res.Sub_id AS sub_id, res.unit AS response_unit, res.Sub_unit AS response_sub_unit, res.Call_origin AS response_call_origin, res.time_call AS response_time, res.Status AS acknowledge, res.receive_by AS acknowledge_by, u.email AS modified_by
+FROM `response_unit` `res`
+LEFT JOIN `users` `u` ON `u`.`admin_id` = `res`.`uid`
+WHERE `res`.`id` IN('67026', '67026')
+ERROR - 2022-06-13 19:53:30 --> 404 Page Not Found: Assets/images
+ERROR - 2022-06-13 19:59:48 --> Query error: Unknown column 'uid' in 'field list' - Invalid query: INSERT INTO `response_unit` (`id`, `Sub_id`, `unit`, `Sub_unit`, `Call_origin`, `time_call`, `Status`, `receive_by`, `uid`) VALUES (67028, 1, 'Others', 'All monitoring stations', 'Telephone', '19:43', 'Acknowledged', 'Duty operator', '12345678')
+ERROR - 2022-06-13 20:01:52 --> 404 Page Not Found: Assets/images
+ERROR - 2022-06-13 20:08:25 --> Query error: Unknown column 'uid' in 'field list' - Invalid query: INSERT INTO `response_unit` (`id`, `Sub_id`, `unit`, `Sub_unit`, `Call_origin`, `time_call`, `Status`, `receive_by`, `uid`) VALUES (67029, 1, 'Central Dispatch', 'N/A', 'CDRRMD', '19:58', 'Acknowledged', 'Oscar 24', '12345678')
+ERROR - 2022-06-13 20:08:55 --> Query error: Unknown column 'res.uid' in 'on clause' - Invalid query: SELECT res.resp_id, res.id, res.Sub_id AS sub_id, res.unit AS response_unit, res.Sub_unit AS response_sub_unit, res.Call_origin AS response_call_origin, res.time_call AS response_time, res.Status AS acknowledge, res.receive_by AS acknowledge_by, u.email AS modified_by
+FROM `response_unit` `res`
+LEFT JOIN `users` `u` ON `u`.`admin_id` = `res`.`uid`
+WHERE `res`.`id` IN('67029', '67029')
+ERROR - 2022-06-13 20:13:07 --> 404 Page Not Found: Assets/images
+ERROR - 2022-06-13 20:16:34 --> Query error: Unknown column 'uid' in 'field list' - Invalid query: INSERT INTO `response_unit` (`id`, `Sub_id`, `unit`, `Sub_unit`, `Call_origin`, `time_call`, `Status`, `receive_by`, `uid`) VALUES (67031, 1, 'CEPALCO', 'N/A', 'Telephone', '20:03', 'Acknowledged', 'Oscar', '12345678')
+ERROR - 2022-06-13 20:17:49 --> Query error: Unknown column 'res.uid' in 'on clause' - Invalid query: SELECT res.resp_id, res.id, res.Sub_id AS sub_id, res.unit AS response_unit, res.Sub_unit AS response_sub_unit, res.Call_origin AS response_call_origin, res.time_call AS response_time, res.Status AS acknowledge, res.receive_by AS acknowledge_by, u.email AS modified_by
+FROM `response_unit` `res`
+LEFT JOIN `users` `u` ON `u`.`admin_id` = `res`.`uid`
+WHERE `res`.`id` IN('67029', '67029', '67030')
+ERROR - 2022-06-13 21:05:35 --> Query error: Unknown column 'res.uid' in 'on clause' - Invalid query: SELECT res.resp_id, res.id, res.Sub_id AS sub_id, res.unit AS response_unit, res.Sub_unit AS response_sub_unit, res.Call_origin AS response_call_origin, res.time_call AS response_time, res.Status AS acknowledge, res.receive_by AS acknowledge_by, u.email AS modified_by
+FROM `response_unit` `res`
+LEFT JOIN `users` `u` ON `u`.`admin_id` = `res`.`uid`
+WHERE `res`.`id` IN('67030', '67030')
+ERROR - 2022-06-13 21:22:49 --> {"filterscount":"0","groupscount":"0","sortorder":"","pagenum":"0","pagesize":"50","recordstartindex":"0","recordendindex":"50","fdt":"","tdt":"","type":"default"}
+ERROR - 2022-06-13 21:22:49 --> SELECT did AS id,slnk,DATE(slnk_dt) AS sdate,TIME(slnk_dt) AS stime,clnk,DATE(clnk_dt) AS cdate,TIME(clnk_dt) AS ctime,type_post,type_advi,IF(cdo_affect LIKE "na","N/A",UPPER(cdo_affect)) AS cdo_affect,IF(affect_area LIKE "na","N/A", UPPER(affect_area)) AS affect_area,estat,IF(infocast = 1,"YES","NO") AS infocast,total_text,IF(missed_post = 1,"YES","NO") AS missed_post,missed_by,IF(xp_rain = 1,"YES","NO") AS xp_rain,remarks,a.uid AS userid,b.uname,a.dt_created,c.uname AS mname,(SELECT GROUP_CONCAT(name SEPARATOR ", ") FROM w_ws WHERE did = id AND lst_group = "cdo") AS ws_cdo,(SELECT GROUP_CONCAT(name SEPARATOR ", ") FROM w_ws WHERE did = id AND lst_group = "par") AS ws_par,(SELECT GROUP_CONCAT(CONCAT(type," ",IF(name LIKE "%others%",intr_name,name)) SEPARATOR ", ") FROM w_tc WHERE did = id AND lst_group = "cdo") AS tc_cdo,(SELECT GROUP_CONCAT(CONCAT(type," ",IF(name LIKE "%others%",intr_name,name)) SEPARATOR ", ") FROM w_tc WHERE did = id AND lst_group = "par") AS tc_par,offset_contact FROM w_data AS a LEFT JOIN w_user AS b ON b.uid = a.uid LEFT JOIN w_user c ON c.uid = a.missed_by WHERE clnk_dt BETWEEN CAST(CONCAT(DATE_ADD(CURDATE(), INTERVAL -1 DAY)," 19:00:00") AS DATETIME) AND CURRENT_TIMESTAMP() ORDER BY clnk_dt DESC
+ERROR - 2022-06-13 22:17:03 --> 404 Page Not Found: Assets/images
+ERROR - 2022-06-13 22:20:46 --> Query error: Unknown column 'uid' in 'field list' - Invalid query: INSERT INTO `response_unit` (`id`, `Sub_id`, `unit`, `Sub_unit`, `Call_origin`, `time_call`, `Status`, `receive_by`, `uid`) VALUES (67033, 1, 'CEPALCO', 'N/A', 'Telephone', '22:04', 'Acknowledged', 'Oscar', '12345678')
+ERROR - 2022-06-13 22:21:04 --> Query error: Unknown column 'res.uid' in 'on clause' - Invalid query: SELECT res.resp_id, res.id, res.Sub_id AS sub_id, res.unit AS response_unit, res.Sub_unit AS response_sub_unit, res.Call_origin AS response_call_origin, res.time_call AS response_time, res.Status AS acknowledge, res.receive_by AS acknowledge_by, u.email AS modified_by
+FROM `response_unit` `res`
+LEFT JOIN `users` `u` ON `u`.`admin_id` = `res`.`uid`
+WHERE `res`.`id` IN('67033', '67033')
+ERROR - 2022-06-13 22:23:01 --> 404 Page Not Found: Assets/images
+ERROR - 2022-06-13 22:29:04 --> Query error: Unknown column 'uid' in 'field list' - Invalid query: INSERT INTO `response_unit` (`id`, `Sub_id`, `unit`, `Sub_unit`, `Call_origin`, `time_call`, `Status`, `receive_by`, `uid`) VALUES (67034, 1, 'Central Dispatch', 'N/A', 'CDRRMD', '22:13', 'Acknowledged', 'Oscar 29', '12345678')
+ERROR - 2022-06-13 22:36:07 --> Query error: Unknown column 'res.uid' in 'on clause' - Invalid query: SELECT res.resp_id, res.id, res.Sub_id AS sub_id, res.unit AS response_unit, res.Sub_unit AS response_sub_unit, res.Call_origin AS response_call_origin, res.time_call AS response_time, res.Status AS acknowledge, res.receive_by AS acknowledge_by, u.email AS modified_by
+FROM `response_unit` `res`
+LEFT JOIN `users` `u` ON `u`.`admin_id` = `res`.`uid`
+WHERE `res`.`id` IN('67034', '67034')
+ERROR - 2022-06-13 22:40:34 --> 404 Page Not Found: Assets/images
+ERROR - 2022-06-13 22:44:06 --> Query error: Unknown column 'uid' in 'field list' - Invalid query: INSERT INTO `response_unit` (`id`, `Sub_id`, `unit`, `Sub_unit`, `Call_origin`, `time_call`, `Status`, `receive_by`, `uid`) VALUES (67035, 1, 'PNP', 'Police Station 4', 'Telephone', '22:39', 'Acknowledged', 'PCpl Lanzaderas', '12345678')
+ERROR - 2022-06-13 22:59:05 --> Query error: Unknown column 'res.uid' in 'on clause' - Invalid query: SELECT res.resp_id, res.id, res.Sub_id AS sub_id, res.unit AS response_unit, res.Sub_unit AS response_sub_unit, res.Call_origin AS response_call_origin, res.time_call AS response_time, res.Status AS acknowledge, res.receive_by AS acknowledge_by, u.email AS modified_by
+FROM `response_unit` `res`
+LEFT JOIN `users` `u` ON `u`.`admin_id` = `res`.`uid`
+WHERE `res`.`id` IN('67034', '67034')

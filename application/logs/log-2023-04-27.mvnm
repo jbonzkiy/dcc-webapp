@@ -1,0 +1,66 @@
+ERROR - 2023-04-27 09:02:36 --> Severity: Warning --> mysqli::real_connect(): (HY000/2002): A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond.
+ C:\xampp\htdocs\dcc-webapp\system\database\drivers\mysqli\mysqli_driver.php 203
+ERROR - 2023-04-27 09:02:36 --> Unable to connect to the database
+ERROR - 2023-04-27 09:02:47 --> Severity: Warning --> mysqli::real_connect(): (HY000/2002): A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond.
+ C:\xampp\htdocs\dcc-webapp\system\database\drivers\mysqli\mysqli_driver.php 203
+ERROR - 2023-04-27 09:02:47 --> Unable to connect to the database
+ERROR - 2023-04-27 09:02:57 --> Severity: Warning --> mysqli::real_connect(): (HY000/2002): A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond.
+ C:\xampp\htdocs\dcc-webapp\system\database\drivers\mysqli\mysqli_driver.php 203
+ERROR - 2023-04-27 09:02:57 --> Unable to connect to the database
+ERROR - 2023-04-27 09:02:57 --> Query error: A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond.
+ - Invalid query: SELECT `Call_Log_ID`,`Time_Dispatched`,`Time_Accomplished`,`Team`,`Color`,`NR`,`NR_Type`,Group_Name_A,d.Type_Emergency_ID AS tid FROM (SELECT * FROM `dispatch_team`  ORDER BY `Dispatch_Team_ID` DESC) AS a INNER JOIN `team` AS b ON a.`Team_ID` = b.`Team_ID` LEFT JOIN call_log AS c ON a.Call_log_ID = c.CallLog_ID LEFT JOIN type_emergency AS d ON c.Type_Emergency_ID = d.Type_Emergency_ID WHERE b.`Code` NOT LIKE 'm%' AND b.Code NOT LIKE 'fire%' GROUP BY Team
+ERROR - 2023-04-27 09:02:57 --> Severity: Error --> Call to a member function result() on boolean C:\xampp\htdocs\dcc-webapp\application\models\maps_model.php 88
+ERROR - 2023-04-27 09:03:07 --> Severity: Error --> Maximum execution time of 30 seconds exceeded C:\xampp\htdocs\dcc-webapp\system\core\Common.php 595
+ERROR - 2023-04-27 09:03:18 --> Severity: Warning --> mysqli::real_connect(): (HY000/2002): A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond.
+ C:\xampp\htdocs\dcc-webapp\system\database\drivers\mysqli\mysqli_driver.php 203
+ERROR - 2023-04-27 09:03:18 --> Unable to connect to the database
+ERROR - 2023-04-27 09:03:28 --> Severity: Warning --> mysqli::real_connect(): (HY000/2002): A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond.
+ C:\xampp\htdocs\dcc-webapp\system\database\drivers\mysqli\mysqli_driver.php 203
+ERROR - 2023-04-27 09:03:28 --> Unable to connect to the database
+ERROR - 2023-04-27 09:03:28 --> Query error: A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond.
+ - Invalid query: SELECT `CallLog_ID`, `Latitude`, `Longitude`, `NameCaller`, `Address`, `TelNo`, `Remarks`, `Status`, `Group_Name_A`, `Type_Emergency`, `LandMark`, TIME(Date_Log) AS dt, `Date_Log` AS `dtlog`, (SELECT `Time_Accomplished` FROM `dispatch_team` WHERE Call_Log_ID = CallLog_ID ORDER BY `Time_Accomplished` DESC LIMIT 1) AS ta, (SELECT `Time_Dispatched` FROM `dispatch_team` WHERE Call_Log_ID = CallLog_ID ORDER BY `Time_Dispatched` DESC LIMIT 1) AS td, (SELECT COUNT(Dispatch_Team_ID) FROM `dispatch_team` WHERE Call_Log_ID = CallLog_ID) AS dcnt, (SELECT COUNT(Other_Agency_ID) FROM `trans_other_agency` WHERE Caller_ID = CallLog_ID) AS cnt_other_agency, (SELECT Actions FROM `log_user` WHERE Call_Log_ID = CallLog_ID ORDER BY Date_Log DESC LIMIT 1) AS user_action, (SELECT COUNT(Completed_ID) FROM `completed` WHERE Call_Log_ID = CallLog_ID) AS cnt_completed
+FROM `call_log` AS `a`
+INNER JOIN `type_emergency` AS `b` ON `a`.`Type_Emergency_ID` = `b`.`Type_Emergency_ID`
+WHERE `Date_Log` BETWEEN CAST(CONCAT(DATE_ADD(CURDATE(), INTERVAL -1 DAY),' 19:00:00') AS DATETIME) AND CURRENT_TIMESTAMP() AND `a`.`Type_Emergency_ID` NOT IN ('129','131','170','94','79','172','125')
+ORDER BY DATE(Date_Log), TIME(Date_Log)
+ERROR - 2023-04-27 09:03:28 --> Severity: Error --> Call to a member function result() on boolean C:\xampp\htdocs\dcc-webapp\application\models\maps_model.php 35
+ERROR - 2023-04-27 09:03:38 --> Severity: Error --> Maximum execution time of 30 seconds exceeded C:\xampp\htdocs\dcc-webapp\system\core\Common.php 595
+ERROR - 2023-04-27 09:03:48 --> Severity: Error --> Maximum execution time of 30 seconds exceeded C:\xampp\htdocs\dcc-webapp\system\core\Common.php 595
+ERROR - 2023-04-27 09:03:59 --> Severity: Error --> Maximum execution time of 30 seconds exceeded C:\xampp\htdocs\dcc-webapp\system\core\Common.php 595
+ERROR - 2023-04-27 09:03:59 --> Severity: Error --> Maximum execution time of 30 seconds exceeded C:\xampp\htdocs\dcc-webapp\system\libraries\Session\drivers\Session_files_driver.php 180
+ERROR - 2023-04-27 09:04:09 --> Severity: Error --> Maximum execution time of 30 seconds exceeded C:\xampp\htdocs\dcc-webapp\system\core\Common.php 595
+ERROR - 2023-04-27 09:04:09 --> Severity: Error --> Call to a member function select() on null C:\xampp\htdocs\dcc-webapp\application\models\maps_model.php 27
+ERROR - 2023-04-27 09:04:09 --> Severity: Error --> Call to a member function query() on null C:\xampp\htdocs\dcc-webapp\application\models\maps_model.php 87
+ERROR - 2023-04-27 09:04:09 --> Severity: Error --> Call to a member function select() on null C:\xampp\htdocs\dcc-webapp\application\models\maps_model.php 27
+ERROR - 2023-04-27 09:04:09 --> Severity: Error --> Call to a member function select() on null C:\xampp\htdocs\dcc-webapp\application\models\maps_model.php 27
+ERROR - 2023-04-27 09:04:09 --> Severity: Error --> Call to a member function select() on null C:\xampp\htdocs\dcc-webapp\application\models\maps_model.php 27
+ERROR - 2023-04-27 09:04:09 --> Severity: Error --> Call to a member function query() on null C:\xampp\htdocs\dcc-webapp\application\models\maps_model.php 87
+ERROR - 2023-04-27 09:04:11 --> Severity: Error --> Call to a member function select() on null C:\xampp\htdocs\dcc-webapp\application\models\maps_model.php 27
+ERROR - 2023-04-27 09:04:19 --> Severity: Error --> Call to a member function select() on null C:\xampp\htdocs\dcc-webapp\application\models\maps_model.php 27
+ERROR - 2023-04-27 09:05:10 --> Severity: Error --> Call to a member function query() on null C:\xampp\htdocs\dcc-webapp\application\models\maps_model.php 98
+ERROR - 2023-04-27 09:05:16 --> Severity: Error --> Call to a member function query() on null C:\xampp\htdocs\dcc-webapp\application\models\maps_model.php 125
+ERROR - 2023-04-27 09:05:31 --> Severity: Parsing Error --> syntax error, unexpected '?' C:\xampp\htdocs\dcc-webapp\application\models\logistic_model.php 459
+ERROR - 2023-04-27 09:06:21 --> Severity: Parsing Error --> syntax error, unexpected '?' C:\xampp\htdocs\dcc-webapp\application\models\logistic_model.php 706
+ERROR - 2023-04-27 09:06:22 --> Severity: Parsing Error --> syntax error, unexpected '?' C:\xampp\htdocs\dcc-webapp\application\models\logistic_model.php 706
+ERROR - 2023-04-27 09:06:40 --> Severity: Parsing Error --> syntax error, unexpected '?' C:\xampp\htdocs\dcc-webapp\application\models\logistic_model.php 855
+ERROR - 2023-04-27 09:07:08 --> Severity: Parsing Error --> syntax error, unexpected '?' C:\xampp\htdocs\dcc-webapp\application\models\logistic_model.php 1204
+ERROR - 2023-04-27 16:02:22 --> Query error: Table 'nineoneone.type_emergency' doesn't exist - Invalid query: SELECT AVG(test) AS avg FROM (SELECT COUNT(*) AS test FROM call_log AS a INNER JOIN type_emergency AS b ON a.`Type_Emergency_ID` = b.`Type_Emergency_ID` WHERE Group_Name_A NOT LIKE 'other calls' AND a.Type_Emergency_ID NOT IN('129','131','170') AND DATE(Date_Log) BETWEEN CAST('2021-01-01' AS DATE) AND DATE_SUB(CAST('2023-04-27' AS DATE), INTERVAL 1 MONTH) GROUP BY DATE_FORMAT(Date_Log,'%Y-%c') ORDER BY DATE(Date_Log)) AS testing
+ERROR - 2023-04-27 16:02:23 --> Severity: Error --> Call to a member function result() on boolean C:\xampp\htdocs\dcc-webapp\application\models\ers_model.php 269
+ERROR - 2023-04-27 16:02:23 --> Query error: Table 'nineoneone.type_emergency' doesn't exist - Invalid query: SELECT COUNT(*) AS today, (SELECT COUNT(*) FROM `call_log` AS a INNER JOIN `type_emergency` AS b ON a.`Type_Emergency_ID` = b.`Type_Emergency_ID` WHERE Group_Name_A NOT LIKE 'other calls' AND a.Type_Emergency_ID NOT IN('129', '131', '170', '172') AND DATE(Date_Log) LIKE CAST('2023-04-27' AS DATE)) AS emergency, (SELECT COUNT(*) FROM `call_log` AS a INNER JOIN `type_emergency` AS b ON a.`Type_Emergency_ID` = b.`Type_Emergency_ID` WHERE Group_Name_A LIKE 'other calls' AND a.Type_Emergency_ID NOT IN('129', '131', '170', '172') AND DATE(Date_Log) LIKE CAST('2023-04-27' AS DATE)) AS other, (SELECT COUNT(*) FROM `call_log` WHERE Type_Emergency_ID IN('129', '131', '170', '172') AND DATE(Date_log) LIKE CAST('2023-04-27' AS DATE)) AS hangup
+FROM `call_log`
+WHERE DATE(Date_log) LIKE CAST('2023-04-27' AS DATE)
+ERROR - 2023-04-27 16:02:23 --> Severity: Error --> Call to a member function row() on boolean C:\xampp\htdocs\dcc-webapp\application\models\ers_model.php 66
+ERROR - 2023-04-27 16:02:23 --> Query error: Table 'nineoneone.type_emergency' doesn't exist - Invalid query: SELECT (SELECT COUNT(*) FROM `call_log` AS a INNER JOIN `type_emergency` AS b ON a.`Type_Emergency_ID` = b.`Type_Emergency_ID` WHERE Group_Name_A NOT LIKE 'other calls' AND a.Type_Emergency_ID NOT IN('129', '131', '170', '172') AND MONTHNAME(Date_Log) LIKE MONTHNAME(CAST('2023-04-27' AS DATE)) AND YEAR(Date_Log) LIKE YEAR(CAST('2023-04-27' AS DATE))) AS total_emerg, (SELECT COUNT(*) FROM `call_log` AS a INNER JOIN `type_emergency` AS b ON a.`Type_Emergency_ID` = b.`Type_Emergency_ID` WHERE Group_Name_A LIKE 'other calls' AND a.Type_Emergency_ID NOT IN('129', '131', '170', '172') AND MONTHNAME(Date_Log) LIKE MONTHNAME(CAST('2023-04-27' AS DATE)) AND YEAR(Date_Log) LIKE YEAR(CAST('2023-04-27' AS DATE))) AS total_other, (SELECT COUNT(*) FROM `call_log` WHERE Type_Emergency_ID IN('129', '131', '170', '172') AND MONTHNAME(Date_Log) LIKE MONTHNAME(CAST('2023-04-27' AS DATE)) AND YEAR(Date_Log) LIKE YEAR(CAST('2023-04-27' AS DATE))) AS total_hangup, (SELECT COUNT(*) FROM `call_log` AS a INNER JOIN `type_emergency` AS b ON a.`Type_Emergency_ID` = b.`Type_Emergency_ID` WHERE MONTHNAME(Date_Log) LIKE MONTHNAME(CAST('2023-04-27' AS DATE)) AND YEAR(Date_Log) LIKE YEAR(CAST('2023-04-27' AS DATE))) AS total_calls
+FROM `call_log`
+ LIMIT 1
+ERROR - 2023-04-27 16:02:23 --> Severity: Error --> Call to a member function row() on boolean C:\xampp\htdocs\dcc-webapp\application\models\ers_model.php 253
+ERROR - 2023-04-27 16:02:23 --> Query error: Table 'nineoneone.type_emergency' doesn't exist - Invalid query: SELECT `b`.`Type_Emergency` as `Name`, COUNT(*) AS cnt
+FROM `call_log` AS `a`
+INNER JOIN `type_emergency` AS `b` ON `a`.`Type_Emergency_ID` = `b`.`Type_Emergency_ID`
+WHERE DATE(Date_Log) LIKE CAST('2023-04-27' AS DATE)
+GROUP BY `a`.`Type_Emergency_ID`
+ORDER BY FIELD(a.Type_Emergency_ID, '170') DESC, COUNT(*) DESC
+ERROR - 2023-04-27 16:02:23 --> Severity: Error --> Call to a member function result() on boolean C:\xampp\htdocs\dcc-webapp\application\models\ers_model.php 305
+ERROR - 2023-04-27 16:03:06 --> Severity: Error --> Maximum execution time of 30 seconds exceeded C:\xampp\htdocs\dcc-webapp\system\database\drivers\mysqli\mysqli_driver.php 307
+ERROR - 2023-04-27 16:03:06 --> Severity: Error --> Maximum execution time of 30 seconds exceeded C:\xampp\htdocs\dcc-webapp\system\libraries\Session\drivers\Session_files_driver.php 180
+ERROR - 2023-04-27 16:03:06 --> Severity: Error --> Maximum execution time of 30 seconds exceeded C:\xampp\htdocs\dcc-webapp\system\libraries\Session\drivers\Session_files_driver.php 180

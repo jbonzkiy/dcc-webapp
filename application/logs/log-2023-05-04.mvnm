@@ -1,0 +1,620 @@
+ERROR - 2023-05-04 16:31:47 --> {"filterscount":"0","groupscount":"0","sortorder":"","pagenum":"0","pagesize":"50","recordstartindex":"0","recordendindex":"50","fdt":"","tdt":"","type":"default"}
+ERROR - 2023-05-04 16:31:47 --> SELECT did AS id,slnk,DATE(slnk_dt) AS sdate,TIME(slnk_dt) AS stime,clnk,DATE(clnk_dt) AS cdate,TIME(clnk_dt) AS ctime,type_post,type_advi,IF(cdo_affect LIKE "na","N/A",UPPER(cdo_affect)) AS cdo_affect,IF(affect_area LIKE "na","N/A", UPPER(affect_area)) AS affect_area,estat,IF(infocast = 1,"YES","NO") AS infocast,total_text,IF(missed_post = 1,"YES","NO") AS missed_post,missed_by,IF(xp_rain = 1,"YES","NO") AS xp_rain,remarks,a.uid AS userid,b.uname,a.dt_created,c.uname AS mname,(SELECT GROUP_CONCAT(name SEPARATOR ", ") FROM w_ws WHERE did = id AND lst_group = "cdo") AS ws_cdo,(SELECT GROUP_CONCAT(name SEPARATOR ", ") FROM w_ws WHERE did = id AND lst_group = "par") AS ws_par,(SELECT GROUP_CONCAT(CONCAT(type," ",IF(name LIKE "%others%",intr_name,name)) SEPARATOR ", ") FROM w_tc WHERE did = id AND lst_group = "cdo") AS tc_cdo,(SELECT GROUP_CONCAT(CONCAT(type," ",IF(name LIKE "%others%",intr_name,name)) SEPARATOR ", ") FROM w_tc WHERE did = id AND lst_group = "par") AS tc_par,offset_contact FROM w_data AS a LEFT JOIN w_user AS b ON b.uid = a.uid LEFT JOIN w_user c ON c.uid = a.missed_by WHERE clnk_dt BETWEEN CAST(CONCAT(DATE_ADD(CURDATE(), INTERVAL -1 DAY)," 19:00:00") AS DATETIME) AND CURRENT_TIMESTAMP() ORDER BY clnk_dt DESC
+ERROR - 2023-05-04 16:40:52 --> Severity: Warning --> mysqli::real_connect(): (HY000/2002): A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond.
+ C:\xampp\htdocs\dcc-webapp\system\database\drivers\mysqli\mysqli_driver.php 203
+ERROR - 2023-05-04 16:40:52 --> Unable to connect to the database
+ERROR - 2023-05-04 16:41:02 --> Severity: Warning --> mysqli::real_connect(): (HY000/2002): A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond.
+ C:\xampp\htdocs\dcc-webapp\system\database\drivers\mysqli\mysqli_driver.php 203
+ERROR - 2023-05-04 16:41:02 --> Unable to connect to the database
+ERROR - 2023-05-04 16:41:12 --> Severity: Warning --> mysqli::real_connect(): (HY000/2002): A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond.
+ C:\xampp\htdocs\dcc-webapp\system\database\drivers\mysqli\mysqli_driver.php 203
+ERROR - 2023-05-04 16:41:12 --> Unable to connect to the database
+ERROR - 2023-05-04 16:41:12 --> Query error: A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond.
+ - Invalid query: SELECT COUNT(*) AS today, (SELECT COUNT(*) FROM `call_log` AS a INNER JOIN `type_emergency` AS b ON a.`Type_Emergency_ID` = b.`Type_Emergency_ID` WHERE Group_Name_A NOT LIKE 'other calls' AND a.Type_Emergency_ID NOT IN('129', '131', '170', '172') AND DATE(Date_Log) LIKE CAST('2023-05-04' AS DATE)) AS emergency, (SELECT COUNT(*) FROM `call_log` AS a INNER JOIN `type_emergency` AS b ON a.`Type_Emergency_ID` = b.`Type_Emergency_ID` WHERE Group_Name_A LIKE 'other calls' AND a.Type_Emergency_ID NOT IN('129', '131', '170', '172') AND DATE(Date_Log) LIKE CAST('2023-05-04' AS DATE)) AS other, (SELECT COUNT(*) FROM `call_log` WHERE Type_Emergency_ID IN('129', '131', '170', '172') AND DATE(Date_log) LIKE CAST('2023-05-04' AS DATE)) AS hangup
+FROM `call_log`
+WHERE DATE(Date_log) LIKE CAST('2023-05-04' AS DATE)
+ERROR - 2023-05-04 16:41:13 --> Severity: Error --> Call to a member function row() on boolean C:\xampp\htdocs\dcc-webapp\application\models\ers_model.php 66
+ERROR - 2023-05-04 16:41:23 --> Severity: Error --> Maximum execution time of 30 seconds exceeded C:\xampp\htdocs\dcc-webapp\system\core\Common.php 595
+ERROR - 2023-05-04 16:41:23 --> Severity: Error --> Maximum execution time of 30 seconds exceeded C:\xampp\htdocs\dcc-webapp\system\libraries\Session\drivers\Session_files_driver.php 180
+ERROR - 2023-05-04 16:41:23 --> Severity: Error --> Maximum execution time of 30 seconds exceeded C:\xampp\htdocs\dcc-webapp\system\libraries\Session\drivers\Session_files_driver.php 180
+ERROR - 2023-05-04 16:41:23 --> Severity: Error --> Maximum execution time of 30 seconds exceeded C:\xampp\htdocs\dcc-webapp\system\libraries\Session\drivers\Session_files_driver.php 180
+ERROR - 2023-05-04 16:41:23 --> Severity: Error --> Maximum execution time of 30 seconds exceeded C:\xampp\htdocs\dcc-webapp\system\libraries\Session\drivers\Session_files_driver.php 180
+ERROR - 2023-05-04 16:41:33 --> Severity: Warning --> mysqli::real_connect(): (HY000/2002): A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond.
+ C:\xampp\htdocs\dcc-webapp\system\database\drivers\mysqli\mysqli_driver.php 203
+ERROR - 2023-05-04 16:41:33 --> Unable to connect to the database
+ERROR - 2023-05-04 16:41:43 --> Severity: Error --> Maximum execution time of 30 seconds exceeded C:\xampp\htdocs\dcc-webapp\system\core\Common.php 595
+ERROR - 2023-05-04 16:41:53 --> Severity: Error --> Maximum execution time of 30 seconds exceeded C:\xampp\htdocs\dcc-webapp\system\core\Common.php 595
+ERROR - 2023-05-04 16:41:53 --> Severity: Error --> Maximum execution time of 30 seconds exceeded C:\xampp\htdocs\dcc-webapp\system\libraries\Session\drivers\Session_files_driver.php 180
+ERROR - 2023-05-04 16:41:53 --> Severity: Error --> Maximum execution time of 30 seconds exceeded C:\xampp\htdocs\dcc-webapp\system\libraries\Session\drivers\Session_files_driver.php 180
+ERROR - 2023-05-04 16:42:03 --> Severity: Error --> Maximum execution time of 30 seconds exceeded C:\xampp\htdocs\dcc-webapp\system\core\Common.php 595
+ERROR - 2023-05-04 16:42:03 --> Severity: Error --> Maximum execution time of 30 seconds exceeded C:\xampp\htdocs\dcc-webapp\system\libraries\Session\drivers\Session_files_driver.php 180
+ERROR - 2023-05-04 16:42:13 --> Severity: Error --> Maximum execution time of 30 seconds exceeded C:\xampp\htdocs\dcc-webapp\system\core\Common.php 595
+ERROR - 2023-05-04 16:42:23 --> Severity: Error --> Maximum execution time of 30 seconds exceeded C:\xampp\htdocs\dcc-webapp\system\core\Common.php 595
+ERROR - 2023-05-04 16:42:23 --> Severity: Error --> Maximum execution time of 30 seconds exceeded C:\xampp\htdocs\dcc-webapp\system\libraries\Session\drivers\Session_files_driver.php 180
+ERROR - 2023-05-04 16:42:23 --> Severity: Error --> Maximum execution time of 30 seconds exceeded C:\xampp\htdocs\dcc-webapp\system\libraries\Session\drivers\Session_files_driver.php 180
+ERROR - 2023-05-04 16:42:33 --> Severity: Warning --> mysqli::real_connect(): (HY000/2002): A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond.
+ C:\xampp\htdocs\dcc-webapp\system\database\drivers\mysqli\mysqli_driver.php 203
+ERROR - 2023-05-04 16:42:33 --> Unable to connect to the database
+ERROR - 2023-05-04 16:42:43 --> Severity: Error --> Maximum execution time of 30 seconds exceeded C:\xampp\htdocs\dcc-webapp\system\core\Common.php 595
+ERROR - 2023-05-04 16:42:43 --> Severity: Error --> Maximum execution time of 30 seconds exceeded C:\xampp\htdocs\dcc-webapp\system\libraries\Session\drivers\Session_files_driver.php 180
+ERROR - 2023-05-04 16:42:43 --> Severity: Error --> Maximum execution time of 30 seconds exceeded C:\xampp\htdocs\dcc-webapp\system\libraries\Session\drivers\Session_files_driver.php 180
+ERROR - 2023-05-04 16:42:53 --> Severity: Warning --> mysqli::real_connect(): (HY000/2002): A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond.
+ C:\xampp\htdocs\dcc-webapp\system\database\drivers\mysqli\mysqli_driver.php 203
+ERROR - 2023-05-04 16:42:53 --> Unable to connect to the database
+ERROR - 2023-05-04 16:43:03 --> Severity: Error --> Maximum execution time of 30 seconds exceeded C:\xampp\htdocs\dcc-webapp\system\core\Common.php 595
+ERROR - 2023-05-04 16:43:03 --> Severity: Error --> Maximum execution time of 30 seconds exceeded C:\xampp\htdocs\dcc-webapp\system\libraries\Session\drivers\Session_files_driver.php 180
+ERROR - 2023-05-04 16:43:03 --> Severity: Error --> Maximum execution time of 30 seconds exceeded C:\xampp\htdocs\dcc-webapp\system\libraries\Session\drivers\Session_files_driver.php 180
+ERROR - 2023-05-04 16:43:13 --> Severity: Warning --> mysqli::real_connect(): (HY000/2002): A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond.
+ C:\xampp\htdocs\dcc-webapp\system\database\drivers\mysqli\mysqli_driver.php 203
+ERROR - 2023-05-04 16:43:13 --> Unable to connect to the database
+ERROR - 2023-05-04 16:43:23 --> Severity: Error --> Maximum execution time of 30 seconds exceeded C:\xampp\htdocs\dcc-webapp\system\core\Common.php 595
+ERROR - 2023-05-04 16:43:23 --> Severity: Error --> Maximum execution time of 30 seconds exceeded C:\xampp\htdocs\dcc-webapp\system\libraries\Session\drivers\Session_files_driver.php 180
+ERROR - 2023-05-04 16:43:23 --> Severity: Error --> Maximum execution time of 30 seconds exceeded C:\xampp\htdocs\dcc-webapp\system\libraries\Session\drivers\Session_files_driver.php 180
+ERROR - 2023-05-04 16:43:33 --> Severity: Warning --> mysqli::real_connect(): (HY000/2002): A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond.
+ C:\xampp\htdocs\dcc-webapp\system\database\drivers\mysqli\mysqli_driver.php 203
+ERROR - 2023-05-04 16:43:33 --> Unable to connect to the database
+ERROR - 2023-05-04 16:43:43 --> Severity: Error --> Maximum execution time of 30 seconds exceeded C:\xampp\htdocs\dcc-webapp\system\core\Common.php 595
+ERROR - 2023-05-04 16:43:43 --> Severity: Error --> Maximum execution time of 30 seconds exceeded C:\xampp\htdocs\dcc-webapp\system\libraries\Session\drivers\Session_files_driver.php 180
+ERROR - 2023-05-04 16:43:43 --> Severity: Error --> Maximum execution time of 30 seconds exceeded C:\xampp\htdocs\dcc-webapp\system\libraries\Session\drivers\Session_files_driver.php 180
+ERROR - 2023-05-04 16:43:53 --> Severity: Warning --> mysqli::real_connect(): (HY000/2002): A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond.
+ C:\xampp\htdocs\dcc-webapp\system\database\drivers\mysqli\mysqli_driver.php 203
+ERROR - 2023-05-04 16:43:53 --> Unable to connect to the database
+ERROR - 2023-05-04 16:44:03 --> Severity: Error --> Maximum execution time of 30 seconds exceeded C:\xampp\htdocs\dcc-webapp\system\core\Common.php 595
+ERROR - 2023-05-04 16:44:03 --> Severity: Error --> Maximum execution time of 30 seconds exceeded C:\xampp\htdocs\dcc-webapp\system\libraries\Session\drivers\Session_files_driver.php 180
+ERROR - 2023-05-04 16:44:03 --> Severity: Error --> Maximum execution time of 30 seconds exceeded C:\xampp\htdocs\dcc-webapp\system\libraries\Session\drivers\Session_files_driver.php 180
+ERROR - 2023-05-04 16:44:13 --> Severity: Warning --> mysqli::real_connect(): (HY000/2002): A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond.
+ C:\xampp\htdocs\dcc-webapp\system\database\drivers\mysqli\mysqli_driver.php 203
+ERROR - 2023-05-04 16:44:13 --> Unable to connect to the database
+ERROR - 2023-05-04 16:44:23 --> Severity: Error --> Maximum execution time of 30 seconds exceeded C:\xampp\htdocs\dcc-webapp\system\core\Common.php 595
+ERROR - 2023-05-04 16:44:23 --> Severity: Error --> Maximum execution time of 30 seconds exceeded C:\xampp\htdocs\dcc-webapp\system\libraries\Session\drivers\Session_files_driver.php 180
+ERROR - 2023-05-04 16:44:23 --> Severity: Error --> Maximum execution time of 30 seconds exceeded C:\xampp\htdocs\dcc-webapp\system\libraries\Session\drivers\Session_files_driver.php 180
+ERROR - 2023-05-04 16:44:24 --> Query error: Table 'nineoneone.type_emergency' doesn't exist - Invalid query: SELECT COUNT(*) AS today, (SELECT COUNT(*) FROM `call_log` AS a INNER JOIN `type_emergency` AS b ON a.`Type_Emergency_ID` = b.`Type_Emergency_ID` WHERE Group_Name_A NOT LIKE 'other calls' AND a.Type_Emergency_ID NOT IN('129', '131', '170', '172') AND DATE(Date_Log) LIKE CAST('2023-05-04' AS DATE)) AS emergency, (SELECT COUNT(*) FROM `call_log` AS a INNER JOIN `type_emergency` AS b ON a.`Type_Emergency_ID` = b.`Type_Emergency_ID` WHERE Group_Name_A LIKE 'other calls' AND a.Type_Emergency_ID NOT IN('129', '131', '170', '172') AND DATE(Date_Log) LIKE CAST('2023-05-04' AS DATE)) AS other, (SELECT COUNT(*) FROM `call_log` WHERE Type_Emergency_ID IN('129', '131', '170', '172') AND DATE(Date_log) LIKE CAST('2023-05-04' AS DATE)) AS hangup
+FROM `call_log`
+WHERE DATE(Date_log) LIKE CAST('2023-05-04' AS DATE)
+ERROR - 2023-05-04 16:44:24 --> Severity: Error --> Call to a member function row() on boolean C:\xampp\htdocs\dcc-webapp\application\models\ers_model.php 66
+ERROR - 2023-05-04 16:44:24 --> Query error: Table 'nineoneone.type_emergency' doesn't exist - Invalid query: SELECT `b`.`Type_Emergency` as `Name`, COUNT(*) AS cnt
+FROM `call_log` AS `a`
+INNER JOIN `type_emergency` AS `b` ON `a`.`Type_Emergency_ID` = `b`.`Type_Emergency_ID`
+WHERE DATE(Date_Log) LIKE CAST('2023-05-04' AS DATE)
+GROUP BY `a`.`Type_Emergency_ID`
+ORDER BY FIELD(a.Type_Emergency_ID, '170') DESC, COUNT(*) DESC
+ERROR - 2023-05-04 16:44:24 --> Severity: Error --> Call to a member function result() on boolean C:\xampp\htdocs\dcc-webapp\application\models\ers_model.php 305
+ERROR - 2023-05-04 16:44:24 --> Query error: Table 'nineoneone.type_emergency' doesn't exist - Invalid query: SELECT AVG(test) AS avg FROM (SELECT COUNT(*) AS test FROM call_log AS a INNER JOIN type_emergency AS b ON a.`Type_Emergency_ID` = b.`Type_Emergency_ID` WHERE Group_Name_A NOT LIKE 'other calls' AND a.Type_Emergency_ID NOT IN('129','131','170') AND DATE(Date_Log) BETWEEN CAST('2021-01-01' AS DATE) AND DATE_SUB(CAST('2023-05-04' AS DATE), INTERVAL 1 MONTH) GROUP BY DATE_FORMAT(Date_Log,'%Y-%c') ORDER BY DATE(Date_Log)) AS testing
+ERROR - 2023-05-04 16:44:24 --> Severity: Error --> Call to a member function result() on boolean C:\xampp\htdocs\dcc-webapp\application\models\ers_model.php 269
+ERROR - 2023-05-04 16:44:24 --> Query error: Table 'nineoneone.type_emergency' doesn't exist - Invalid query: SELECT (SELECT COUNT(*) FROM `call_log` AS a INNER JOIN `type_emergency` AS b ON a.`Type_Emergency_ID` = b.`Type_Emergency_ID` WHERE Group_Name_A NOT LIKE 'other calls' AND a.Type_Emergency_ID NOT IN('129', '131', '170', '172') AND MONTHNAME(Date_Log) LIKE MONTHNAME(CAST('2023-05-04' AS DATE)) AND YEAR(Date_Log) LIKE YEAR(CAST('2023-05-04' AS DATE))) AS total_emerg, (SELECT COUNT(*) FROM `call_log` AS a INNER JOIN `type_emergency` AS b ON a.`Type_Emergency_ID` = b.`Type_Emergency_ID` WHERE Group_Name_A LIKE 'other calls' AND a.Type_Emergency_ID NOT IN('129', '131', '170', '172') AND MONTHNAME(Date_Log) LIKE MONTHNAME(CAST('2023-05-04' AS DATE)) AND YEAR(Date_Log) LIKE YEAR(CAST('2023-05-04' AS DATE))) AS total_other, (SELECT COUNT(*) FROM `call_log` WHERE Type_Emergency_ID IN('129', '131', '170', '172') AND MONTHNAME(Date_Log) LIKE MONTHNAME(CAST('2023-05-04' AS DATE)) AND YEAR(Date_Log) LIKE YEAR(CAST('2023-05-04' AS DATE))) AS total_hangup, (SELECT COUNT(*) FROM `call_log` AS a INNER JOIN `type_emergency` AS b ON a.`Type_Emergency_ID` = b.`Type_Emergency_ID` WHERE MONTHNAME(Date_Log) LIKE MONTHNAME(CAST('2023-05-04' AS DATE)) AND YEAR(Date_Log) LIKE YEAR(CAST('2023-05-04' AS DATE))) AS total_calls
+FROM `call_log`
+ LIMIT 1
+ERROR - 2023-05-04 16:44:24 --> Severity: Error --> Call to a member function row() on boolean C:\xampp\htdocs\dcc-webapp\application\models\ers_model.php 253
+ERROR - 2023-05-04 16:44:24 --> Query error: Table 'nineoneone.type_emergency' doesn't exist - Invalid query: SELECT COUNT(*) AS today, (SELECT COUNT(*) FROM `call_log` AS a INNER JOIN `type_emergency` AS b ON a.`Type_Emergency_ID` = b.`Type_Emergency_ID` WHERE Group_Name_A NOT LIKE 'other calls' AND a.Type_Emergency_ID NOT IN('129', '131', '170', '172') AND DATE(Date_Log) LIKE CAST('2023-05-04' AS DATE)) AS emergency, (SELECT COUNT(*) FROM `call_log` AS a INNER JOIN `type_emergency` AS b ON a.`Type_Emergency_ID` = b.`Type_Emergency_ID` WHERE Group_Name_A LIKE 'other calls' AND a.Type_Emergency_ID NOT IN('129', '131', '170', '172') AND DATE(Date_Log) LIKE CAST('2023-05-04' AS DATE)) AS other, (SELECT COUNT(*) FROM `call_log` WHERE Type_Emergency_ID IN('129', '131', '170', '172') AND DATE(Date_log) LIKE CAST('2023-05-04' AS DATE)) AS hangup
+FROM `call_log`
+WHERE DATE(Date_log) LIKE CAST('2023-05-04' AS DATE)
+ERROR - 2023-05-04 16:44:24 --> Severity: Error --> Call to a member function row() on boolean C:\xampp\htdocs\dcc-webapp\application\models\ers_model.php 66
+ERROR - 2023-05-04 16:44:24 --> Query error: Table 'nineoneone.type_emergency' doesn't exist - Invalid query: SELECT AVG(test) AS avg FROM (SELECT COUNT(*) AS test FROM call_log AS a INNER JOIN type_emergency AS b ON a.`Type_Emergency_ID` = b.`Type_Emergency_ID` WHERE Group_Name_A NOT LIKE 'other calls' AND a.Type_Emergency_ID NOT IN('129','131','170') AND DATE(Date_Log) BETWEEN CAST('2021-01-01' AS DATE) AND DATE_SUB(CAST('2023-05-04' AS DATE), INTERVAL 1 MONTH) GROUP BY DATE_FORMAT(Date_Log,'%Y-%c') ORDER BY DATE(Date_Log)) AS testing
+ERROR - 2023-05-04 16:44:24 --> Severity: Error --> Call to a member function result() on boolean C:\xampp\htdocs\dcc-webapp\application\models\ers_model.php 269
+ERROR - 2023-05-04 16:44:24 --> Query error: Table 'nineoneone.type_emergency' doesn't exist - Invalid query: SELECT `b`.`Type_Emergency` as `Name`, COUNT(*) AS cnt
+FROM `call_log` AS `a`
+INNER JOIN `type_emergency` AS `b` ON `a`.`Type_Emergency_ID` = `b`.`Type_Emergency_ID`
+WHERE DATE(Date_Log) LIKE CAST('2023-05-04' AS DATE)
+GROUP BY `a`.`Type_Emergency_ID`
+ORDER BY FIELD(a.Type_Emergency_ID, '170') DESC, COUNT(*) DESC
+ERROR - 2023-05-04 16:44:24 --> Severity: Error --> Call to a member function result() on boolean C:\xampp\htdocs\dcc-webapp\application\models\ers_model.php 305
+ERROR - 2023-05-04 16:44:24 --> Query error: Table 'nineoneone.type_emergency' doesn't exist - Invalid query: SELECT `CallLog_ID` as `cid`, COUNT(*) AS tcalls, DATE_FORMAT(Date_log, "%b") AS m, YEAR(Date_Log) AS y, (SELECT COUNT(*) FROM `call_log` AS a INNER JOIN `type_emergency` AS b ON a.`Type_Emergency_ID` = b.`Type_Emergency_ID` WHERE Group_Name_A NOT LIKE 'other calls' AND a.Type_Emergency_ID NOT IN('129', '131', '170', '172') AND DATE_FORMAT(Date_Log, '%b') LIKE m AND YEAR(Date_Log) LIKE y) AS temer
+FROM `call_log`
+WHERE YEAR(Date_Log) LIKE YEAR(CAST('2023-05-04' AS DATE))
+GROUP BY MONTH(Date_Log), YEAR(Date_Log)
+ERROR - 2023-05-04 16:44:24 --> Severity: Error --> Call to a member function result() on boolean C:\xampp\htdocs\dcc-webapp\application\models\ers_model.php 321
+ERROR - 2023-05-04 16:44:26 --> Query error: Table 'nineoneone.type_emergency' doesn't exist - Invalid query: SELECT `b`.`Type_Emergency` as `Name`, COUNT(*) AS cnt
+FROM `call_log` AS `a`
+INNER JOIN `type_emergency` AS `b` ON `a`.`Type_Emergency_ID` = `b`.`Type_Emergency_ID`
+WHERE DATE_FORMAT(Date_Log,'%Y-%c') LIKE DATE_FORMAT(CAST('2023-05-04' AS DATE),'%Y-%c') AND `a`.`Type_Emergency_ID` NOT IN('129','131','170','172') AND `Group_Name_A` NOT LIKE 'other calls'
+GROUP BY `a`.`Type_Emergency_ID`
+ORDER BY COUNT(*) DESC
+ERROR - 2023-05-04 16:44:26 --> Severity: Error --> Call to a member function result() on boolean C:\xampp\htdocs\dcc-webapp\application\models\ers_model.php 305
+ERROR - 2023-05-04 16:44:44 --> Query error: Table 'nineoneone.type_emergency' doesn't exist - Invalid query: SELECT COUNT(*) AS today, (SELECT COUNT(*) FROM `call_log` AS a INNER JOIN `type_emergency` AS b ON a.`Type_Emergency_ID` = b.`Type_Emergency_ID` WHERE Group_Name_A NOT LIKE 'other calls' AND a.Type_Emergency_ID NOT IN('129', '131', '170', '172') AND DATE(Date_Log) LIKE CAST('2023-05-04' AS DATE)) AS emergency, (SELECT COUNT(*) FROM `call_log` AS a INNER JOIN `type_emergency` AS b ON a.`Type_Emergency_ID` = b.`Type_Emergency_ID` WHERE Group_Name_A LIKE 'other calls' AND a.Type_Emergency_ID NOT IN('129', '131', '170', '172') AND DATE(Date_Log) LIKE CAST('2023-05-04' AS DATE)) AS other, (SELECT COUNT(*) FROM `call_log` WHERE Type_Emergency_ID IN('129', '131', '170', '172') AND DATE(Date_log) LIKE CAST('2023-05-04' AS DATE)) AS hangup
+FROM `call_log`
+WHERE DATE(Date_log) LIKE CAST('2023-05-04' AS DATE)
+ERROR - 2023-05-04 16:44:44 --> Severity: Error --> Call to a member function row() on boolean C:\xampp\htdocs\dcc-webapp\application\models\ers_model.php 66
+ERROR - 2023-05-04 16:44:44 --> Query error: Table 'nineoneone.type_emergency' doesn't exist - Invalid query: SELECT AVG(test) AS avg FROM (SELECT COUNT(*) AS test FROM call_log AS a INNER JOIN type_emergency AS b ON a.`Type_Emergency_ID` = b.`Type_Emergency_ID` WHERE Group_Name_A NOT LIKE 'other calls' AND a.Type_Emergency_ID NOT IN('129','131','170') AND DATE(Date_Log) BETWEEN CAST('2021-01-01' AS DATE) AND DATE_SUB(CAST('2023-05-04' AS DATE), INTERVAL 1 MONTH) GROUP BY DATE_FORMAT(Date_Log,'%Y-%c') ORDER BY DATE(Date_Log)) AS testing
+ERROR - 2023-05-04 16:44:44 --> Severity: Error --> Call to a member function result() on boolean C:\xampp\htdocs\dcc-webapp\application\models\ers_model.php 269
+ERROR - 2023-05-04 16:44:44 --> Query error: Table 'nineoneone.type_emergency' doesn't exist - Invalid query: SELECT `b`.`Type_Emergency` as `Name`, COUNT(*) AS cnt
+FROM `call_log` AS `a`
+INNER JOIN `type_emergency` AS `b` ON `a`.`Type_Emergency_ID` = `b`.`Type_Emergency_ID`
+WHERE DATE(Date_Log) LIKE CAST('2023-05-04' AS DATE)
+GROUP BY `a`.`Type_Emergency_ID`
+ORDER BY FIELD(a.Type_Emergency_ID, '170') DESC, COUNT(*) DESC
+ERROR - 2023-05-04 16:44:44 --> Severity: Error --> Call to a member function result() on boolean C:\xampp\htdocs\dcc-webapp\application\models\ers_model.php 305
+ERROR - 2023-05-04 16:44:45 --> Query error: Table 'nineoneone.type_emergency' doesn't exist - Invalid query: SELECT COUNT(*) AS today, (SELECT COUNT(*) FROM `call_log` AS a INNER JOIN `type_emergency` AS b ON a.`Type_Emergency_ID` = b.`Type_Emergency_ID` WHERE Group_Name_A NOT LIKE 'other calls' AND a.Type_Emergency_ID NOT IN('129', '131', '170', '172') AND DATE(Date_Log) LIKE CAST('2023-01-01' AS DATE)) AS emergency, (SELECT COUNT(*) FROM `call_log` AS a INNER JOIN `type_emergency` AS b ON a.`Type_Emergency_ID` = b.`Type_Emergency_ID` WHERE Group_Name_A LIKE 'other calls' AND a.Type_Emergency_ID NOT IN('129', '131', '170', '172') AND DATE(Date_Log) LIKE CAST('2023-01-01' AS DATE)) AS other, (SELECT COUNT(*) FROM `call_log` WHERE Type_Emergency_ID IN('129', '131', '170', '172') AND DATE(Date_log) LIKE CAST('2023-01-01' AS DATE)) AS hangup
+FROM `call_log`
+WHERE DATE(Date_log) LIKE CAST('2023-01-01' AS DATE)
+ERROR - 2023-05-04 16:44:45 --> Severity: Error --> Call to a member function row() on boolean C:\xampp\htdocs\dcc-webapp\application\models\ers_model.php 66
+ERROR - 2023-05-04 16:44:45 --> Query error: Table 'nineoneone.type_emergency' doesn't exist - Invalid query: SELECT AVG(test) AS avg FROM (SELECT COUNT(*) AS test FROM call_log AS a INNER JOIN type_emergency AS b ON a.`Type_Emergency_ID` = b.`Type_Emergency_ID` WHERE Group_Name_A NOT LIKE 'other calls' AND a.Type_Emergency_ID NOT IN('129','131','170') AND DATE(Date_Log) BETWEEN CAST('2021-01-01' AS DATE) AND DATE_SUB(CAST('2023-01-01' AS DATE), INTERVAL 1 MONTH) GROUP BY DATE_FORMAT(Date_Log,'%Y-%c') ORDER BY DATE(Date_Log)) AS testing
+ERROR - 2023-05-04 16:44:45 --> Severity: Error --> Call to a member function result() on boolean C:\xampp\htdocs\dcc-webapp\application\models\ers_model.php 269
+ERROR - 2023-05-04 16:45:18 --> Query error: Table 'nineoneone.type_emergency' doesn't exist - Invalid query: SELECT AVG(test) AS avg FROM (SELECT COUNT(*) AS test FROM call_log AS a INNER JOIN type_emergency AS b ON a.`Type_Emergency_ID` = b.`Type_Emergency_ID` WHERE Group_Name_A NOT LIKE 'other calls' AND a.Type_Emergency_ID NOT IN('129','131','170') AND DATE(Date_Log) BETWEEN CAST('2021-01-01' AS DATE) AND DATE_SUB(CAST('2023-05-04' AS DATE), INTERVAL 1 MONTH) GROUP BY DATE_FORMAT(Date_Log,'%Y-%c') ORDER BY DATE(Date_Log)) AS testing
+ERROR - 2023-05-04 16:45:18 --> Severity: Error --> Call to a member function result() on boolean C:\xampp\htdocs\dcc-webapp\application\models\ers_model.php 269
+ERROR - 2023-05-04 16:45:18 --> Query error: Table 'nineoneone.type_emergency' doesn't exist - Invalid query: SELECT COUNT(*) AS today, (SELECT COUNT(*) FROM `call_log` AS a INNER JOIN `type_emergency` AS b ON a.`Type_Emergency_ID` = b.`Type_Emergency_ID` WHERE Group_Name_A NOT LIKE 'other calls' AND a.Type_Emergency_ID NOT IN('129', '131', '170', '172') AND DATE(Date_Log) LIKE CAST('2023-05-04' AS DATE)) AS emergency, (SELECT COUNT(*) FROM `call_log` AS a INNER JOIN `type_emergency` AS b ON a.`Type_Emergency_ID` = b.`Type_Emergency_ID` WHERE Group_Name_A LIKE 'other calls' AND a.Type_Emergency_ID NOT IN('129', '131', '170', '172') AND DATE(Date_Log) LIKE CAST('2023-05-04' AS DATE)) AS other, (SELECT COUNT(*) FROM `call_log` WHERE Type_Emergency_ID IN('129', '131', '170', '172') AND DATE(Date_log) LIKE CAST('2023-05-04' AS DATE)) AS hangup
+FROM `call_log`
+WHERE DATE(Date_log) LIKE CAST('2023-05-04' AS DATE)
+ERROR - 2023-05-04 16:45:18 --> Severity: Error --> Call to a member function row() on boolean C:\xampp\htdocs\dcc-webapp\application\models\ers_model.php 66
+ERROR - 2023-05-04 16:45:18 --> Query error: Table 'nineoneone.type_emergency' doesn't exist - Invalid query: SELECT (SELECT COUNT(*) FROM `call_log` AS a INNER JOIN `type_emergency` AS b ON a.`Type_Emergency_ID` = b.`Type_Emergency_ID` WHERE Group_Name_A NOT LIKE 'other calls' AND a.Type_Emergency_ID NOT IN('129', '131', '170', '172') AND MONTHNAME(Date_Log) LIKE MONTHNAME(CAST('2023-05-04' AS DATE)) AND YEAR(Date_Log) LIKE YEAR(CAST('2023-05-04' AS DATE))) AS total_emerg, (SELECT COUNT(*) FROM `call_log` AS a INNER JOIN `type_emergency` AS b ON a.`Type_Emergency_ID` = b.`Type_Emergency_ID` WHERE Group_Name_A LIKE 'other calls' AND a.Type_Emergency_ID NOT IN('129', '131', '170', '172') AND MONTHNAME(Date_Log) LIKE MONTHNAME(CAST('2023-05-04' AS DATE)) AND YEAR(Date_Log) LIKE YEAR(CAST('2023-05-04' AS DATE))) AS total_other, (SELECT COUNT(*) FROM `call_log` WHERE Type_Emergency_ID IN('129', '131', '170', '172') AND MONTHNAME(Date_Log) LIKE MONTHNAME(CAST('2023-05-04' AS DATE)) AND YEAR(Date_Log) LIKE YEAR(CAST('2023-05-04' AS DATE))) AS total_hangup, (SELECT COUNT(*) FROM `call_log` AS a INNER JOIN `type_emergency` AS b ON a.`Type_Emergency_ID` = b.`Type_Emergency_ID` WHERE MONTHNAME(Date_Log) LIKE MONTHNAME(CAST('2023-05-04' AS DATE)) AND YEAR(Date_Log) LIKE YEAR(CAST('2023-05-04' AS DATE))) AS total_calls
+FROM `call_log`
+ LIMIT 1
+ERROR - 2023-05-04 16:45:18 --> Severity: Error --> Call to a member function row() on boolean C:\xampp\htdocs\dcc-webapp\application\models\ers_model.php 253
+ERROR - 2023-05-04 16:45:18 --> Query error: Table 'nineoneone.type_emergency' doesn't exist - Invalid query: SELECT `CallLog_ID` as `cid`, COUNT(*) AS tcalls, DATE_FORMAT(Date_log, "%b") AS m, YEAR(Date_Log) AS y, (SELECT COUNT(*) FROM `call_log` AS a INNER JOIN `type_emergency` AS b ON a.`Type_Emergency_ID` = b.`Type_Emergency_ID` WHERE Group_Name_A NOT LIKE 'other calls' AND a.Type_Emergency_ID NOT IN('129', '131', '170', '172') AND DATE_FORMAT(Date_Log, '%b') LIKE m AND YEAR(Date_Log) LIKE y) AS temer
+FROM `call_log`
+WHERE YEAR(Date_Log) LIKE YEAR(CAST('2023-05-04' AS DATE))
+GROUP BY MONTH(Date_Log), YEAR(Date_Log)
+ERROR - 2023-05-04 16:45:18 --> Severity: Error --> Call to a member function result() on boolean C:\xampp\htdocs\dcc-webapp\application\models\ers_model.php 321
+ERROR - 2023-05-04 16:45:19 --> Query error: Table 'nineoneone.type_emergency' doesn't exist - Invalid query: SELECT `b`.`Type_Emergency` as `Name`, COUNT(*) AS cnt
+FROM `call_log` AS `a`
+INNER JOIN `type_emergency` AS `b` ON `a`.`Type_Emergency_ID` = `b`.`Type_Emergency_ID`
+WHERE DATE(Date_Log) LIKE CAST('2023-05-04' AS DATE)
+GROUP BY `a`.`Type_Emergency_ID`
+ORDER BY FIELD(a.Type_Emergency_ID, '170') DESC, COUNT(*) DESC
+ERROR - 2023-05-04 16:45:19 --> Severity: Error --> Call to a member function result() on boolean C:\xampp\htdocs\dcc-webapp\application\models\ers_model.php 305
+ERROR - 2023-05-04 16:45:19 --> Query error: Table 'nineoneone.type_emergency' doesn't exist - Invalid query: SELECT `b`.`Type_Emergency` as `Name`, COUNT(*) AS cnt
+FROM `call_log` AS `a`
+INNER JOIN `type_emergency` AS `b` ON `a`.`Type_Emergency_ID` = `b`.`Type_Emergency_ID`
+WHERE DATE_FORMAT(Date_Log,'%Y-%c') LIKE DATE_FORMAT(CAST('2023-05-04' AS DATE),'%Y-%c') AND `a`.`Type_Emergency_ID` NOT IN('129','131','170','172') AND `Group_Name_A` NOT LIKE 'other calls'
+GROUP BY `a`.`Type_Emergency_ID`
+ORDER BY COUNT(*) DESC
+ERROR - 2023-05-04 16:45:19 --> Severity: Error --> Call to a member function result() on boolean C:\xampp\htdocs\dcc-webapp\application\models\ers_model.php 305
+ERROR - 2023-05-04 16:45:33 --> Query error: Table 'nineoneone.type_emergency' doesn't exist - Invalid query: SELECT COUNT(*) AS today, (SELECT COUNT(*) FROM `call_log` AS a INNER JOIN `type_emergency` AS b ON a.`Type_Emergency_ID` = b.`Type_Emergency_ID` WHERE Group_Name_A NOT LIKE 'other calls' AND a.Type_Emergency_ID NOT IN('129', '131', '170', '172') AND DATE(Date_Log) LIKE CAST('2022-01-01' AS DATE)) AS emergency, (SELECT COUNT(*) FROM `call_log` AS a INNER JOIN `type_emergency` AS b ON a.`Type_Emergency_ID` = b.`Type_Emergency_ID` WHERE Group_Name_A LIKE 'other calls' AND a.Type_Emergency_ID NOT IN('129', '131', '170', '172') AND DATE(Date_Log) LIKE CAST('2022-01-01' AS DATE)) AS other, (SELECT COUNT(*) FROM `call_log` WHERE Type_Emergency_ID IN('129', '131', '170', '172') AND DATE(Date_log) LIKE CAST('2022-01-01' AS DATE)) AS hangup
+FROM `call_log`
+WHERE DATE(Date_log) LIKE CAST('2022-01-01' AS DATE)
+ERROR - 2023-05-04 16:45:33 --> Severity: Error --> Call to a member function row() on boolean C:\xampp\htdocs\dcc-webapp\application\models\ers_model.php 66
+ERROR - 2023-05-04 16:46:29 --> Severity: Error --> Maximum execution time of 30 seconds exceeded C:\xampp\htdocs\dcc-webapp\system\database\drivers\mysqli\mysqli_driver.php 307
+ERROR - 2023-05-04 16:46:29 --> Severity: Error --> Maximum execution time of 30 seconds exceeded C:\xampp\htdocs\dcc-webapp\system\libraries\Session\drivers\Session_files_driver.php 180
+ERROR - 2023-05-04 16:46:29 --> Severity: Error --> Maximum execution time of 30 seconds exceeded C:\xampp\htdocs\dcc-webapp\system\libraries\Session\drivers\Session_files_driver.php 180
+ERROR - 2023-05-04 16:46:29 --> Severity: Error --> Maximum execution time of 30 seconds exceeded C:\xampp\htdocs\dcc-webapp\system\libraries\Session\drivers\Session_files_driver.php 180
+ERROR - 2023-05-04 16:46:29 --> Severity: Error --> Maximum execution time of 30 seconds exceeded C:\xampp\htdocs\dcc-webapp\system\libraries\Session\drivers\Session_files_driver.php 180
+ERROR - 2023-05-04 16:46:29 --> Severity: Error --> Maximum execution time of 30 seconds exceeded C:\xampp\htdocs\dcc-webapp\system\libraries\Session\drivers\Session_files_driver.php 180
+ERROR - 2023-05-04 16:46:29 --> Query error: Table 'nineoneone.type_emergency' doesn't exist - Invalid query: SELECT COUNT(*) AS today, (SELECT COUNT(*) FROM `call_log` AS a INNER JOIN `type_emergency` AS b ON a.`Type_Emergency_ID` = b.`Type_Emergency_ID` WHERE Group_Name_A NOT LIKE 'other calls' AND a.Type_Emergency_ID NOT IN('129', '131', '170', '172') AND DATE(Date_Log) LIKE CAST('2022-01-01' AS DATE)) AS emergency, (SELECT COUNT(*) FROM `call_log` AS a INNER JOIN `type_emergency` AS b ON a.`Type_Emergency_ID` = b.`Type_Emergency_ID` WHERE Group_Name_A LIKE 'other calls' AND a.Type_Emergency_ID NOT IN('129', '131', '170', '172') AND DATE(Date_Log) LIKE CAST('2022-01-01' AS DATE)) AS other, (SELECT COUNT(*) FROM `call_log` WHERE Type_Emergency_ID IN('129', '131', '170', '172') AND DATE(Date_log) LIKE CAST('2022-01-01' AS DATE)) AS hangup
+FROM `call_log`
+WHERE DATE(Date_log) LIKE CAST('2022-01-01' AS DATE)
+ERROR - 2023-05-04 16:46:29 --> Severity: Error --> Call to a member function row() on boolean C:\xampp\htdocs\dcc-webapp\application\models\ers_model.php 66
+ERROR - 2023-05-04 16:46:29 --> Query error: Table 'nineoneone.type_emergency' doesn't exist - Invalid query: SELECT AVG(test) AS avg FROM (SELECT COUNT(*) AS test FROM call_log AS a INNER JOIN type_emergency AS b ON a.`Type_Emergency_ID` = b.`Type_Emergency_ID` WHERE Group_Name_A NOT LIKE 'other calls' AND a.Type_Emergency_ID NOT IN('129','131','170') AND DATE(Date_Log) BETWEEN CAST('2021-01-01' AS DATE) AND DATE_SUB(CAST('2022-01-01' AS DATE), INTERVAL 1 MONTH) GROUP BY DATE_FORMAT(Date_Log,'%Y-%c') ORDER BY DATE(Date_Log)) AS testing
+ERROR - 2023-05-04 16:46:29 --> Severity: Error --> Call to a member function result() on boolean C:\xampp\htdocs\dcc-webapp\application\models\ers_model.php 269
+ERROR - 2023-05-04 16:47:26 --> Severity: Error --> Maximum execution time of 30 seconds exceeded C:\xampp\htdocs\dcc-webapp\system\database\drivers\mysqli\mysqli_driver.php 307
+ERROR - 2023-05-04 16:47:26 --> Severity: Error --> Maximum execution time of 30 seconds exceeded C:\xampp\htdocs\dcc-webapp\system\libraries\Session\drivers\Session_files_driver.php 180
+ERROR - 2023-05-04 16:47:26 --> Severity: Error --> Maximum execution time of 30 seconds exceeded C:\xampp\htdocs\dcc-webapp\system\libraries\Session\drivers\Session_files_driver.php 180
+ERROR - 2023-05-04 16:47:26 --> Severity: Error --> Maximum execution time of 30 seconds exceeded C:\xampp\htdocs\dcc-webapp\system\libraries\Session\drivers\Session_files_driver.php 180
+ERROR - 2023-05-04 16:47:26 --> Severity: Error --> Maximum execution time of 30 seconds exceeded C:\xampp\htdocs\dcc-webapp\system\libraries\Session\drivers\Session_files_driver.php 180
+ERROR - 2023-05-04 16:47:26 --> Severity: Error --> Maximum execution time of 30 seconds exceeded C:\xampp\htdocs\dcc-webapp\system\libraries\Session\drivers\Session_files_driver.php 180
+ERROR - 2023-05-04 16:47:26 --> Query error: Table 'nineoneone.type_emergency' doesn't exist - Invalid query: SELECT AVG(test) AS avg FROM (SELECT COUNT(*) AS test FROM call_log AS a INNER JOIN type_emergency AS b ON a.`Type_Emergency_ID` = b.`Type_Emergency_ID` WHERE Group_Name_A NOT LIKE 'other calls' AND a.Type_Emergency_ID NOT IN('129','131','170') AND DATE(Date_Log) BETWEEN CAST('2021-01-01' AS DATE) AND DATE_SUB(CAST('2022-01-01' AS DATE), INTERVAL 1 MONTH) GROUP BY DATE_FORMAT(Date_Log,'%Y-%c') ORDER BY DATE(Date_Log)) AS testing
+ERROR - 2023-05-04 16:47:26 --> Severity: Error --> Call to a member function result() on boolean C:\xampp\htdocs\dcc-webapp\application\models\ers_model.php 269
+ERROR - 2023-05-04 16:47:26 --> Query error: Table 'nineoneone.type_emergency' doesn't exist - Invalid query: SELECT `b`.`Type_Emergency` as `Name`, COUNT(*) AS cnt
+FROM `call_log` AS `a`
+INNER JOIN `type_emergency` AS `b` ON `a`.`Type_Emergency_ID` = `b`.`Type_Emergency_ID`
+WHERE DATE(Date_Log) LIKE CAST('2022-01-01' AS DATE)
+GROUP BY `a`.`Type_Emergency_ID`
+ORDER BY FIELD(a.Type_Emergency_ID, '170') DESC, COUNT(*) DESC
+ERROR - 2023-05-04 16:47:26 --> Severity: Error --> Call to a member function result() on boolean C:\xampp\htdocs\dcc-webapp\application\models\ers_model.php 305
+ERROR - 2023-05-04 16:47:27 --> Query error: Table 'nineoneone.type_emergency' doesn't exist - Invalid query: SELECT COUNT(*) AS today, (SELECT COUNT(*) FROM `call_log` AS a INNER JOIN `type_emergency` AS b ON a.`Type_Emergency_ID` = b.`Type_Emergency_ID` WHERE Group_Name_A NOT LIKE 'other calls' AND a.Type_Emergency_ID NOT IN('129', '131', '170', '172') AND DATE(Date_Log) LIKE CAST('2022-01-01' AS DATE)) AS emergency, (SELECT COUNT(*) FROM `call_log` AS a INNER JOIN `type_emergency` AS b ON a.`Type_Emergency_ID` = b.`Type_Emergency_ID` WHERE Group_Name_A LIKE 'other calls' AND a.Type_Emergency_ID NOT IN('129', '131', '170', '172') AND DATE(Date_Log) LIKE CAST('2022-01-01' AS DATE)) AS other, (SELECT COUNT(*) FROM `call_log` WHERE Type_Emergency_ID IN('129', '131', '170', '172') AND DATE(Date_log) LIKE CAST('2022-01-01' AS DATE)) AS hangup
+FROM `call_log`
+WHERE DATE(Date_log) LIKE CAST('2022-01-01' AS DATE)
+ERROR - 2023-05-04 16:47:27 --> Severity: Error --> Call to a member function row() on boolean C:\xampp\htdocs\dcc-webapp\application\models\ers_model.php 66
+ERROR - 2023-05-04 16:47:27 --> Query error: Table 'nineoneone.type_emergency' doesn't exist - Invalid query: SELECT AVG(test) AS avg FROM (SELECT COUNT(*) AS test FROM call_log AS a INNER JOIN type_emergency AS b ON a.`Type_Emergency_ID` = b.`Type_Emergency_ID` WHERE Group_Name_A NOT LIKE 'other calls' AND a.Type_Emergency_ID NOT IN('129','131','170') AND DATE(Date_Log) BETWEEN CAST('2021-01-01' AS DATE) AND DATE_SUB(CAST('2022-01-01' AS DATE), INTERVAL 1 MONTH) GROUP BY DATE_FORMAT(Date_Log,'%Y-%c') ORDER BY DATE(Date_Log)) AS testing
+ERROR - 2023-05-04 16:47:27 --> Severity: Error --> Call to a member function result() on boolean C:\xampp\htdocs\dcc-webapp\application\models\ers_model.php 269
+ERROR - 2023-05-04 16:47:27 --> Query error: Table 'nineoneone.type_emergency' doesn't exist - Invalid query: SELECT `b`.`Type_Emergency` as `Name`, COUNT(*) AS cnt
+FROM `call_log` AS `a`
+INNER JOIN `type_emergency` AS `b` ON `a`.`Type_Emergency_ID` = `b`.`Type_Emergency_ID`
+WHERE DATE(Date_Log) LIKE CAST('2022-01-01' AS DATE)
+GROUP BY `a`.`Type_Emergency_ID`
+ORDER BY FIELD(a.Type_Emergency_ID, '170') DESC, COUNT(*) DESC
+ERROR - 2023-05-04 16:47:27 --> Severity: Error --> Call to a member function result() on boolean C:\xampp\htdocs\dcc-webapp\application\models\ers_model.php 305
+ERROR - 2023-05-04 16:47:27 --> Query error: Table 'nineoneone.type_emergency' doesn't exist - Invalid query: SELECT COUNT(*) AS today, (SELECT COUNT(*) FROM `call_log` AS a INNER JOIN `type_emergency` AS b ON a.`Type_Emergency_ID` = b.`Type_Emergency_ID` WHERE Group_Name_A NOT LIKE 'other calls' AND a.Type_Emergency_ID NOT IN('129', '131', '170', '172') AND DATE(Date_Log) LIKE CAST('2022-01-01' AS DATE)) AS emergency, (SELECT COUNT(*) FROM `call_log` AS a INNER JOIN `type_emergency` AS b ON a.`Type_Emergency_ID` = b.`Type_Emergency_ID` WHERE Group_Name_A LIKE 'other calls' AND a.Type_Emergency_ID NOT IN('129', '131', '170', '172') AND DATE(Date_Log) LIKE CAST('2022-01-01' AS DATE)) AS other, (SELECT COUNT(*) FROM `call_log` WHERE Type_Emergency_ID IN('129', '131', '170', '172') AND DATE(Date_log) LIKE CAST('2022-01-01' AS DATE)) AS hangup
+FROM `call_log`
+WHERE DATE(Date_log) LIKE CAST('2022-01-01' AS DATE)
+ERROR - 2023-05-04 16:47:27 --> Severity: Error --> Call to a member function row() on boolean C:\xampp\htdocs\dcc-webapp\application\models\ers_model.php 66
+ERROR - 2023-05-04 16:47:27 --> Query error: Table 'nineoneone.type_emergency' doesn't exist - Invalid query: SELECT AVG(test) AS avg FROM (SELECT COUNT(*) AS test FROM call_log AS a INNER JOIN type_emergency AS b ON a.`Type_Emergency_ID` = b.`Type_Emergency_ID` WHERE Group_Name_A NOT LIKE 'other calls' AND a.Type_Emergency_ID NOT IN('129','131','170') AND DATE(Date_Log) BETWEEN CAST('2021-01-01' AS DATE) AND DATE_SUB(CAST('2022-01-01' AS DATE), INTERVAL 1 MONTH) GROUP BY DATE_FORMAT(Date_Log,'%Y-%c') ORDER BY DATE(Date_Log)) AS testing
+ERROR - 2023-05-04 16:47:27 --> Severity: Error --> Call to a member function result() on boolean C:\xampp\htdocs\dcc-webapp\application\models\ers_model.php 269
+ERROR - 2023-05-04 16:47:27 --> Query error: Table 'nineoneone.type_emergency' doesn't exist - Invalid query: SELECT `b`.`Type_Emergency` as `Name`, COUNT(*) AS cnt
+FROM `call_log` AS `a`
+INNER JOIN `type_emergency` AS `b` ON `a`.`Type_Emergency_ID` = `b`.`Type_Emergency_ID`
+WHERE DATE(Date_Log) LIKE CAST('2022-01-01' AS DATE)
+GROUP BY `a`.`Type_Emergency_ID`
+ORDER BY FIELD(a.Type_Emergency_ID, '170') DESC, COUNT(*) DESC
+ERROR - 2023-05-04 16:47:27 --> Severity: Error --> Call to a member function result() on boolean C:\xampp\htdocs\dcc-webapp\application\models\ers_model.php 305
+ERROR - 2023-05-04 16:47:27 --> Query error: Table 'nineoneone.type_emergency' doesn't exist - Invalid query: SELECT COUNT(*) AS today, (SELECT COUNT(*) FROM `call_log` AS a INNER JOIN `type_emergency` AS b ON a.`Type_Emergency_ID` = b.`Type_Emergency_ID` WHERE Group_Name_A NOT LIKE 'other calls' AND a.Type_Emergency_ID NOT IN('129', '131', '170', '172') AND DATE(Date_Log) LIKE CAST('2022-01-01' AS DATE)) AS emergency, (SELECT COUNT(*) FROM `call_log` AS a INNER JOIN `type_emergency` AS b ON a.`Type_Emergency_ID` = b.`Type_Emergency_ID` WHERE Group_Name_A LIKE 'other calls' AND a.Type_Emergency_ID NOT IN('129', '131', '170', '172') AND DATE(Date_Log) LIKE CAST('2022-01-01' AS DATE)) AS other, (SELECT COUNT(*) FROM `call_log` WHERE Type_Emergency_ID IN('129', '131', '170', '172') AND DATE(Date_log) LIKE CAST('2022-01-01' AS DATE)) AS hangup
+FROM `call_log`
+WHERE DATE(Date_log) LIKE CAST('2022-01-01' AS DATE)
+ERROR - 2023-05-04 16:47:27 --> Severity: Error --> Call to a member function row() on boolean C:\xampp\htdocs\dcc-webapp\application\models\ers_model.php 66
+ERROR - 2023-05-04 16:47:27 --> Query error: Table 'nineoneone.type_emergency' doesn't exist - Invalid query: SELECT AVG(test) AS avg FROM (SELECT COUNT(*) AS test FROM call_log AS a INNER JOIN type_emergency AS b ON a.`Type_Emergency_ID` = b.`Type_Emergency_ID` WHERE Group_Name_A NOT LIKE 'other calls' AND a.Type_Emergency_ID NOT IN('129','131','170') AND DATE(Date_Log) BETWEEN CAST('2021-01-01' AS DATE) AND DATE_SUB(CAST('2022-01-01' AS DATE), INTERVAL 1 MONTH) GROUP BY DATE_FORMAT(Date_Log,'%Y-%c') ORDER BY DATE(Date_Log)) AS testing
+ERROR - 2023-05-04 16:47:27 --> Severity: Error --> Call to a member function result() on boolean C:\xampp\htdocs\dcc-webapp\application\models\ers_model.php 269
+ERROR - 2023-05-04 16:47:27 --> Query error: Table 'nineoneone.type_emergency' doesn't exist - Invalid query: SELECT `b`.`Type_Emergency` as `Name`, COUNT(*) AS cnt
+FROM `call_log` AS `a`
+INNER JOIN `type_emergency` AS `b` ON `a`.`Type_Emergency_ID` = `b`.`Type_Emergency_ID`
+WHERE DATE(Date_Log) LIKE CAST('2022-01-01' AS DATE)
+GROUP BY `a`.`Type_Emergency_ID`
+ORDER BY FIELD(a.Type_Emergency_ID, '170') DESC, COUNT(*) DESC
+ERROR - 2023-05-04 16:47:27 --> Severity: Error --> Call to a member function result() on boolean C:\xampp\htdocs\dcc-webapp\application\models\ers_model.php 305
+ERROR - 2023-05-04 16:47:27 --> Query error: Table 'nineoneone.type_emergency' doesn't exist - Invalid query: SELECT COUNT(*) AS today, (SELECT COUNT(*) FROM `call_log` AS a INNER JOIN `type_emergency` AS b ON a.`Type_Emergency_ID` = b.`Type_Emergency_ID` WHERE Group_Name_A NOT LIKE 'other calls' AND a.Type_Emergency_ID NOT IN('129', '131', '170', '172') AND DATE(Date_Log) LIKE CAST('2022-01-01' AS DATE)) AS emergency, (SELECT COUNT(*) FROM `call_log` AS a INNER JOIN `type_emergency` AS b ON a.`Type_Emergency_ID` = b.`Type_Emergency_ID` WHERE Group_Name_A LIKE 'other calls' AND a.Type_Emergency_ID NOT IN('129', '131', '170', '172') AND DATE(Date_Log) LIKE CAST('2022-01-01' AS DATE)) AS other, (SELECT COUNT(*) FROM `call_log` WHERE Type_Emergency_ID IN('129', '131', '170', '172') AND DATE(Date_log) LIKE CAST('2022-01-01' AS DATE)) AS hangup
+FROM `call_log`
+WHERE DATE(Date_log) LIKE CAST('2022-01-01' AS DATE)
+ERROR - 2023-05-04 16:47:27 --> Severity: Error --> Call to a member function row() on boolean C:\xampp\htdocs\dcc-webapp\application\models\ers_model.php 66
+ERROR - 2023-05-04 16:47:27 --> Query error: Table 'nineoneone.type_emergency' doesn't exist - Invalid query: SELECT AVG(test) AS avg FROM (SELECT COUNT(*) AS test FROM call_log AS a INNER JOIN type_emergency AS b ON a.`Type_Emergency_ID` = b.`Type_Emergency_ID` WHERE Group_Name_A NOT LIKE 'other calls' AND a.Type_Emergency_ID NOT IN('129','131','170') AND DATE(Date_Log) BETWEEN CAST('2021-01-01' AS DATE) AND DATE_SUB(CAST('2022-01-01' AS DATE), INTERVAL 1 MONTH) GROUP BY DATE_FORMAT(Date_Log,'%Y-%c') ORDER BY DATE(Date_Log)) AS testing
+ERROR - 2023-05-04 16:47:27 --> Severity: Error --> Call to a member function result() on boolean C:\xampp\htdocs\dcc-webapp\application\models\ers_model.php 269
+ERROR - 2023-05-04 16:47:27 --> Query error: Table 'nineoneone.type_emergency' doesn't exist - Invalid query: SELECT `b`.`Type_Emergency` as `Name`, COUNT(*) AS cnt
+FROM `call_log` AS `a`
+INNER JOIN `type_emergency` AS `b` ON `a`.`Type_Emergency_ID` = `b`.`Type_Emergency_ID`
+WHERE DATE(Date_Log) LIKE CAST('2022-01-01' AS DATE)
+GROUP BY `a`.`Type_Emergency_ID`
+ORDER BY FIELD(a.Type_Emergency_ID, '170') DESC, COUNT(*) DESC
+ERROR - 2023-05-04 16:47:27 --> Severity: Error --> Call to a member function result() on boolean C:\xampp\htdocs\dcc-webapp\application\models\ers_model.php 305
+ERROR - 2023-05-04 16:47:27 --> Query error: Table 'nineoneone.type_emergency' doesn't exist - Invalid query: SELECT COUNT(*) AS today, (SELECT COUNT(*) FROM `call_log` AS a INNER JOIN `type_emergency` AS b ON a.`Type_Emergency_ID` = b.`Type_Emergency_ID` WHERE Group_Name_A NOT LIKE 'other calls' AND a.Type_Emergency_ID NOT IN('129', '131', '170', '172') AND DATE(Date_Log) LIKE CAST('2022-01-01' AS DATE)) AS emergency, (SELECT COUNT(*) FROM `call_log` AS a INNER JOIN `type_emergency` AS b ON a.`Type_Emergency_ID` = b.`Type_Emergency_ID` WHERE Group_Name_A LIKE 'other calls' AND a.Type_Emergency_ID NOT IN('129', '131', '170', '172') AND DATE(Date_Log) LIKE CAST('2022-01-01' AS DATE)) AS other, (SELECT COUNT(*) FROM `call_log` WHERE Type_Emergency_ID IN('129', '131', '170', '172') AND DATE(Date_log) LIKE CAST('2022-01-01' AS DATE)) AS hangup
+FROM `call_log`
+WHERE DATE(Date_log) LIKE CAST('2022-01-01' AS DATE)
+ERROR - 2023-05-04 16:47:27 --> Severity: Error --> Call to a member function row() on boolean C:\xampp\htdocs\dcc-webapp\application\models\ers_model.php 66
+ERROR - 2023-05-04 16:47:27 --> Query error: Table 'nineoneone.type_emergency' doesn't exist - Invalid query: SELECT AVG(test) AS avg FROM (SELECT COUNT(*) AS test FROM call_log AS a INNER JOIN type_emergency AS b ON a.`Type_Emergency_ID` = b.`Type_Emergency_ID` WHERE Group_Name_A NOT LIKE 'other calls' AND a.Type_Emergency_ID NOT IN('129','131','170') AND DATE(Date_Log) BETWEEN CAST('2021-01-01' AS DATE) AND DATE_SUB(CAST('2022-01-01' AS DATE), INTERVAL 1 MONTH) GROUP BY DATE_FORMAT(Date_Log,'%Y-%c') ORDER BY DATE(Date_Log)) AS testing
+ERROR - 2023-05-04 16:47:27 --> Severity: Error --> Call to a member function result() on boolean C:\xampp\htdocs\dcc-webapp\application\models\ers_model.php 269
+ERROR - 2023-05-04 16:47:27 --> Query error: Table 'nineoneone.type_emergency' doesn't exist - Invalid query: SELECT `b`.`Type_Emergency` as `Name`, COUNT(*) AS cnt
+FROM `call_log` AS `a`
+INNER JOIN `type_emergency` AS `b` ON `a`.`Type_Emergency_ID` = `b`.`Type_Emergency_ID`
+WHERE DATE(Date_Log) LIKE CAST('2022-01-01' AS DATE)
+GROUP BY `a`.`Type_Emergency_ID`
+ORDER BY FIELD(a.Type_Emergency_ID, '170') DESC, COUNT(*) DESC
+ERROR - 2023-05-04 16:47:27 --> Severity: Error --> Call to a member function result() on boolean C:\xampp\htdocs\dcc-webapp\application\models\ers_model.php 305
+ERROR - 2023-05-04 16:47:38 --> Query error: Table 'nineoneone.type_emergency' doesn't exist - Invalid query: SELECT COUNT(*) AS today, (SELECT COUNT(*) FROM `call_log` AS a INNER JOIN `type_emergency` AS b ON a.`Type_Emergency_ID` = b.`Type_Emergency_ID` WHERE Group_Name_A NOT LIKE 'other calls' AND a.Type_Emergency_ID NOT IN('129', '131', '170', '172') AND DATE(Date_Log) LIKE CAST('2022-01-01' AS DATE)) AS emergency, (SELECT COUNT(*) FROM `call_log` AS a INNER JOIN `type_emergency` AS b ON a.`Type_Emergency_ID` = b.`Type_Emergency_ID` WHERE Group_Name_A LIKE 'other calls' AND a.Type_Emergency_ID NOT IN('129', '131', '170', '172') AND DATE(Date_Log) LIKE CAST('2022-01-01' AS DATE)) AS other, (SELECT COUNT(*) FROM `call_log` WHERE Type_Emergency_ID IN('129', '131', '170', '172') AND DATE(Date_log) LIKE CAST('2022-01-01' AS DATE)) AS hangup
+FROM `call_log`
+WHERE DATE(Date_log) LIKE CAST('2022-01-01' AS DATE)
+ERROR - 2023-05-04 16:47:38 --> Severity: Error --> Call to a member function row() on boolean C:\xampp\htdocs\dcc-webapp\application\models\ers_model.php 66
+ERROR - 2023-05-04 16:47:38 --> Query error: Table 'nineoneone.type_emergency' doesn't exist - Invalid query: SELECT `b`.`Type_Emergency` as `Name`, COUNT(*) AS cnt
+FROM `call_log` AS `a`
+INNER JOIN `type_emergency` AS `b` ON `a`.`Type_Emergency_ID` = `b`.`Type_Emergency_ID`
+WHERE DATE(Date_Log) LIKE CAST('2022-01-01' AS DATE)
+GROUP BY `a`.`Type_Emergency_ID`
+ORDER BY FIELD(a.Type_Emergency_ID, '170') DESC, COUNT(*) DESC
+ERROR - 2023-05-04 16:47:38 --> Severity: Error --> Call to a member function result() on boolean C:\xampp\htdocs\dcc-webapp\application\models\ers_model.php 305
+ERROR - 2023-05-04 16:47:38 --> Query error: Table 'nineoneone.type_emergency' doesn't exist - Invalid query: SELECT AVG(test) AS avg FROM (SELECT COUNT(*) AS test FROM call_log AS a INNER JOIN type_emergency AS b ON a.`Type_Emergency_ID` = b.`Type_Emergency_ID` WHERE Group_Name_A NOT LIKE 'other calls' AND a.Type_Emergency_ID NOT IN('129','131','170') AND DATE(Date_Log) BETWEEN CAST('2021-01-01' AS DATE) AND DATE_SUB(CAST('2022-01-01' AS DATE), INTERVAL 1 MONTH) GROUP BY DATE_FORMAT(Date_Log,'%Y-%c') ORDER BY DATE(Date_Log)) AS testing
+ERROR - 2023-05-04 16:47:38 --> Severity: Error --> Call to a member function result() on boolean C:\xampp\htdocs\dcc-webapp\application\models\ers_model.php 269
+ERROR - 2023-05-04 16:47:58 --> Query error: Table 'nineoneone.type_emergency' doesn't exist - Invalid query: SELECT `b`.`Type_Emergency` as `Name`, COUNT(*) AS cnt
+FROM `call_log` AS `a`
+INNER JOIN `type_emergency` AS `b` ON `a`.`Type_Emergency_ID` = `b`.`Type_Emergency_ID`
+WHERE DATE(Date_Log) LIKE CAST('2022-01-01' AS DATE)
+GROUP BY `a`.`Type_Emergency_ID`
+ORDER BY FIELD(a.Type_Emergency_ID, '170') DESC, COUNT(*) DESC
+ERROR - 2023-05-04 16:47:58 --> Severity: Error --> Call to a member function result() on boolean C:\xampp\htdocs\dcc-webapp\application\models\ers_model.php 305
+ERROR - 2023-05-04 16:47:58 --> Query error: Table 'nineoneone.type_emergency' doesn't exist - Invalid query: SELECT COUNT(*) AS today, (SELECT COUNT(*) FROM `call_log` AS a INNER JOIN `type_emergency` AS b ON a.`Type_Emergency_ID` = b.`Type_Emergency_ID` WHERE Group_Name_A NOT LIKE 'other calls' AND a.Type_Emergency_ID NOT IN('129', '131', '170', '172') AND DATE(Date_Log) LIKE CAST('2022-01-01' AS DATE)) AS emergency, (SELECT COUNT(*) FROM `call_log` AS a INNER JOIN `type_emergency` AS b ON a.`Type_Emergency_ID` = b.`Type_Emergency_ID` WHERE Group_Name_A LIKE 'other calls' AND a.Type_Emergency_ID NOT IN('129', '131', '170', '172') AND DATE(Date_Log) LIKE CAST('2022-01-01' AS DATE)) AS other, (SELECT COUNT(*) FROM `call_log` WHERE Type_Emergency_ID IN('129', '131', '170', '172') AND DATE(Date_log) LIKE CAST('2022-01-01' AS DATE)) AS hangup
+FROM `call_log`
+WHERE DATE(Date_log) LIKE CAST('2022-01-01' AS DATE)
+ERROR - 2023-05-04 16:47:58 --> Severity: Error --> Call to a member function row() on boolean C:\xampp\htdocs\dcc-webapp\application\models\ers_model.php 66
+ERROR - 2023-05-04 16:47:58 --> Query error: Table 'nineoneone.type_emergency' doesn't exist - Invalid query: SELECT AVG(test) AS avg FROM (SELECT COUNT(*) AS test FROM call_log AS a INNER JOIN type_emergency AS b ON a.`Type_Emergency_ID` = b.`Type_Emergency_ID` WHERE Group_Name_A NOT LIKE 'other calls' AND a.Type_Emergency_ID NOT IN('129','131','170') AND DATE(Date_Log) BETWEEN CAST('2021-01-01' AS DATE) AND DATE_SUB(CAST('2022-01-01' AS DATE), INTERVAL 1 MONTH) GROUP BY DATE_FORMAT(Date_Log,'%Y-%c') ORDER BY DATE(Date_Log)) AS testing
+ERROR - 2023-05-04 16:47:58 --> Severity: Error --> Call to a member function result() on boolean C:\xampp\htdocs\dcc-webapp\application\models\ers_model.php 269
+ERROR - 2023-05-04 16:48:04 --> Query error: Table 'nineoneone.type_emergency' doesn't exist - Invalid query: SELECT COUNT(*) AS today, (SELECT COUNT(*) FROM `call_log` AS a INNER JOIN `type_emergency` AS b ON a.`Type_Emergency_ID` = b.`Type_Emergency_ID` WHERE Group_Name_A NOT LIKE 'other calls' AND a.Type_Emergency_ID NOT IN('129', '131', '170', '172') AND DATE(Date_Log) LIKE CAST('2023-05-04' AS DATE)) AS emergency, (SELECT COUNT(*) FROM `call_log` AS a INNER JOIN `type_emergency` AS b ON a.`Type_Emergency_ID` = b.`Type_Emergency_ID` WHERE Group_Name_A LIKE 'other calls' AND a.Type_Emergency_ID NOT IN('129', '131', '170', '172') AND DATE(Date_Log) LIKE CAST('2023-05-04' AS DATE)) AS other, (SELECT COUNT(*) FROM `call_log` WHERE Type_Emergency_ID IN('129', '131', '170', '172') AND DATE(Date_log) LIKE CAST('2023-05-04' AS DATE)) AS hangup
+FROM `call_log`
+WHERE DATE(Date_log) LIKE CAST('2023-05-04' AS DATE)
+ERROR - 2023-05-04 16:48:04 --> Query error: Table 'nineoneone.type_emergency' doesn't exist - Invalid query: SELECT (SELECT COUNT(*) FROM `call_log` AS a INNER JOIN `type_emergency` AS b ON a.`Type_Emergency_ID` = b.`Type_Emergency_ID` WHERE Group_Name_A NOT LIKE 'other calls' AND a.Type_Emergency_ID NOT IN('129', '131', '170', '172') AND MONTHNAME(Date_Log) LIKE MONTHNAME(CAST('2023-05-04' AS DATE)) AND YEAR(Date_Log) LIKE YEAR(CAST('2023-05-04' AS DATE))) AS total_emerg, (SELECT COUNT(*) FROM `call_log` AS a INNER JOIN `type_emergency` AS b ON a.`Type_Emergency_ID` = b.`Type_Emergency_ID` WHERE Group_Name_A LIKE 'other calls' AND a.Type_Emergency_ID NOT IN('129', '131', '170', '172') AND MONTHNAME(Date_Log) LIKE MONTHNAME(CAST('2023-05-04' AS DATE)) AND YEAR(Date_Log) LIKE YEAR(CAST('2023-05-04' AS DATE))) AS total_other, (SELECT COUNT(*) FROM `call_log` WHERE Type_Emergency_ID IN('129', '131', '170', '172') AND MONTHNAME(Date_Log) LIKE MONTHNAME(CAST('2023-05-04' AS DATE)) AND YEAR(Date_Log) LIKE YEAR(CAST('2023-05-04' AS DATE))) AS total_hangup, (SELECT COUNT(*) FROM `call_log` AS a INNER JOIN `type_emergency` AS b ON a.`Type_Emergency_ID` = b.`Type_Emergency_ID` WHERE MONTHNAME(Date_Log) LIKE MONTHNAME(CAST('2023-05-04' AS DATE)) AND YEAR(Date_Log) LIKE YEAR(CAST('2023-05-04' AS DATE))) AS total_calls
+FROM `call_log`
+ LIMIT 1
+ERROR - 2023-05-04 16:48:04 --> Query error: Table 'nineoneone.type_emergency' doesn't exist - Invalid query: SELECT AVG(test) AS avg FROM (SELECT COUNT(*) AS test FROM call_log AS a INNER JOIN type_emergency AS b ON a.`Type_Emergency_ID` = b.`Type_Emergency_ID` WHERE Group_Name_A NOT LIKE 'other calls' AND a.Type_Emergency_ID NOT IN('129','131','170') AND DATE(Date_Log) BETWEEN CAST('2021-01-01' AS DATE) AND DATE_SUB(CAST('2023-05-04' AS DATE), INTERVAL 1 MONTH) GROUP BY DATE_FORMAT(Date_Log,'%Y-%c') ORDER BY DATE(Date_Log)) AS testing
+ERROR - 2023-05-04 16:48:06 --> Query error: Table 'nineoneone.type_emergency' doesn't exist - Invalid query: SELECT `b`.`Type_Emergency` as `Name`, COUNT(*) AS cnt
+FROM `call_log` AS `a`
+INNER JOIN `type_emergency` AS `b` ON `a`.`Type_Emergency_ID` = `b`.`Type_Emergency_ID`
+WHERE DATE(Date_Log) LIKE CAST('2023-05-04' AS DATE)
+GROUP BY `a`.`Type_Emergency_ID`
+ORDER BY FIELD(a.Type_Emergency_ID, '170') DESC, COUNT(*) DESC
+ERROR - 2023-05-04 16:48:06 --> Query error: Table 'nineoneone.type_emergency' doesn't exist - Invalid query: SELECT `CallLog_ID` as `cid`, COUNT(*) AS tcalls, DATE_FORMAT(Date_log, "%b") AS m, YEAR(Date_Log) AS y, (SELECT COUNT(*) FROM `call_log` AS a INNER JOIN `type_emergency` AS b ON a.`Type_Emergency_ID` = b.`Type_Emergency_ID` WHERE Group_Name_A NOT LIKE 'other calls' AND a.Type_Emergency_ID NOT IN('129', '131', '170', '172') AND DATE_FORMAT(Date_Log, '%b') LIKE m AND YEAR(Date_Log) LIKE y) AS temer
+FROM `call_log`
+WHERE YEAR(Date_Log) LIKE YEAR(CAST('2023-05-04' AS DATE))
+GROUP BY MONTH(Date_Log), YEAR(Date_Log)
+ERROR - 2023-05-04 16:48:06 --> Query error: Table 'nineoneone.type_emergency' doesn't exist - Invalid query: SELECT `b`.`Type_Emergency` as `Name`, COUNT(*) AS cnt
+FROM `call_log` AS `a`
+INNER JOIN `type_emergency` AS `b` ON `a`.`Type_Emergency_ID` = `b`.`Type_Emergency_ID`
+WHERE DATE_FORMAT(Date_Log,'%Y-%c') LIKE DATE_FORMAT(CAST('2023-05-04' AS DATE),'%Y-%c') AND `a`.`Type_Emergency_ID` NOT IN('129','131','170','172') AND `Group_Name_A` NOT LIKE 'other calls'
+GROUP BY `a`.`Type_Emergency_ID`
+ORDER BY COUNT(*) DESC
+ERROR - 2023-05-04 16:48:14 --> Query error: Table 'nineoneone.type_emergency' doesn't exist - Invalid query: SELECT AVG(test) AS avg FROM (SELECT COUNT(*) AS test FROM call_log AS a INNER JOIN type_emergency AS b ON a.`Type_Emergency_ID` = b.`Type_Emergency_ID` WHERE Group_Name_A NOT LIKE 'other calls' AND a.Type_Emergency_ID NOT IN('129','131','170') AND DATE(Date_Log) BETWEEN CAST('2021-01-01' AS DATE) AND DATE_SUB(CAST('2023-01-04' AS DATE), INTERVAL 1 MONTH) GROUP BY DATE_FORMAT(Date_Log,'%Y-%c') ORDER BY DATE(Date_Log)) AS testing
+ERROR - 2023-05-04 16:48:14 --> Query error: Table 'nineoneone.type_emergency' doesn't exist - Invalid query: SELECT COUNT(*) AS today, (SELECT COUNT(*) FROM `call_log` AS a INNER JOIN `type_emergency` AS b ON a.`Type_Emergency_ID` = b.`Type_Emergency_ID` WHERE Group_Name_A NOT LIKE 'other calls' AND a.Type_Emergency_ID NOT IN('129', '131', '170', '172') AND DATE(Date_Log) LIKE CAST('2023-01-04' AS DATE)) AS emergency, (SELECT COUNT(*) FROM `call_log` AS a INNER JOIN `type_emergency` AS b ON a.`Type_Emergency_ID` = b.`Type_Emergency_ID` WHERE Group_Name_A LIKE 'other calls' AND a.Type_Emergency_ID NOT IN('129', '131', '170', '172') AND DATE(Date_Log) LIKE CAST('2023-01-04' AS DATE)) AS other, (SELECT COUNT(*) FROM `call_log` WHERE Type_Emergency_ID IN('129', '131', '170', '172') AND DATE(Date_log) LIKE CAST('2023-01-04' AS DATE)) AS hangup
+FROM `call_log`
+WHERE DATE(Date_log) LIKE CAST('2023-01-04' AS DATE)
+ERROR - 2023-05-04 16:48:52 --> Severity: Error --> Maximum execution time of 30 seconds exceeded C:\xampp\htdocs\dcc-webapp\system\database\drivers\mysqli\mysqli_driver.php 307
+ERROR - 2023-05-04 16:48:52 --> Severity: Error --> Maximum execution time of 30 seconds exceeded C:\xampp\htdocs\dcc-webapp\system\libraries\Session\drivers\Session_files_driver.php 180
+ERROR - 2023-05-04 16:48:52 --> Severity: Error --> Maximum execution time of 30 seconds exceeded C:\xampp\htdocs\dcc-webapp\system\libraries\Session\drivers\Session_files_driver.php 180
+ERROR - 2023-05-04 16:48:52 --> Severity: Error --> Maximum execution time of 30 seconds exceeded C:\xampp\htdocs\dcc-webapp\system\libraries\Session\drivers\Session_files_driver.php 180
+ERROR - 2023-05-04 16:48:52 --> Severity: Error --> Maximum execution time of 30 seconds exceeded C:\xampp\htdocs\dcc-webapp\system\libraries\Session\drivers\Session_files_driver.php 180
+ERROR - 2023-05-04 16:48:52 --> Severity: Error --> Maximum execution time of 30 seconds exceeded C:\xampp\htdocs\dcc-webapp\system\libraries\Session\drivers\Session_files_driver.php 180
+ERROR - 2023-05-04 16:48:52 --> Query error: Table 'nineoneone.type_emergency' doesn't exist - Invalid query: SELECT AVG(test) AS avg FROM (SELECT COUNT(*) AS test FROM call_log AS a INNER JOIN type_emergency AS b ON a.`Type_Emergency_ID` = b.`Type_Emergency_ID` WHERE Group_Name_A NOT LIKE 'other calls' AND a.Type_Emergency_ID NOT IN('129','131','170') AND DATE(Date_Log) BETWEEN CAST('2021-01-01' AS DATE) AND DATE_SUB(CAST('2023-01-04' AS DATE), INTERVAL 1 MONTH) GROUP BY DATE_FORMAT(Date_Log,'%Y-%c') ORDER BY DATE(Date_Log)) AS testing
+ERROR - 2023-05-04 16:49:32 --> Severity: Error --> Maximum execution time of 30 seconds exceeded C:\xampp\htdocs\dcc-webapp\system\database\drivers\mysqli\mysqli_driver.php 307
+ERROR - 2023-05-04 16:49:32 --> Severity: Error --> Maximum execution time of 30 seconds exceeded C:\xampp\htdocs\dcc-webapp\system\libraries\Session\drivers\Session_files_driver.php 180
+ERROR - 2023-05-04 16:49:32 --> Severity: Error --> Maximum execution time of 30 seconds exceeded C:\xampp\htdocs\dcc-webapp\system\libraries\Session\drivers\Session_files_driver.php 180
+ERROR - 2023-05-04 16:49:32 --> Severity: Error --> Maximum execution time of 30 seconds exceeded C:\xampp\htdocs\dcc-webapp\system\libraries\Session\drivers\Session_files_driver.php 180
+ERROR - 2023-05-04 16:49:32 --> Severity: Error --> Maximum execution time of 30 seconds exceeded C:\xampp\htdocs\dcc-webapp\system\libraries\Session\drivers\Session_files_driver.php 180
+ERROR - 2023-05-04 16:49:32 --> Severity: Error --> Maximum execution time of 30 seconds exceeded C:\xampp\htdocs\dcc-webapp\system\libraries\Session\drivers\Session_files_driver.php 180
+ERROR - 2023-05-04 16:49:32 --> Severity: Error --> Maximum execution time of 30 seconds exceeded C:\xampp\htdocs\dcc-webapp\system\libraries\Session\drivers\Session_files_driver.php 180
+ERROR - 2023-05-04 16:49:32 --> Severity: Error --> Maximum execution time of 30 seconds exceeded C:\xampp\htdocs\dcc-webapp\system\libraries\Session\drivers\Session_files_driver.php 180
+ERROR - 2023-05-04 16:49:32 --> Severity: Error --> Maximum execution time of 30 seconds exceeded C:\xampp\htdocs\dcc-webapp\system\libraries\Session\drivers\Session_files_driver.php 180
+ERROR - 2023-05-04 16:49:32 --> Severity: Error --> Maximum execution time of 30 seconds exceeded C:\xampp\htdocs\dcc-webapp\system\libraries\Session\drivers\Session_files_driver.php 180
+ERROR - 2023-05-04 16:49:32 --> Severity: Error --> Maximum execution time of 30 seconds exceeded C:\xampp\htdocs\dcc-webapp\system\libraries\Session\drivers\Session_files_driver.php 180
+ERROR - 2023-05-04 16:49:32 --> Severity: Error --> Maximum execution time of 30 seconds exceeded C:\xampp\htdocs\dcc-webapp\system\libraries\Session\drivers\Session_files_driver.php 180
+ERROR - 2023-05-04 16:49:32 --> Severity: Error --> Maximum execution time of 30 seconds exceeded C:\xampp\htdocs\dcc-webapp\system\libraries\Session\drivers\Session_files_driver.php 180
+ERROR - 2023-05-04 16:49:32 --> Severity: Error --> Maximum execution time of 30 seconds exceeded C:\xampp\htdocs\dcc-webapp\system\libraries\Session\drivers\Session_files_driver.php 180
+ERROR - 2023-05-04 16:49:32 --> Severity: Error --> Maximum execution time of 30 seconds exceeded C:\xampp\htdocs\dcc-webapp\system\libraries\Session\drivers\Session_files_driver.php 180
+ERROR - 2023-05-04 16:49:32 --> Query error: Table 'nineoneone.type_emergency' doesn't exist - Invalid query: SELECT `b`.`Type_Emergency` as `Name`, COUNT(*) AS cnt
+FROM `call_log` AS `a`
+INNER JOIN `type_emergency` AS `b` ON `a`.`Type_Emergency_ID` = `b`.`Type_Emergency_ID`
+WHERE DATE_FORMAT(Date_Log,'%Y-%c') LIKE DATE_FORMAT(CAST('2023-05-04' AS DATE),'%Y-%c') AND `a`.`Type_Emergency_ID` NOT IN('129','131','170','172') AND `Group_Name_A` NOT LIKE 'other calls'
+GROUP BY `a`.`Type_Emergency_ID`
+ORDER BY COUNT(*) DESC
+ERROR - 2023-05-04 16:49:32 --> Query error: Table 'nineoneone.type_emergency' doesn't exist - Invalid query: SELECT COUNT(*) AS today, (SELECT COUNT(*) FROM `call_log` AS a INNER JOIN `type_emergency` AS b ON a.`Type_Emergency_ID` = b.`Type_Emergency_ID` WHERE Group_Name_A NOT LIKE 'other calls' AND a.Type_Emergency_ID NOT IN('129', '131', '170', '172') AND DATE(Date_Log) LIKE CAST('2023-05-04' AS DATE)) AS emergency, (SELECT COUNT(*) FROM `call_log` AS a INNER JOIN `type_emergency` AS b ON a.`Type_Emergency_ID` = b.`Type_Emergency_ID` WHERE Group_Name_A LIKE 'other calls' AND a.Type_Emergency_ID NOT IN('129', '131', '170', '172') AND DATE(Date_Log) LIKE CAST('2023-05-04' AS DATE)) AS other, (SELECT COUNT(*) FROM `call_log` WHERE Type_Emergency_ID IN('129', '131', '170', '172') AND DATE(Date_log) LIKE CAST('2023-05-04' AS DATE)) AS hangup
+FROM `call_log`
+WHERE DATE(Date_log) LIKE CAST('2023-05-04' AS DATE)
+ERROR - 2023-05-04 16:49:32 --> Query error: Table 'nineoneone.type_emergency' doesn't exist - Invalid query: SELECT AVG(test) AS avg FROM (SELECT COUNT(*) AS test FROM call_log AS a INNER JOIN type_emergency AS b ON a.`Type_Emergency_ID` = b.`Type_Emergency_ID` WHERE Group_Name_A NOT LIKE 'other calls' AND a.Type_Emergency_ID NOT IN('129','131','170') AND DATE(Date_Log) BETWEEN CAST('2021-01-01' AS DATE) AND DATE_SUB(CAST('2023-05-04' AS DATE), INTERVAL 1 MONTH) GROUP BY DATE_FORMAT(Date_Log,'%Y-%c') ORDER BY DATE(Date_Log)) AS testing
+ERROR - 2023-05-04 16:49:32 --> Query error: Table 'nineoneone.type_emergency' doesn't exist - Invalid query: SELECT `b`.`Type_Emergency` as `Name`, COUNT(*) AS cnt
+FROM `call_log` AS `a`
+INNER JOIN `type_emergency` AS `b` ON `a`.`Type_Emergency_ID` = `b`.`Type_Emergency_ID`
+WHERE DATE(Date_Log) LIKE CAST('2023-05-04' AS DATE)
+GROUP BY `a`.`Type_Emergency_ID`
+ORDER BY FIELD(a.Type_Emergency_ID, '170') DESC, COUNT(*) DESC
+ERROR - 2023-05-04 16:49:33 --> Query error: Table 'nineoneone.type_emergency' doesn't exist - Invalid query: SELECT COUNT(*) AS today, (SELECT COUNT(*) FROM `call_log` AS a INNER JOIN `type_emergency` AS b ON a.`Type_Emergency_ID` = b.`Type_Emergency_ID` WHERE Group_Name_A NOT LIKE 'other calls' AND a.Type_Emergency_ID NOT IN('129', '131', '170', '172') AND DATE(Date_Log) LIKE CAST('2023-05-04' AS DATE)) AS emergency, (SELECT COUNT(*) FROM `call_log` AS a INNER JOIN `type_emergency` AS b ON a.`Type_Emergency_ID` = b.`Type_Emergency_ID` WHERE Group_Name_A LIKE 'other calls' AND a.Type_Emergency_ID NOT IN('129', '131', '170', '172') AND DATE(Date_Log) LIKE CAST('2023-05-04' AS DATE)) AS other, (SELECT COUNT(*) FROM `call_log` WHERE Type_Emergency_ID IN('129', '131', '170', '172') AND DATE(Date_log) LIKE CAST('2023-05-04' AS DATE)) AS hangup
+FROM `call_log`
+WHERE DATE(Date_log) LIKE CAST('2023-05-04' AS DATE)
+ERROR - 2023-05-04 16:49:33 --> Query error: Table 'nineoneone.type_emergency' doesn't exist - Invalid query: SELECT AVG(test) AS avg FROM (SELECT COUNT(*) AS test FROM call_log AS a INNER JOIN type_emergency AS b ON a.`Type_Emergency_ID` = b.`Type_Emergency_ID` WHERE Group_Name_A NOT LIKE 'other calls' AND a.Type_Emergency_ID NOT IN('129','131','170') AND DATE(Date_Log) BETWEEN CAST('2021-01-01' AS DATE) AND DATE_SUB(CAST('2023-05-04' AS DATE), INTERVAL 1 MONTH) GROUP BY DATE_FORMAT(Date_Log,'%Y-%c') ORDER BY DATE(Date_Log)) AS testing
+ERROR - 2023-05-04 16:49:33 --> Query error: Table 'nineoneone.type_emergency' doesn't exist - Invalid query: SELECT `b`.`Type_Emergency` as `Name`, COUNT(*) AS cnt
+FROM `call_log` AS `a`
+INNER JOIN `type_emergency` AS `b` ON `a`.`Type_Emergency_ID` = `b`.`Type_Emergency_ID`
+WHERE DATE(Date_Log) LIKE CAST('2023-05-04' AS DATE)
+GROUP BY `a`.`Type_Emergency_ID`
+ORDER BY FIELD(a.Type_Emergency_ID, '170') DESC, COUNT(*) DESC
+ERROR - 2023-05-04 16:49:53 --> Query error: Table 'nineoneone.type_emergency' doesn't exist - Invalid query: SELECT AVG(test) AS avg FROM (SELECT COUNT(*) AS test FROM call_log AS a INNER JOIN type_emergency AS b ON a.`Type_Emergency_ID` = b.`Type_Emergency_ID` WHERE Group_Name_A NOT LIKE 'other calls' AND a.Type_Emergency_ID NOT IN('129','131','170') AND DATE(Date_Log) BETWEEN CAST('2021-01-01' AS DATE) AND DATE_SUB(CAST('2023-05-04' AS DATE), INTERVAL 1 MONTH) GROUP BY DATE_FORMAT(Date_Log,'%Y-%c') ORDER BY DATE(Date_Log)) AS testing
+ERROR - 2023-05-04 16:49:53 --> Query error: Table 'nineoneone.type_emergency' doesn't exist - Invalid query: SELECT COUNT(*) AS today, (SELECT COUNT(*) FROM `call_log` AS a INNER JOIN `type_emergency` AS b ON a.`Type_Emergency_ID` = b.`Type_Emergency_ID` WHERE Group_Name_A NOT LIKE 'other calls' AND a.Type_Emergency_ID NOT IN('129', '131', '170', '172') AND DATE(Date_Log) LIKE CAST('2023-05-04' AS DATE)) AS emergency, (SELECT COUNT(*) FROM `call_log` AS a INNER JOIN `type_emergency` AS b ON a.`Type_Emergency_ID` = b.`Type_Emergency_ID` WHERE Group_Name_A LIKE 'other calls' AND a.Type_Emergency_ID NOT IN('129', '131', '170', '172') AND DATE(Date_Log) LIKE CAST('2023-05-04' AS DATE)) AS other, (SELECT COUNT(*) FROM `call_log` WHERE Type_Emergency_ID IN('129', '131', '170', '172') AND DATE(Date_log) LIKE CAST('2023-05-04' AS DATE)) AS hangup
+FROM `call_log`
+WHERE DATE(Date_log) LIKE CAST('2023-05-04' AS DATE)
+ERROR - 2023-05-04 16:49:53 --> Query error: Table 'nineoneone.type_emergency' doesn't exist - Invalid query: SELECT `b`.`Type_Emergency` as `Name`, COUNT(*) AS cnt
+FROM `call_log` AS `a`
+INNER JOIN `type_emergency` AS `b` ON `a`.`Type_Emergency_ID` = `b`.`Type_Emergency_ID`
+WHERE DATE(Date_Log) LIKE CAST('2023-05-04' AS DATE)
+GROUP BY `a`.`Type_Emergency_ID`
+ORDER BY FIELD(a.Type_Emergency_ID, '170') DESC, COUNT(*) DESC
+ERROR - 2023-05-04 16:50:13 --> Query error: Table 'nineoneone.type_emergency' doesn't exist - Invalid query: SELECT `b`.`Type_Emergency` as `Name`, COUNT(*) AS cnt
+FROM `call_log` AS `a`
+INNER JOIN `type_emergency` AS `b` ON `a`.`Type_Emergency_ID` = `b`.`Type_Emergency_ID`
+WHERE DATE(Date_Log) LIKE CAST('2023-05-04' AS DATE)
+GROUP BY `a`.`Type_Emergency_ID`
+ORDER BY FIELD(a.Type_Emergency_ID, '170') DESC, COUNT(*) DESC
+ERROR - 2023-05-04 16:50:13 --> Query error: Table 'nineoneone.type_emergency' doesn't exist - Invalid query: SELECT COUNT(*) AS today, (SELECT COUNT(*) FROM `call_log` AS a INNER JOIN `type_emergency` AS b ON a.`Type_Emergency_ID` = b.`Type_Emergency_ID` WHERE Group_Name_A NOT LIKE 'other calls' AND a.Type_Emergency_ID NOT IN('129', '131', '170', '172') AND DATE(Date_Log) LIKE CAST('2023-05-04' AS DATE)) AS emergency, (SELECT COUNT(*) FROM `call_log` AS a INNER JOIN `type_emergency` AS b ON a.`Type_Emergency_ID` = b.`Type_Emergency_ID` WHERE Group_Name_A LIKE 'other calls' AND a.Type_Emergency_ID NOT IN('129', '131', '170', '172') AND DATE(Date_Log) LIKE CAST('2023-05-04' AS DATE)) AS other, (SELECT COUNT(*) FROM `call_log` WHERE Type_Emergency_ID IN('129', '131', '170', '172') AND DATE(Date_log) LIKE CAST('2023-05-04' AS DATE)) AS hangup
+FROM `call_log`
+WHERE DATE(Date_log) LIKE CAST('2023-05-04' AS DATE)
+ERROR - 2023-05-04 16:50:13 --> Query error: Table 'nineoneone.type_emergency' doesn't exist - Invalid query: SELECT AVG(test) AS avg FROM (SELECT COUNT(*) AS test FROM call_log AS a INNER JOIN type_emergency AS b ON a.`Type_Emergency_ID` = b.`Type_Emergency_ID` WHERE Group_Name_A NOT LIKE 'other calls' AND a.Type_Emergency_ID NOT IN('129','131','170') AND DATE(Date_Log) BETWEEN CAST('2021-01-01' AS DATE) AND DATE_SUB(CAST('2023-05-04' AS DATE), INTERVAL 1 MONTH) GROUP BY DATE_FORMAT(Date_Log,'%Y-%c') ORDER BY DATE(Date_Log)) AS testing
+ERROR - 2023-05-04 16:50:33 --> Query error: Table 'nineoneone.type_emergency' doesn't exist - Invalid query: SELECT `b`.`Type_Emergency` as `Name`, COUNT(*) AS cnt
+FROM `call_log` AS `a`
+INNER JOIN `type_emergency` AS `b` ON `a`.`Type_Emergency_ID` = `b`.`Type_Emergency_ID`
+WHERE DATE(Date_Log) LIKE CAST('2023-05-04' AS DATE)
+GROUP BY `a`.`Type_Emergency_ID`
+ORDER BY FIELD(a.Type_Emergency_ID, '170') DESC, COUNT(*) DESC
+ERROR - 2023-05-04 16:50:33 --> Query error: Table 'nineoneone.type_emergency' doesn't exist - Invalid query: SELECT COUNT(*) AS today, (SELECT COUNT(*) FROM `call_log` AS a INNER JOIN `type_emergency` AS b ON a.`Type_Emergency_ID` = b.`Type_Emergency_ID` WHERE Group_Name_A NOT LIKE 'other calls' AND a.Type_Emergency_ID NOT IN('129', '131', '170', '172') AND DATE(Date_Log) LIKE CAST('2023-05-04' AS DATE)) AS emergency, (SELECT COUNT(*) FROM `call_log` AS a INNER JOIN `type_emergency` AS b ON a.`Type_Emergency_ID` = b.`Type_Emergency_ID` WHERE Group_Name_A LIKE 'other calls' AND a.Type_Emergency_ID NOT IN('129', '131', '170', '172') AND DATE(Date_Log) LIKE CAST('2023-05-04' AS DATE)) AS other, (SELECT COUNT(*) FROM `call_log` WHERE Type_Emergency_ID IN('129', '131', '170', '172') AND DATE(Date_log) LIKE CAST('2023-05-04' AS DATE)) AS hangup
+FROM `call_log`
+WHERE DATE(Date_log) LIKE CAST('2023-05-04' AS DATE)
+ERROR - 2023-05-04 16:50:33 --> Query error: Table 'nineoneone.type_emergency' doesn't exist - Invalid query: SELECT AVG(test) AS avg FROM (SELECT COUNT(*) AS test FROM call_log AS a INNER JOIN type_emergency AS b ON a.`Type_Emergency_ID` = b.`Type_Emergency_ID` WHERE Group_Name_A NOT LIKE 'other calls' AND a.Type_Emergency_ID NOT IN('129','131','170') AND DATE(Date_Log) BETWEEN CAST('2021-01-01' AS DATE) AND DATE_SUB(CAST('2023-05-04' AS DATE), INTERVAL 1 MONTH) GROUP BY DATE_FORMAT(Date_Log,'%Y-%c') ORDER BY DATE(Date_Log)) AS testing
+ERROR - 2023-05-04 16:50:53 --> Query error: Table 'nineoneone.type_emergency' doesn't exist - Invalid query: SELECT AVG(test) AS avg FROM (SELECT COUNT(*) AS test FROM call_log AS a INNER JOIN type_emergency AS b ON a.`Type_Emergency_ID` = b.`Type_Emergency_ID` WHERE Group_Name_A NOT LIKE 'other calls' AND a.Type_Emergency_ID NOT IN('129','131','170') AND DATE(Date_Log) BETWEEN CAST('2021-01-01' AS DATE) AND DATE_SUB(CAST('2023-05-04' AS DATE), INTERVAL 1 MONTH) GROUP BY DATE_FORMAT(Date_Log,'%Y-%c') ORDER BY DATE(Date_Log)) AS testing
+ERROR - 2023-05-04 16:50:53 --> Query error: Table 'nineoneone.type_emergency' doesn't exist - Invalid query: SELECT COUNT(*) AS today, (SELECT COUNT(*) FROM `call_log` AS a INNER JOIN `type_emergency` AS b ON a.`Type_Emergency_ID` = b.`Type_Emergency_ID` WHERE Group_Name_A NOT LIKE 'other calls' AND a.Type_Emergency_ID NOT IN('129', '131', '170', '172') AND DATE(Date_Log) LIKE CAST('2023-05-04' AS DATE)) AS emergency, (SELECT COUNT(*) FROM `call_log` AS a INNER JOIN `type_emergency` AS b ON a.`Type_Emergency_ID` = b.`Type_Emergency_ID` WHERE Group_Name_A LIKE 'other calls' AND a.Type_Emergency_ID NOT IN('129', '131', '170', '172') AND DATE(Date_Log) LIKE CAST('2023-05-04' AS DATE)) AS other, (SELECT COUNT(*) FROM `call_log` WHERE Type_Emergency_ID IN('129', '131', '170', '172') AND DATE(Date_log) LIKE CAST('2023-05-04' AS DATE)) AS hangup
+FROM `call_log`
+WHERE DATE(Date_log) LIKE CAST('2023-05-04' AS DATE)
+ERROR - 2023-05-04 16:50:53 --> Query error: Table 'nineoneone.type_emergency' doesn't exist - Invalid query: SELECT `b`.`Type_Emergency` as `Name`, COUNT(*) AS cnt
+FROM `call_log` AS `a`
+INNER JOIN `type_emergency` AS `b` ON `a`.`Type_Emergency_ID` = `b`.`Type_Emergency_ID`
+WHERE DATE(Date_Log) LIKE CAST('2023-05-04' AS DATE)
+GROUP BY `a`.`Type_Emergency_ID`
+ORDER BY FIELD(a.Type_Emergency_ID, '170') DESC, COUNT(*) DESC
+ERROR - 2023-05-04 16:51:13 --> Query error: Table 'nineoneone.type_emergency' doesn't exist - Invalid query: SELECT COUNT(*) AS today, (SELECT COUNT(*) FROM `call_log` AS a INNER JOIN `type_emergency` AS b ON a.`Type_Emergency_ID` = b.`Type_Emergency_ID` WHERE Group_Name_A NOT LIKE 'other calls' AND a.Type_Emergency_ID NOT IN('129', '131', '170', '172') AND DATE(Date_Log) LIKE CAST('2023-05-04' AS DATE)) AS emergency, (SELECT COUNT(*) FROM `call_log` AS a INNER JOIN `type_emergency` AS b ON a.`Type_Emergency_ID` = b.`Type_Emergency_ID` WHERE Group_Name_A LIKE 'other calls' AND a.Type_Emergency_ID NOT IN('129', '131', '170', '172') AND DATE(Date_Log) LIKE CAST('2023-05-04' AS DATE)) AS other, (SELECT COUNT(*) FROM `call_log` WHERE Type_Emergency_ID IN('129', '131', '170', '172') AND DATE(Date_log) LIKE CAST('2023-05-04' AS DATE)) AS hangup
+FROM `call_log`
+WHERE DATE(Date_log) LIKE CAST('2023-05-04' AS DATE)
+ERROR - 2023-05-04 16:51:13 --> Query error: Table 'nineoneone.type_emergency' doesn't exist - Invalid query: SELECT AVG(test) AS avg FROM (SELECT COUNT(*) AS test FROM call_log AS a INNER JOIN type_emergency AS b ON a.`Type_Emergency_ID` = b.`Type_Emergency_ID` WHERE Group_Name_A NOT LIKE 'other calls' AND a.Type_Emergency_ID NOT IN('129','131','170') AND DATE(Date_Log) BETWEEN CAST('2021-01-01' AS DATE) AND DATE_SUB(CAST('2023-05-04' AS DATE), INTERVAL 1 MONTH) GROUP BY DATE_FORMAT(Date_Log,'%Y-%c') ORDER BY DATE(Date_Log)) AS testing
+ERROR - 2023-05-04 16:51:13 --> Query error: Table 'nineoneone.type_emergency' doesn't exist - Invalid query: SELECT `b`.`Type_Emergency` as `Name`, COUNT(*) AS cnt
+FROM `call_log` AS `a`
+INNER JOIN `type_emergency` AS `b` ON `a`.`Type_Emergency_ID` = `b`.`Type_Emergency_ID`
+WHERE DATE(Date_Log) LIKE CAST('2023-05-04' AS DATE)
+GROUP BY `a`.`Type_Emergency_ID`
+ORDER BY FIELD(a.Type_Emergency_ID, '170') DESC, COUNT(*) DESC
+ERROR - 2023-05-04 16:51:33 --> Query error: Table 'nineoneone.type_emergency' doesn't exist - Invalid query: SELECT COUNT(*) AS today, (SELECT COUNT(*) FROM `call_log` AS a INNER JOIN `type_emergency` AS b ON a.`Type_Emergency_ID` = b.`Type_Emergency_ID` WHERE Group_Name_A NOT LIKE 'other calls' AND a.Type_Emergency_ID NOT IN('129', '131', '170', '172') AND DATE(Date_Log) LIKE CAST('2023-05-04' AS DATE)) AS emergency, (SELECT COUNT(*) FROM `call_log` AS a INNER JOIN `type_emergency` AS b ON a.`Type_Emergency_ID` = b.`Type_Emergency_ID` WHERE Group_Name_A LIKE 'other calls' AND a.Type_Emergency_ID NOT IN('129', '131', '170', '172') AND DATE(Date_Log) LIKE CAST('2023-05-04' AS DATE)) AS other, (SELECT COUNT(*) FROM `call_log` WHERE Type_Emergency_ID IN('129', '131', '170', '172') AND DATE(Date_log) LIKE CAST('2023-05-04' AS DATE)) AS hangup
+FROM `call_log`
+WHERE DATE(Date_log) LIKE CAST('2023-05-04' AS DATE)
+ERROR - 2023-05-04 16:51:33 --> Query error: Table 'nineoneone.type_emergency' doesn't exist - Invalid query: SELECT `b`.`Type_Emergency` as `Name`, COUNT(*) AS cnt
+FROM `call_log` AS `a`
+INNER JOIN `type_emergency` AS `b` ON `a`.`Type_Emergency_ID` = `b`.`Type_Emergency_ID`
+WHERE DATE(Date_Log) LIKE CAST('2023-05-04' AS DATE)
+GROUP BY `a`.`Type_Emergency_ID`
+ORDER BY FIELD(a.Type_Emergency_ID, '170') DESC, COUNT(*) DESC
+ERROR - 2023-05-04 16:51:33 --> Query error: Table 'nineoneone.type_emergency' doesn't exist - Invalid query: SELECT AVG(test) AS avg FROM (SELECT COUNT(*) AS test FROM call_log AS a INNER JOIN type_emergency AS b ON a.`Type_Emergency_ID` = b.`Type_Emergency_ID` WHERE Group_Name_A NOT LIKE 'other calls' AND a.Type_Emergency_ID NOT IN('129','131','170') AND DATE(Date_Log) BETWEEN CAST('2021-01-01' AS DATE) AND DATE_SUB(CAST('2023-05-04' AS DATE), INTERVAL 1 MONTH) GROUP BY DATE_FORMAT(Date_Log,'%Y-%c') ORDER BY DATE(Date_Log)) AS testing
+ERROR - 2023-05-04 16:51:53 --> Query error: Table 'nineoneone.type_emergency' doesn't exist - Invalid query: SELECT AVG(test) AS avg FROM (SELECT COUNT(*) AS test FROM call_log AS a INNER JOIN type_emergency AS b ON a.`Type_Emergency_ID` = b.`Type_Emergency_ID` WHERE Group_Name_A NOT LIKE 'other calls' AND a.Type_Emergency_ID NOT IN('129','131','170') AND DATE(Date_Log) BETWEEN CAST('2021-01-01' AS DATE) AND DATE_SUB(CAST('2023-05-04' AS DATE), INTERVAL 1 MONTH) GROUP BY DATE_FORMAT(Date_Log,'%Y-%c') ORDER BY DATE(Date_Log)) AS testing
+ERROR - 2023-05-04 16:51:53 --> Query error: Table 'nineoneone.type_emergency' doesn't exist - Invalid query: SELECT COUNT(*) AS today, (SELECT COUNT(*) FROM `call_log` AS a INNER JOIN `type_emergency` AS b ON a.`Type_Emergency_ID` = b.`Type_Emergency_ID` WHERE Group_Name_A NOT LIKE 'other calls' AND a.Type_Emergency_ID NOT IN('129', '131', '170', '172') AND DATE(Date_Log) LIKE CAST('2023-05-04' AS DATE)) AS emergency, (SELECT COUNT(*) FROM `call_log` AS a INNER JOIN `type_emergency` AS b ON a.`Type_Emergency_ID` = b.`Type_Emergency_ID` WHERE Group_Name_A LIKE 'other calls' AND a.Type_Emergency_ID NOT IN('129', '131', '170', '172') AND DATE(Date_Log) LIKE CAST('2023-05-04' AS DATE)) AS other, (SELECT COUNT(*) FROM `call_log` WHERE Type_Emergency_ID IN('129', '131', '170', '172') AND DATE(Date_log) LIKE CAST('2023-05-04' AS DATE)) AS hangup
+FROM `call_log`
+WHERE DATE(Date_log) LIKE CAST('2023-05-04' AS DATE)
+ERROR - 2023-05-04 16:51:53 --> Query error: Table 'nineoneone.type_emergency' doesn't exist - Invalid query: SELECT `b`.`Type_Emergency` as `Name`, COUNT(*) AS cnt
+FROM `call_log` AS `a`
+INNER JOIN `type_emergency` AS `b` ON `a`.`Type_Emergency_ID` = `b`.`Type_Emergency_ID`
+WHERE DATE(Date_Log) LIKE CAST('2023-05-04' AS DATE)
+GROUP BY `a`.`Type_Emergency_ID`
+ORDER BY FIELD(a.Type_Emergency_ID, '170') DESC, COUNT(*) DESC
+ERROR - 2023-05-04 16:52:13 --> Query error: Table 'nineoneone.type_emergency' doesn't exist - Invalid query: SELECT AVG(test) AS avg FROM (SELECT COUNT(*) AS test FROM call_log AS a INNER JOIN type_emergency AS b ON a.`Type_Emergency_ID` = b.`Type_Emergency_ID` WHERE Group_Name_A NOT LIKE 'other calls' AND a.Type_Emergency_ID NOT IN('129','131','170') AND DATE(Date_Log) BETWEEN CAST('2021-01-01' AS DATE) AND DATE_SUB(CAST('2023-05-04' AS DATE), INTERVAL 1 MONTH) GROUP BY DATE_FORMAT(Date_Log,'%Y-%c') ORDER BY DATE(Date_Log)) AS testing
+ERROR - 2023-05-04 16:52:13 --> Query error: Table 'nineoneone.type_emergency' doesn't exist - Invalid query: SELECT COUNT(*) AS today, (SELECT COUNT(*) FROM `call_log` AS a INNER JOIN `type_emergency` AS b ON a.`Type_Emergency_ID` = b.`Type_Emergency_ID` WHERE Group_Name_A NOT LIKE 'other calls' AND a.Type_Emergency_ID NOT IN('129', '131', '170', '172') AND DATE(Date_Log) LIKE CAST('2023-05-04' AS DATE)) AS emergency, (SELECT COUNT(*) FROM `call_log` AS a INNER JOIN `type_emergency` AS b ON a.`Type_Emergency_ID` = b.`Type_Emergency_ID` WHERE Group_Name_A LIKE 'other calls' AND a.Type_Emergency_ID NOT IN('129', '131', '170', '172') AND DATE(Date_Log) LIKE CAST('2023-05-04' AS DATE)) AS other, (SELECT COUNT(*) FROM `call_log` WHERE Type_Emergency_ID IN('129', '131', '170', '172') AND DATE(Date_log) LIKE CAST('2023-05-04' AS DATE)) AS hangup
+FROM `call_log`
+WHERE DATE(Date_log) LIKE CAST('2023-05-04' AS DATE)
+ERROR - 2023-05-04 16:52:13 --> Query error: Table 'nineoneone.type_emergency' doesn't exist - Invalid query: SELECT `b`.`Type_Emergency` as `Name`, COUNT(*) AS cnt
+FROM `call_log` AS `a`
+INNER JOIN `type_emergency` AS `b` ON `a`.`Type_Emergency_ID` = `b`.`Type_Emergency_ID`
+WHERE DATE(Date_Log) LIKE CAST('2023-05-04' AS DATE)
+GROUP BY `a`.`Type_Emergency_ID`
+ORDER BY FIELD(a.Type_Emergency_ID, '170') DESC, COUNT(*) DESC
+ERROR - 2023-05-04 16:52:33 --> Query error: Table 'nineoneone.type_emergency' doesn't exist - Invalid query: SELECT AVG(test) AS avg FROM (SELECT COUNT(*) AS test FROM call_log AS a INNER JOIN type_emergency AS b ON a.`Type_Emergency_ID` = b.`Type_Emergency_ID` WHERE Group_Name_A NOT LIKE 'other calls' AND a.Type_Emergency_ID NOT IN('129','131','170') AND DATE(Date_Log) BETWEEN CAST('2021-01-01' AS DATE) AND DATE_SUB(CAST('2023-05-04' AS DATE), INTERVAL 1 MONTH) GROUP BY DATE_FORMAT(Date_Log,'%Y-%c') ORDER BY DATE(Date_Log)) AS testing
+ERROR - 2023-05-04 16:52:33 --> Query error: Table 'nineoneone.type_emergency' doesn't exist - Invalid query: SELECT COUNT(*) AS today, (SELECT COUNT(*) FROM `call_log` AS a INNER JOIN `type_emergency` AS b ON a.`Type_Emergency_ID` = b.`Type_Emergency_ID` WHERE Group_Name_A NOT LIKE 'other calls' AND a.Type_Emergency_ID NOT IN('129', '131', '170', '172') AND DATE(Date_Log) LIKE CAST('2023-05-04' AS DATE)) AS emergency, (SELECT COUNT(*) FROM `call_log` AS a INNER JOIN `type_emergency` AS b ON a.`Type_Emergency_ID` = b.`Type_Emergency_ID` WHERE Group_Name_A LIKE 'other calls' AND a.Type_Emergency_ID NOT IN('129', '131', '170', '172') AND DATE(Date_Log) LIKE CAST('2023-05-04' AS DATE)) AS other, (SELECT COUNT(*) FROM `call_log` WHERE Type_Emergency_ID IN('129', '131', '170', '172') AND DATE(Date_log) LIKE CAST('2023-05-04' AS DATE)) AS hangup
+FROM `call_log`
+WHERE DATE(Date_log) LIKE CAST('2023-05-04' AS DATE)
+ERROR - 2023-05-04 16:52:33 --> Query error: Table 'nineoneone.type_emergency' doesn't exist - Invalid query: SELECT `b`.`Type_Emergency` as `Name`, COUNT(*) AS cnt
+FROM `call_log` AS `a`
+INNER JOIN `type_emergency` AS `b` ON `a`.`Type_Emergency_ID` = `b`.`Type_Emergency_ID`
+WHERE DATE(Date_Log) LIKE CAST('2023-05-04' AS DATE)
+GROUP BY `a`.`Type_Emergency_ID`
+ORDER BY FIELD(a.Type_Emergency_ID, '170') DESC, COUNT(*) DESC
+ERROR - 2023-05-04 16:52:53 --> Query error: Table 'nineoneone.type_emergency' doesn't exist - Invalid query: SELECT COUNT(*) AS today, (SELECT COUNT(*) FROM `call_log` AS a INNER JOIN `type_emergency` AS b ON a.`Type_Emergency_ID` = b.`Type_Emergency_ID` WHERE Group_Name_A NOT LIKE 'other calls' AND a.Type_Emergency_ID NOT IN('129', '131', '170', '172') AND DATE(Date_Log) LIKE CAST('2023-05-04' AS DATE)) AS emergency, (SELECT COUNT(*) FROM `call_log` AS a INNER JOIN `type_emergency` AS b ON a.`Type_Emergency_ID` = b.`Type_Emergency_ID` WHERE Group_Name_A LIKE 'other calls' AND a.Type_Emergency_ID NOT IN('129', '131', '170', '172') AND DATE(Date_Log) LIKE CAST('2023-05-04' AS DATE)) AS other, (SELECT COUNT(*) FROM `call_log` WHERE Type_Emergency_ID IN('129', '131', '170', '172') AND DATE(Date_log) LIKE CAST('2023-05-04' AS DATE)) AS hangup
+FROM `call_log`
+WHERE DATE(Date_log) LIKE CAST('2023-05-04' AS DATE)
+ERROR - 2023-05-04 16:52:53 --> Query error: Table 'nineoneone.type_emergency' doesn't exist - Invalid query: SELECT AVG(test) AS avg FROM (SELECT COUNT(*) AS test FROM call_log AS a INNER JOIN type_emergency AS b ON a.`Type_Emergency_ID` = b.`Type_Emergency_ID` WHERE Group_Name_A NOT LIKE 'other calls' AND a.Type_Emergency_ID NOT IN('129','131','170') AND DATE(Date_Log) BETWEEN CAST('2021-01-01' AS DATE) AND DATE_SUB(CAST('2023-05-04' AS DATE), INTERVAL 1 MONTH) GROUP BY DATE_FORMAT(Date_Log,'%Y-%c') ORDER BY DATE(Date_Log)) AS testing
+ERROR - 2023-05-04 16:52:53 --> Query error: Table 'nineoneone.type_emergency' doesn't exist - Invalid query: SELECT `b`.`Type_Emergency` as `Name`, COUNT(*) AS cnt
+FROM `call_log` AS `a`
+INNER JOIN `type_emergency` AS `b` ON `a`.`Type_Emergency_ID` = `b`.`Type_Emergency_ID`
+WHERE DATE(Date_Log) LIKE CAST('2023-05-04' AS DATE)
+GROUP BY `a`.`Type_Emergency_ID`
+ORDER BY FIELD(a.Type_Emergency_ID, '170') DESC, COUNT(*) DESC
+ERROR - 2023-05-04 16:53:13 --> Query error: Table 'nineoneone.type_emergency' doesn't exist - Invalid query: SELECT COUNT(*) AS today, (SELECT COUNT(*) FROM `call_log` AS a INNER JOIN `type_emergency` AS b ON a.`Type_Emergency_ID` = b.`Type_Emergency_ID` WHERE Group_Name_A NOT LIKE 'other calls' AND a.Type_Emergency_ID NOT IN('129', '131', '170', '172') AND DATE(Date_Log) LIKE CAST('2023-05-04' AS DATE)) AS emergency, (SELECT COUNT(*) FROM `call_log` AS a INNER JOIN `type_emergency` AS b ON a.`Type_Emergency_ID` = b.`Type_Emergency_ID` WHERE Group_Name_A LIKE 'other calls' AND a.Type_Emergency_ID NOT IN('129', '131', '170', '172') AND DATE(Date_Log) LIKE CAST('2023-05-04' AS DATE)) AS other, (SELECT COUNT(*) FROM `call_log` WHERE Type_Emergency_ID IN('129', '131', '170', '172') AND DATE(Date_log) LIKE CAST('2023-05-04' AS DATE)) AS hangup
+FROM `call_log`
+WHERE DATE(Date_log) LIKE CAST('2023-05-04' AS DATE)
+ERROR - 2023-05-04 16:53:13 --> Query error: Table 'nineoneone.type_emergency' doesn't exist - Invalid query: SELECT AVG(test) AS avg FROM (SELECT COUNT(*) AS test FROM call_log AS a INNER JOIN type_emergency AS b ON a.`Type_Emergency_ID` = b.`Type_Emergency_ID` WHERE Group_Name_A NOT LIKE 'other calls' AND a.Type_Emergency_ID NOT IN('129','131','170') AND DATE(Date_Log) BETWEEN CAST('2021-01-01' AS DATE) AND DATE_SUB(CAST('2023-05-04' AS DATE), INTERVAL 1 MONTH) GROUP BY DATE_FORMAT(Date_Log,'%Y-%c') ORDER BY DATE(Date_Log)) AS testing
+ERROR - 2023-05-04 16:53:13 --> Query error: Table 'nineoneone.type_emergency' doesn't exist - Invalid query: SELECT `b`.`Type_Emergency` as `Name`, COUNT(*) AS cnt
+FROM `call_log` AS `a`
+INNER JOIN `type_emergency` AS `b` ON `a`.`Type_Emergency_ID` = `b`.`Type_Emergency_ID`
+WHERE DATE(Date_Log) LIKE CAST('2023-05-04' AS DATE)
+GROUP BY `a`.`Type_Emergency_ID`
+ORDER BY FIELD(a.Type_Emergency_ID, '170') DESC, COUNT(*) DESC
+ERROR - 2023-05-04 16:53:33 --> Query error: Table 'nineoneone.type_emergency' doesn't exist - Invalid query: SELECT COUNT(*) AS today, (SELECT COUNT(*) FROM `call_log` AS a INNER JOIN `type_emergency` AS b ON a.`Type_Emergency_ID` = b.`Type_Emergency_ID` WHERE Group_Name_A NOT LIKE 'other calls' AND a.Type_Emergency_ID NOT IN('129', '131', '170', '172') AND DATE(Date_Log) LIKE CAST('2023-05-04' AS DATE)) AS emergency, (SELECT COUNT(*) FROM `call_log` AS a INNER JOIN `type_emergency` AS b ON a.`Type_Emergency_ID` = b.`Type_Emergency_ID` WHERE Group_Name_A LIKE 'other calls' AND a.Type_Emergency_ID NOT IN('129', '131', '170', '172') AND DATE(Date_Log) LIKE CAST('2023-05-04' AS DATE)) AS other, (SELECT COUNT(*) FROM `call_log` WHERE Type_Emergency_ID IN('129', '131', '170', '172') AND DATE(Date_log) LIKE CAST('2023-05-04' AS DATE)) AS hangup
+FROM `call_log`
+WHERE DATE(Date_log) LIKE CAST('2023-05-04' AS DATE)
+ERROR - 2023-05-04 16:53:33 --> Query error: Table 'nineoneone.type_emergency' doesn't exist - Invalid query: SELECT `b`.`Type_Emergency` as `Name`, COUNT(*) AS cnt
+FROM `call_log` AS `a`
+INNER JOIN `type_emergency` AS `b` ON `a`.`Type_Emergency_ID` = `b`.`Type_Emergency_ID`
+WHERE DATE(Date_Log) LIKE CAST('2023-05-04' AS DATE)
+GROUP BY `a`.`Type_Emergency_ID`
+ORDER BY FIELD(a.Type_Emergency_ID, '170') DESC, COUNT(*) DESC
+ERROR - 2023-05-04 16:53:33 --> Query error: Table 'nineoneone.type_emergency' doesn't exist - Invalid query: SELECT AVG(test) AS avg FROM (SELECT COUNT(*) AS test FROM call_log AS a INNER JOIN type_emergency AS b ON a.`Type_Emergency_ID` = b.`Type_Emergency_ID` WHERE Group_Name_A NOT LIKE 'other calls' AND a.Type_Emergency_ID NOT IN('129','131','170') AND DATE(Date_Log) BETWEEN CAST('2021-01-01' AS DATE) AND DATE_SUB(CAST('2023-05-04' AS DATE), INTERVAL 1 MONTH) GROUP BY DATE_FORMAT(Date_Log,'%Y-%c') ORDER BY DATE(Date_Log)) AS testing
+ERROR - 2023-05-04 16:53:53 --> Query error: Table 'nineoneone.type_emergency' doesn't exist - Invalid query: SELECT AVG(test) AS avg FROM (SELECT COUNT(*) AS test FROM call_log AS a INNER JOIN type_emergency AS b ON a.`Type_Emergency_ID` = b.`Type_Emergency_ID` WHERE Group_Name_A NOT LIKE 'other calls' AND a.Type_Emergency_ID NOT IN('129','131','170') AND DATE(Date_Log) BETWEEN CAST('2021-01-01' AS DATE) AND DATE_SUB(CAST('2023-05-04' AS DATE), INTERVAL 1 MONTH) GROUP BY DATE_FORMAT(Date_Log,'%Y-%c') ORDER BY DATE(Date_Log)) AS testing
+ERROR - 2023-05-04 16:53:53 --> Query error: Table 'nineoneone.type_emergency' doesn't exist - Invalid query: SELECT `b`.`Type_Emergency` as `Name`, COUNT(*) AS cnt
+FROM `call_log` AS `a`
+INNER JOIN `type_emergency` AS `b` ON `a`.`Type_Emergency_ID` = `b`.`Type_Emergency_ID`
+WHERE DATE(Date_Log) LIKE CAST('2023-05-04' AS DATE)
+GROUP BY `a`.`Type_Emergency_ID`
+ORDER BY FIELD(a.Type_Emergency_ID, '170') DESC, COUNT(*) DESC
+ERROR - 2023-05-04 16:53:53 --> Query error: Table 'nineoneone.type_emergency' doesn't exist - Invalid query: SELECT COUNT(*) AS today, (SELECT COUNT(*) FROM `call_log` AS a INNER JOIN `type_emergency` AS b ON a.`Type_Emergency_ID` = b.`Type_Emergency_ID` WHERE Group_Name_A NOT LIKE 'other calls' AND a.Type_Emergency_ID NOT IN('129', '131', '170', '172') AND DATE(Date_Log) LIKE CAST('2023-05-04' AS DATE)) AS emergency, (SELECT COUNT(*) FROM `call_log` AS a INNER JOIN `type_emergency` AS b ON a.`Type_Emergency_ID` = b.`Type_Emergency_ID` WHERE Group_Name_A LIKE 'other calls' AND a.Type_Emergency_ID NOT IN('129', '131', '170', '172') AND DATE(Date_Log) LIKE CAST('2023-05-04' AS DATE)) AS other, (SELECT COUNT(*) FROM `call_log` WHERE Type_Emergency_ID IN('129', '131', '170', '172') AND DATE(Date_log) LIKE CAST('2023-05-04' AS DATE)) AS hangup
+FROM `call_log`
+WHERE DATE(Date_log) LIKE CAST('2023-05-04' AS DATE)
+ERROR - 2023-05-04 16:54:13 --> Query error: Table 'nineoneone.type_emergency' doesn't exist - Invalid query: SELECT AVG(test) AS avg FROM (SELECT COUNT(*) AS test FROM call_log AS a INNER JOIN type_emergency AS b ON a.`Type_Emergency_ID` = b.`Type_Emergency_ID` WHERE Group_Name_A NOT LIKE 'other calls' AND a.Type_Emergency_ID NOT IN('129','131','170') AND DATE(Date_Log) BETWEEN CAST('2021-01-01' AS DATE) AND DATE_SUB(CAST('2023-05-04' AS DATE), INTERVAL 1 MONTH) GROUP BY DATE_FORMAT(Date_Log,'%Y-%c') ORDER BY DATE(Date_Log)) AS testing
+ERROR - 2023-05-04 16:54:13 --> Query error: Table 'nineoneone.type_emergency' doesn't exist - Invalid query: SELECT COUNT(*) AS today, (SELECT COUNT(*) FROM `call_log` AS a INNER JOIN `type_emergency` AS b ON a.`Type_Emergency_ID` = b.`Type_Emergency_ID` WHERE Group_Name_A NOT LIKE 'other calls' AND a.Type_Emergency_ID NOT IN('129', '131', '170', '172') AND DATE(Date_Log) LIKE CAST('2023-05-04' AS DATE)) AS emergency, (SELECT COUNT(*) FROM `call_log` AS a INNER JOIN `type_emergency` AS b ON a.`Type_Emergency_ID` = b.`Type_Emergency_ID` WHERE Group_Name_A LIKE 'other calls' AND a.Type_Emergency_ID NOT IN('129', '131', '170', '172') AND DATE(Date_Log) LIKE CAST('2023-05-04' AS DATE)) AS other, (SELECT COUNT(*) FROM `call_log` WHERE Type_Emergency_ID IN('129', '131', '170', '172') AND DATE(Date_log) LIKE CAST('2023-05-04' AS DATE)) AS hangup
+FROM `call_log`
+WHERE DATE(Date_log) LIKE CAST('2023-05-04' AS DATE)
+ERROR - 2023-05-04 16:54:13 --> Query error: Table 'nineoneone.type_emergency' doesn't exist - Invalid query: SELECT `b`.`Type_Emergency` as `Name`, COUNT(*) AS cnt
+FROM `call_log` AS `a`
+INNER JOIN `type_emergency` AS `b` ON `a`.`Type_Emergency_ID` = `b`.`Type_Emergency_ID`
+WHERE DATE(Date_Log) LIKE CAST('2023-05-04' AS DATE)
+GROUP BY `a`.`Type_Emergency_ID`
+ORDER BY FIELD(a.Type_Emergency_ID, '170') DESC, COUNT(*) DESC
+ERROR - 2023-05-04 16:54:33 --> Query error: Table 'nineoneone.type_emergency' doesn't exist - Invalid query: SELECT AVG(test) AS avg FROM (SELECT COUNT(*) AS test FROM call_log AS a INNER JOIN type_emergency AS b ON a.`Type_Emergency_ID` = b.`Type_Emergency_ID` WHERE Group_Name_A NOT LIKE 'other calls' AND a.Type_Emergency_ID NOT IN('129','131','170') AND DATE(Date_Log) BETWEEN CAST('2021-01-01' AS DATE) AND DATE_SUB(CAST('2023-05-04' AS DATE), INTERVAL 1 MONTH) GROUP BY DATE_FORMAT(Date_Log,'%Y-%c') ORDER BY DATE(Date_Log)) AS testing
+ERROR - 2023-05-04 16:54:33 --> Query error: Table 'nineoneone.type_emergency' doesn't exist - Invalid query: SELECT COUNT(*) AS today, (SELECT COUNT(*) FROM `call_log` AS a INNER JOIN `type_emergency` AS b ON a.`Type_Emergency_ID` = b.`Type_Emergency_ID` WHERE Group_Name_A NOT LIKE 'other calls' AND a.Type_Emergency_ID NOT IN('129', '131', '170', '172') AND DATE(Date_Log) LIKE CAST('2023-05-04' AS DATE)) AS emergency, (SELECT COUNT(*) FROM `call_log` AS a INNER JOIN `type_emergency` AS b ON a.`Type_Emergency_ID` = b.`Type_Emergency_ID` WHERE Group_Name_A LIKE 'other calls' AND a.Type_Emergency_ID NOT IN('129', '131', '170', '172') AND DATE(Date_Log) LIKE CAST('2023-05-04' AS DATE)) AS other, (SELECT COUNT(*) FROM `call_log` WHERE Type_Emergency_ID IN('129', '131', '170', '172') AND DATE(Date_log) LIKE CAST('2023-05-04' AS DATE)) AS hangup
+FROM `call_log`
+WHERE DATE(Date_log) LIKE CAST('2023-05-04' AS DATE)
+ERROR - 2023-05-04 16:54:33 --> Query error: Table 'nineoneone.type_emergency' doesn't exist - Invalid query: SELECT `b`.`Type_Emergency` as `Name`, COUNT(*) AS cnt
+FROM `call_log` AS `a`
+INNER JOIN `type_emergency` AS `b` ON `a`.`Type_Emergency_ID` = `b`.`Type_Emergency_ID`
+WHERE DATE(Date_Log) LIKE CAST('2023-05-04' AS DATE)
+GROUP BY `a`.`Type_Emergency_ID`
+ORDER BY FIELD(a.Type_Emergency_ID, '170') DESC, COUNT(*) DESC
+ERROR - 2023-05-04 16:54:53 --> Query error: Table 'nineoneone.type_emergency' doesn't exist - Invalid query: SELECT COUNT(*) AS today, (SELECT COUNT(*) FROM `call_log` AS a INNER JOIN `type_emergency` AS b ON a.`Type_Emergency_ID` = b.`Type_Emergency_ID` WHERE Group_Name_A NOT LIKE 'other calls' AND a.Type_Emergency_ID NOT IN('129', '131', '170', '172') AND DATE(Date_Log) LIKE CAST('2023-05-04' AS DATE)) AS emergency, (SELECT COUNT(*) FROM `call_log` AS a INNER JOIN `type_emergency` AS b ON a.`Type_Emergency_ID` = b.`Type_Emergency_ID` WHERE Group_Name_A LIKE 'other calls' AND a.Type_Emergency_ID NOT IN('129', '131', '170', '172') AND DATE(Date_Log) LIKE CAST('2023-05-04' AS DATE)) AS other, (SELECT COUNT(*) FROM `call_log` WHERE Type_Emergency_ID IN('129', '131', '170', '172') AND DATE(Date_log) LIKE CAST('2023-05-04' AS DATE)) AS hangup
+FROM `call_log`
+WHERE DATE(Date_log) LIKE CAST('2023-05-04' AS DATE)
+ERROR - 2023-05-04 16:54:53 --> Query error: Table 'nineoneone.type_emergency' doesn't exist - Invalid query: SELECT AVG(test) AS avg FROM (SELECT COUNT(*) AS test FROM call_log AS a INNER JOIN type_emergency AS b ON a.`Type_Emergency_ID` = b.`Type_Emergency_ID` WHERE Group_Name_A NOT LIKE 'other calls' AND a.Type_Emergency_ID NOT IN('129','131','170') AND DATE(Date_Log) BETWEEN CAST('2021-01-01' AS DATE) AND DATE_SUB(CAST('2023-05-04' AS DATE), INTERVAL 1 MONTH) GROUP BY DATE_FORMAT(Date_Log,'%Y-%c') ORDER BY DATE(Date_Log)) AS testing
+ERROR - 2023-05-04 16:54:53 --> Query error: Table 'nineoneone.type_emergency' doesn't exist - Invalid query: SELECT `b`.`Type_Emergency` as `Name`, COUNT(*) AS cnt
+FROM `call_log` AS `a`
+INNER JOIN `type_emergency` AS `b` ON `a`.`Type_Emergency_ID` = `b`.`Type_Emergency_ID`
+WHERE DATE(Date_Log) LIKE CAST('2023-05-04' AS DATE)
+GROUP BY `a`.`Type_Emergency_ID`
+ORDER BY FIELD(a.Type_Emergency_ID, '170') DESC, COUNT(*) DESC
+ERROR - 2023-05-04 16:55:13 --> Query error: Table 'nineoneone.type_emergency' doesn't exist - Invalid query: SELECT COUNT(*) AS today, (SELECT COUNT(*) FROM `call_log` AS a INNER JOIN `type_emergency` AS b ON a.`Type_Emergency_ID` = b.`Type_Emergency_ID` WHERE Group_Name_A NOT LIKE 'other calls' AND a.Type_Emergency_ID NOT IN('129', '131', '170', '172') AND DATE(Date_Log) LIKE CAST('2023-05-04' AS DATE)) AS emergency, (SELECT COUNT(*) FROM `call_log` AS a INNER JOIN `type_emergency` AS b ON a.`Type_Emergency_ID` = b.`Type_Emergency_ID` WHERE Group_Name_A LIKE 'other calls' AND a.Type_Emergency_ID NOT IN('129', '131', '170', '172') AND DATE(Date_Log) LIKE CAST('2023-05-04' AS DATE)) AS other, (SELECT COUNT(*) FROM `call_log` WHERE Type_Emergency_ID IN('129', '131', '170', '172') AND DATE(Date_log) LIKE CAST('2023-05-04' AS DATE)) AS hangup
+FROM `call_log`
+WHERE DATE(Date_log) LIKE CAST('2023-05-04' AS DATE)
+ERROR - 2023-05-04 16:55:13 --> Query error: Table 'nineoneone.type_emergency' doesn't exist - Invalid query: SELECT AVG(test) AS avg FROM (SELECT COUNT(*) AS test FROM call_log AS a INNER JOIN type_emergency AS b ON a.`Type_Emergency_ID` = b.`Type_Emergency_ID` WHERE Group_Name_A NOT LIKE 'other calls' AND a.Type_Emergency_ID NOT IN('129','131','170') AND DATE(Date_Log) BETWEEN CAST('2021-01-01' AS DATE) AND DATE_SUB(CAST('2023-05-04' AS DATE), INTERVAL 1 MONTH) GROUP BY DATE_FORMAT(Date_Log,'%Y-%c') ORDER BY DATE(Date_Log)) AS testing
+ERROR - 2023-05-04 16:55:13 --> Query error: Table 'nineoneone.type_emergency' doesn't exist - Invalid query: SELECT `b`.`Type_Emergency` as `Name`, COUNT(*) AS cnt
+FROM `call_log` AS `a`
+INNER JOIN `type_emergency` AS `b` ON `a`.`Type_Emergency_ID` = `b`.`Type_Emergency_ID`
+WHERE DATE(Date_Log) LIKE CAST('2023-05-04' AS DATE)
+GROUP BY `a`.`Type_Emergency_ID`
+ORDER BY FIELD(a.Type_Emergency_ID, '170') DESC, COUNT(*) DESC
+ERROR - 2023-05-04 16:55:33 --> Query error: Table 'nineoneone.type_emergency' doesn't exist - Invalid query: SELECT AVG(test) AS avg FROM (SELECT COUNT(*) AS test FROM call_log AS a INNER JOIN type_emergency AS b ON a.`Type_Emergency_ID` = b.`Type_Emergency_ID` WHERE Group_Name_A NOT LIKE 'other calls' AND a.Type_Emergency_ID NOT IN('129','131','170') AND DATE(Date_Log) BETWEEN CAST('2021-01-01' AS DATE) AND DATE_SUB(CAST('2023-05-04' AS DATE), INTERVAL 1 MONTH) GROUP BY DATE_FORMAT(Date_Log,'%Y-%c') ORDER BY DATE(Date_Log)) AS testing
+ERROR - 2023-05-04 16:55:33 --> Query error: Table 'nineoneone.type_emergency' doesn't exist - Invalid query: SELECT `b`.`Type_Emergency` as `Name`, COUNT(*) AS cnt
+FROM `call_log` AS `a`
+INNER JOIN `type_emergency` AS `b` ON `a`.`Type_Emergency_ID` = `b`.`Type_Emergency_ID`
+WHERE DATE(Date_Log) LIKE CAST('2023-05-04' AS DATE)
+GROUP BY `a`.`Type_Emergency_ID`
+ORDER BY FIELD(a.Type_Emergency_ID, '170') DESC, COUNT(*) DESC
+ERROR - 2023-05-04 16:55:33 --> Query error: Table 'nineoneone.type_emergency' doesn't exist - Invalid query: SELECT COUNT(*) AS today, (SELECT COUNT(*) FROM `call_log` AS a INNER JOIN `type_emergency` AS b ON a.`Type_Emergency_ID` = b.`Type_Emergency_ID` WHERE Group_Name_A NOT LIKE 'other calls' AND a.Type_Emergency_ID NOT IN('129', '131', '170', '172') AND DATE(Date_Log) LIKE CAST('2023-05-04' AS DATE)) AS emergency, (SELECT COUNT(*) FROM `call_log` AS a INNER JOIN `type_emergency` AS b ON a.`Type_Emergency_ID` = b.`Type_Emergency_ID` WHERE Group_Name_A LIKE 'other calls' AND a.Type_Emergency_ID NOT IN('129', '131', '170', '172') AND DATE(Date_Log) LIKE CAST('2023-05-04' AS DATE)) AS other, (SELECT COUNT(*) FROM `call_log` WHERE Type_Emergency_ID IN('129', '131', '170', '172') AND DATE(Date_log) LIKE CAST('2023-05-04' AS DATE)) AS hangup
+FROM `call_log`
+WHERE DATE(Date_log) LIKE CAST('2023-05-04' AS DATE)
+ERROR - 2023-05-04 16:55:42 --> Query error: Table 'nineoneone.type_emergency' doesn't exist - Invalid query: SELECT COUNT(*) AS today, (SELECT COUNT(*) FROM `call_log` AS a INNER JOIN `type_emergency` AS b ON a.`Type_Emergency_ID` = b.`Type_Emergency_ID` WHERE Group_Name_A NOT LIKE 'other calls' AND a.Type_Emergency_ID NOT IN('129', '131', '170', '172') AND DATE(Date_Log) LIKE CAST('2023-05-04' AS DATE)) AS emergency, (SELECT COUNT(*) FROM `call_log` AS a INNER JOIN `type_emergency` AS b ON a.`Type_Emergency_ID` = b.`Type_Emergency_ID` WHERE Group_Name_A LIKE 'other calls' AND a.Type_Emergency_ID NOT IN('129', '131', '170', '172') AND DATE(Date_Log) LIKE CAST('2023-05-04' AS DATE)) AS other, (SELECT COUNT(*) FROM `call_log` WHERE Type_Emergency_ID IN('129', '131', '170', '172') AND DATE(Date_log) LIKE CAST('2023-05-04' AS DATE)) AS hangup
+FROM `call_log`
+WHERE DATE(Date_log) LIKE CAST('2023-05-04' AS DATE)
+ERROR - 2023-05-04 16:55:42 --> Query error: Table 'nineoneone.type_emergency' doesn't exist - Invalid query: SELECT (SELECT COUNT(*) FROM `call_log` AS a INNER JOIN `type_emergency` AS b ON a.`Type_Emergency_ID` = b.`Type_Emergency_ID` WHERE Group_Name_A NOT LIKE 'other calls' AND a.Type_Emergency_ID NOT IN('129', '131', '170', '172') AND MONTHNAME(Date_Log) LIKE MONTHNAME(CAST('2023-05-04' AS DATE)) AND YEAR(Date_Log) LIKE YEAR(CAST('2023-05-04' AS DATE))) AS total_emerg, (SELECT COUNT(*) FROM `call_log` AS a INNER JOIN `type_emergency` AS b ON a.`Type_Emergency_ID` = b.`Type_Emergency_ID` WHERE Group_Name_A LIKE 'other calls' AND a.Type_Emergency_ID NOT IN('129', '131', '170', '172') AND MONTHNAME(Date_Log) LIKE MONTHNAME(CAST('2023-05-04' AS DATE)) AND YEAR(Date_Log) LIKE YEAR(CAST('2023-05-04' AS DATE))) AS total_other, (SELECT COUNT(*) FROM `call_log` WHERE Type_Emergency_ID IN('129', '131', '170', '172') AND MONTHNAME(Date_Log) LIKE MONTHNAME(CAST('2023-05-04' AS DATE)) AND YEAR(Date_Log) LIKE YEAR(CAST('2023-05-04' AS DATE))) AS total_hangup, (SELECT COUNT(*) FROM `call_log` AS a INNER JOIN `type_emergency` AS b ON a.`Type_Emergency_ID` = b.`Type_Emergency_ID` WHERE MONTHNAME(Date_Log) LIKE MONTHNAME(CAST('2023-05-04' AS DATE)) AND YEAR(Date_Log) LIKE YEAR(CAST('2023-05-04' AS DATE))) AS total_calls
+FROM `call_log`
+ LIMIT 1
+ERROR - 2023-05-04 16:55:42 --> Query error: Table 'nineoneone.type_emergency' doesn't exist - Invalid query: SELECT AVG(test) AS avg FROM (SELECT COUNT(*) AS test FROM call_log AS a INNER JOIN type_emergency AS b ON a.`Type_Emergency_ID` = b.`Type_Emergency_ID` WHERE Group_Name_A NOT LIKE 'other calls' AND a.Type_Emergency_ID NOT IN('129','131','170') AND DATE(Date_Log) BETWEEN CAST('2021-01-01' AS DATE) AND DATE_SUB(CAST('2023-05-04' AS DATE), INTERVAL 1 MONTH) GROUP BY DATE_FORMAT(Date_Log,'%Y-%c') ORDER BY DATE(Date_Log)) AS testing
+ERROR - 2023-05-04 16:55:43 --> Query error: Table 'nineoneone.type_emergency' doesn't exist - Invalid query: SELECT `CallLog_ID` as `cid`, COUNT(*) AS tcalls, DATE_FORMAT(Date_log, "%b") AS m, YEAR(Date_Log) AS y, (SELECT COUNT(*) FROM `call_log` AS a INNER JOIN `type_emergency` AS b ON a.`Type_Emergency_ID` = b.`Type_Emergency_ID` WHERE Group_Name_A NOT LIKE 'other calls' AND a.Type_Emergency_ID NOT IN('129', '131', '170', '172') AND DATE_FORMAT(Date_Log, '%b') LIKE m AND YEAR(Date_Log) LIKE y) AS temer
+FROM `call_log`
+WHERE YEAR(Date_Log) LIKE YEAR(CAST('2023-05-04' AS DATE))
+GROUP BY MONTH(Date_Log), YEAR(Date_Log)
+ERROR - 2023-05-04 16:55:43 --> Query error: Table 'nineoneone.type_emergency' doesn't exist - Invalid query: SELECT `b`.`Type_Emergency` as `Name`, COUNT(*) AS cnt
+FROM `call_log` AS `a`
+INNER JOIN `type_emergency` AS `b` ON `a`.`Type_Emergency_ID` = `b`.`Type_Emergency_ID`
+WHERE DATE(Date_Log) LIKE CAST('2023-05-04' AS DATE)
+GROUP BY `a`.`Type_Emergency_ID`
+ORDER BY FIELD(a.Type_Emergency_ID, '170') DESC, COUNT(*) DESC
+ERROR - 2023-05-04 16:55:43 --> Query error: Table 'nineoneone.type_emergency' doesn't exist - Invalid query: SELECT `b`.`Type_Emergency` as `Name`, COUNT(*) AS cnt
+FROM `call_log` AS `a`
+INNER JOIN `type_emergency` AS `b` ON `a`.`Type_Emergency_ID` = `b`.`Type_Emergency_ID`
+WHERE DATE_FORMAT(Date_Log,'%Y-%c') LIKE DATE_FORMAT(CAST('2023-05-04' AS DATE),'%Y-%c') AND `a`.`Type_Emergency_ID` NOT IN('129','131','170','172') AND `Group_Name_A` NOT LIKE 'other calls'
+GROUP BY `a`.`Type_Emergency_ID`
+ORDER BY COUNT(*) DESC
+ERROR - 2023-05-04 16:55:48 --> Query error: Table 'nineoneone.type_emergency' doesn't exist - Invalid query: SELECT AVG(test) AS avg FROM (SELECT COUNT(*) AS test FROM call_log AS a INNER JOIN type_emergency AS b ON a.`Type_Emergency_ID` = b.`Type_Emergency_ID` WHERE Group_Name_A NOT LIKE 'other calls' AND a.Type_Emergency_ID NOT IN('129','131','170') AND DATE(Date_Log) BETWEEN CAST('2021-01-01' AS DATE) AND DATE_SUB(CAST('2023-01-04' AS DATE), INTERVAL 1 MONTH) GROUP BY DATE_FORMAT(Date_Log,'%Y-%c') ORDER BY DATE(Date_Log)) AS testing
+ERROR - 2023-05-04 16:55:48 --> Query error: Table 'nineoneone.type_emergency' doesn't exist - Invalid query: SELECT COUNT(*) AS today, (SELECT COUNT(*) FROM `call_log` AS a INNER JOIN `type_emergency` AS b ON a.`Type_Emergency_ID` = b.`Type_Emergency_ID` WHERE Group_Name_A NOT LIKE 'other calls' AND a.Type_Emergency_ID NOT IN('129', '131', '170', '172') AND DATE(Date_Log) LIKE CAST('2023-01-04' AS DATE)) AS emergency, (SELECT COUNT(*) FROM `call_log` AS a INNER JOIN `type_emergency` AS b ON a.`Type_Emergency_ID` = b.`Type_Emergency_ID` WHERE Group_Name_A LIKE 'other calls' AND a.Type_Emergency_ID NOT IN('129', '131', '170', '172') AND DATE(Date_Log) LIKE CAST('2023-01-04' AS DATE)) AS other, (SELECT COUNT(*) FROM `call_log` WHERE Type_Emergency_ID IN('129', '131', '170', '172') AND DATE(Date_log) LIKE CAST('2023-01-04' AS DATE)) AS hangup
+FROM `call_log`
+WHERE DATE(Date_log) LIKE CAST('2023-01-04' AS DATE)
+ERROR - 2023-05-04 16:55:48 --> Query error: Table 'nineoneone.type_emergency' doesn't exist - Invalid query: SELECT `CallLog_ID` as `cid`, COUNT(*) AS tcalls, DATE_FORMAT(Date_log, "%b") AS m, YEAR(Date_Log) AS y, (SELECT COUNT(*) FROM `call_log` AS a INNER JOIN `type_emergency` AS b ON a.`Type_Emergency_ID` = b.`Type_Emergency_ID` WHERE Group_Name_A NOT LIKE 'other calls' AND a.Type_Emergency_ID NOT IN('129', '131', '170', '172') AND DATE_FORMAT(Date_Log, '%b') LIKE m AND YEAR(Date_Log) LIKE y) AS temer
+FROM `call_log`
+WHERE YEAR(Date_Log) LIKE YEAR(CAST('2023-01-04' AS DATE))
+GROUP BY MONTH(Date_Log), YEAR(Date_Log)
+ERROR - 2023-05-04 16:56:25 --> Severity: Error --> Maximum execution time of 30 seconds exceeded C:\xampp\htdocs\dcc-webapp\system\database\drivers\mysqli\mysqli_driver.php 307
+ERROR - 2023-05-04 16:56:25 --> Severity: Error --> Maximum execution time of 30 seconds exceeded C:\xampp\htdocs\dcc-webapp\system\libraries\Session\drivers\Session_files_driver.php 180
+ERROR - 2023-05-04 16:56:25 --> Severity: Error --> Maximum execution time of 30 seconds exceeded C:\xampp\htdocs\dcc-webapp\system\libraries\Session\drivers\Session_files_driver.php 180
+ERROR - 2023-05-04 16:56:25 --> Severity: Error --> Maximum execution time of 30 seconds exceeded C:\xampp\htdocs\dcc-webapp\system\libraries\Session\drivers\Session_files_driver.php 180
+ERROR - 2023-05-04 16:56:25 --> Query error: Table 'nineoneone.type_emergency' doesn't exist - Invalid query: SELECT AVG(test) AS avg FROM (SELECT COUNT(*) AS test FROM call_log AS a INNER JOIN type_emergency AS b ON a.`Type_Emergency_ID` = b.`Type_Emergency_ID` WHERE Group_Name_A NOT LIKE 'other calls' AND a.Type_Emergency_ID NOT IN('129','131','170') AND DATE(Date_Log) BETWEEN CAST('2021-01-01' AS DATE) AND DATE_SUB(CAST('2023-01-04' AS DATE), INTERVAL 1 MONTH) GROUP BY DATE_FORMAT(Date_Log,'%Y-%c') ORDER BY DATE(Date_Log)) AS testing
+ERROR - 2023-05-04 16:56:25 --> Query error: Table 'nineoneone.type_emergency' doesn't exist - Invalid query: SELECT COUNT(*) AS today, (SELECT COUNT(*) FROM `call_log` AS a INNER JOIN `type_emergency` AS b ON a.`Type_Emergency_ID` = b.`Type_Emergency_ID` WHERE Group_Name_A NOT LIKE 'other calls' AND a.Type_Emergency_ID NOT IN('129', '131', '170', '172') AND DATE(Date_Log) LIKE CAST('2023-01-04' AS DATE)) AS emergency, (SELECT COUNT(*) FROM `call_log` AS a INNER JOIN `type_emergency` AS b ON a.`Type_Emergency_ID` = b.`Type_Emergency_ID` WHERE Group_Name_A LIKE 'other calls' AND a.Type_Emergency_ID NOT IN('129', '131', '170', '172') AND DATE(Date_Log) LIKE CAST('2023-01-04' AS DATE)) AS other, (SELECT COUNT(*) FROM `call_log` WHERE Type_Emergency_ID IN('129', '131', '170', '172') AND DATE(Date_log) LIKE CAST('2023-01-04' AS DATE)) AS hangup
+FROM `call_log`
+WHERE DATE(Date_log) LIKE CAST('2023-01-04' AS DATE)
+ERROR - 2023-05-04 16:56:25 --> Query error: Table 'nineoneone.type_emergency' doesn't exist - Invalid query: SELECT COUNT(*) AS today, (SELECT COUNT(*) FROM `call_log` AS a INNER JOIN `type_emergency` AS b ON a.`Type_Emergency_ID` = b.`Type_Emergency_ID` WHERE Group_Name_A NOT LIKE 'other calls' AND a.Type_Emergency_ID NOT IN('129', '131', '170', '172') AND DATE(Date_Log) LIKE CAST('2023-01-04' AS DATE)) AS emergency, (SELECT COUNT(*) FROM `call_log` AS a INNER JOIN `type_emergency` AS b ON a.`Type_Emergency_ID` = b.`Type_Emergency_ID` WHERE Group_Name_A LIKE 'other calls' AND a.Type_Emergency_ID NOT IN('129', '131', '170', '172') AND DATE(Date_Log) LIKE CAST('2023-01-04' AS DATE)) AS other, (SELECT COUNT(*) FROM `call_log` WHERE Type_Emergency_ID IN('129', '131', '170', '172') AND DATE(Date_log) LIKE CAST('2023-01-04' AS DATE)) AS hangup
+FROM `call_log`
+WHERE DATE(Date_log) LIKE CAST('2023-01-04' AS DATE)
+ERROR - 2023-05-04 16:56:25 --> Query error: Table 'nineoneone.type_emergency' doesn't exist - Invalid query: SELECT `b`.`Type_Emergency` as `Name`, COUNT(*) AS cnt
+FROM `call_log` AS `a`
+INNER JOIN `type_emergency` AS `b` ON `a`.`Type_Emergency_ID` = `b`.`Type_Emergency_ID`
+WHERE DATE(Date_Log) LIKE CAST('2023-01-04' AS DATE)
+GROUP BY `a`.`Type_Emergency_ID`
+ORDER BY FIELD(a.Type_Emergency_ID, '170') DESC, COUNT(*) DESC
+ERROR - 2023-05-04 16:56:25 --> Query error: Table 'nineoneone.type_emergency' doesn't exist - Invalid query: SELECT AVG(test) AS avg FROM (SELECT COUNT(*) AS test FROM call_log AS a INNER JOIN type_emergency AS b ON a.`Type_Emergency_ID` = b.`Type_Emergency_ID` WHERE Group_Name_A NOT LIKE 'other calls' AND a.Type_Emergency_ID NOT IN('129','131','170') AND DATE(Date_Log) BETWEEN CAST('2021-01-01' AS DATE) AND DATE_SUB(CAST('2023-01-04' AS DATE), INTERVAL 1 MONTH) GROUP BY DATE_FORMAT(Date_Log,'%Y-%c') ORDER BY DATE(Date_Log)) AS testing
+ERROR - 2023-05-04 16:56:25 --> Query error: Table 'nineoneone.type_emergency' doesn't exist - Invalid query: SELECT `b`.`Type_Emergency` as `Name`, COUNT(*) AS cnt
+FROM `call_log` AS `a`
+INNER JOIN `type_emergency` AS `b` ON `a`.`Type_Emergency_ID` = `b`.`Type_Emergency_ID`
+WHERE DATE(Date_Log) LIKE CAST('2023-01-04' AS DATE)
+GROUP BY `a`.`Type_Emergency_ID`
+ORDER BY FIELD(a.Type_Emergency_ID, '170') DESC, COUNT(*) DESC
+ERROR - 2023-05-04 16:56:52 --> Severity: Warning --> mysqli::real_connect(): (HY000/2002): A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond.
+ C:\xampp\htdocs\dcc-webapp\system\database\drivers\mysqli\mysqli_driver.php 203
+ERROR - 2023-05-04 16:56:52 --> Unable to connect to the database
+ERROR - 2023-05-04 16:57:02 --> Severity: Warning --> mysqli::real_connect(): (HY000/2002): A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond.
+ C:\xampp\htdocs\dcc-webapp\system\database\drivers\mysqli\mysqli_driver.php 203
+ERROR - 2023-05-04 16:57:02 --> Unable to connect to the database
+ERROR - 2023-05-04 16:57:02 --> Query error: A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond.
+ - Invalid query: SELECT AVG(test) AS avg FROM (SELECT COUNT(*) AS test FROM call_log AS a INNER JOIN type_emergency AS b ON a.`Type_Emergency_ID` = b.`Type_Emergency_ID` WHERE Group_Name_A NOT LIKE 'other calls' AND a.Type_Emergency_ID NOT IN('129','131','170') AND DATE(Date_Log) BETWEEN CAST('2021-01-01' AS DATE) AND DATE_SUB(CAST('2023-01-04' AS DATE), INTERVAL 1 MONTH) GROUP BY DATE_FORMAT(Date_Log,'%Y-%c') ORDER BY DATE(Date_Log)) AS testing
+ERROR - 2023-05-04 16:57:02 --> Severity: Error --> Call to a member function result() on boolean C:\xampp\htdocs\dcc-webapp\application\models\ers_model.php 269
+ERROR - 2023-05-04 16:57:12 --> Severity: Error --> Maximum execution time of 30 seconds exceeded C:\xampp\htdocs\dcc-webapp\system\core\Common.php 595
+ERROR - 2023-05-04 16:57:12 --> Severity: Error --> Maximum execution time of 30 seconds exceeded C:\xampp\htdocs\dcc-webapp\system\libraries\Session\drivers\Session_files_driver.php 180
+ERROR - 2023-05-04 16:57:22 --> Severity: Warning --> mysqli::real_connect(): (HY000/2002): A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond.
+ C:\xampp\htdocs\dcc-webapp\system\database\drivers\mysqli\mysqli_driver.php 203
+ERROR - 2023-05-04 16:57:22 --> Unable to connect to the database
+ERROR - 2023-05-04 16:57:32 --> Severity: Warning --> mysqli::real_connect(): (HY000/2002): A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond.
+ C:\xampp\htdocs\dcc-webapp\system\database\drivers\mysqli\mysqli_driver.php 203
+ERROR - 2023-05-04 16:57:32 --> Unable to connect to the database
+ERROR - 2023-05-04 16:57:32 --> Query error: A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond.
+ - Invalid query: SELECT COUNT(*) AS today, (SELECT COUNT(*) FROM `call_log` AS a INNER JOIN `type_emergency` AS b ON a.`Type_Emergency_ID` = b.`Type_Emergency_ID` WHERE Group_Name_A NOT LIKE 'other calls' AND a.Type_Emergency_ID NOT IN('129', '131', '170', '172') AND DATE(Date_Log) LIKE CAST('2023-01-04' AS DATE)) AS emergency, (SELECT COUNT(*) FROM `call_log` AS a INNER JOIN `type_emergency` AS b ON a.`Type_Emergency_ID` = b.`Type_Emergency_ID` WHERE Group_Name_A LIKE 'other calls' AND a.Type_Emergency_ID NOT IN('129', '131', '170', '172') AND DATE(Date_Log) LIKE CAST('2023-01-04' AS DATE)) AS other, (SELECT COUNT(*) FROM `call_log` WHERE Type_Emergency_ID IN('129', '131', '170', '172') AND DATE(Date_log) LIKE CAST('2023-01-04' AS DATE)) AS hangup
+FROM `call_log`
+WHERE DATE(Date_log) LIKE CAST('2023-01-04' AS DATE)
+ERROR - 2023-05-04 16:57:32 --> Severity: Error --> Call to a member function row() on boolean C:\xampp\htdocs\dcc-webapp\application\models\ers_model.php 66
+ERROR - 2023-05-04 16:57:42 --> Severity: Error --> Maximum execution time of 30 seconds exceeded C:\xampp\htdocs\dcc-webapp\system\core\Common.php 595
+ERROR - 2023-05-04 16:57:42 --> Severity: Error --> Maximum execution time of 30 seconds exceeded C:\xampp\htdocs\dcc-webapp\system\libraries\Session\drivers\Session_files_driver.php 180
+ERROR - 2023-05-04 16:58:59 --> {"filterscount":"0","groupscount":"0","sortorder":"","pagenum":"0","pagesize":"50","recordstartindex":"0","recordendindex":"50","fdt":"","tdt":"","type":"default"}
+ERROR - 2023-05-04 16:58:59 --> SELECT did AS id,slnk,DATE(slnk_dt) AS sdate,TIME(slnk_dt) AS stime,clnk,DATE(clnk_dt) AS cdate,TIME(clnk_dt) AS ctime,type_post,type_advi,IF(cdo_affect LIKE "na","N/A",UPPER(cdo_affect)) AS cdo_affect,IF(affect_area LIKE "na","N/A", UPPER(affect_area)) AS affect_area,estat,IF(infocast = 1,"YES","NO") AS infocast,total_text,IF(missed_post = 1,"YES","NO") AS missed_post,missed_by,IF(xp_rain = 1,"YES","NO") AS xp_rain,remarks,a.uid AS userid,b.uname,a.dt_created,c.uname AS mname,(SELECT GROUP_CONCAT(name SEPARATOR ", ") FROM w_ws WHERE did = id AND lst_group = "cdo") AS ws_cdo,(SELECT GROUP_CONCAT(name SEPARATOR ", ") FROM w_ws WHERE did = id AND lst_group = "par") AS ws_par,(SELECT GROUP_CONCAT(CONCAT(type," ",IF(name LIKE "%others%",intr_name,name)) SEPARATOR ", ") FROM w_tc WHERE did = id AND lst_group = "cdo") AS tc_cdo,(SELECT GROUP_CONCAT(CONCAT(type," ",IF(name LIKE "%others%",intr_name,name)) SEPARATOR ", ") FROM w_tc WHERE did = id AND lst_group = "par") AS tc_par,offset_contact FROM w_data AS a LEFT JOIN w_user AS b ON b.uid = a.uid LEFT JOIN w_user c ON c.uid = a.missed_by WHERE clnk_dt BETWEEN CAST(CONCAT(DATE_ADD(CURDATE(), INTERVAL -1 DAY)," 19:00:00") AS DATETIME) AND CURRENT_TIMESTAMP() ORDER BY clnk_dt DESC
+ERROR - 2023-05-04 16:59:19 --> {"filterscount":"0","groupscount":"0","sortorder":"","pagenum":"0","pagesize":"50","recordstartindex":"0","recordendindex":"50","fdt":"","tdt":"","type":"default"}
+ERROR - 2023-05-04 16:59:19 --> SELECT did AS id,slnk,DATE(slnk_dt) AS sdate,TIME(slnk_dt) AS stime,clnk,DATE(clnk_dt) AS cdate,TIME(clnk_dt) AS ctime,type_post,type_advi,IF(cdo_affect LIKE "na","N/A",UPPER(cdo_affect)) AS cdo_affect,IF(affect_area LIKE "na","N/A", UPPER(affect_area)) AS affect_area,estat,IF(infocast = 1,"YES","NO") AS infocast,total_text,IF(missed_post = 1,"YES","NO") AS missed_post,missed_by,IF(xp_rain = 1,"YES","NO") AS xp_rain,remarks,a.uid AS userid,b.uname,a.dt_created,c.uname AS mname,(SELECT GROUP_CONCAT(name SEPARATOR ", ") FROM w_ws WHERE did = id AND lst_group = "cdo") AS ws_cdo,(SELECT GROUP_CONCAT(name SEPARATOR ", ") FROM w_ws WHERE did = id AND lst_group = "par") AS ws_par,(SELECT GROUP_CONCAT(CONCAT(type," ",IF(name LIKE "%others%",intr_name,name)) SEPARATOR ", ") FROM w_tc WHERE did = id AND lst_group = "cdo") AS tc_cdo,(SELECT GROUP_CONCAT(CONCAT(type," ",IF(name LIKE "%others%",intr_name,name)) SEPARATOR ", ") FROM w_tc WHERE did = id AND lst_group = "par") AS tc_par,offset_contact FROM w_data AS a LEFT JOIN w_user AS b ON b.uid = a.uid LEFT JOIN w_user c ON c.uid = a.missed_by WHERE clnk_dt BETWEEN CAST(CONCAT(DATE_ADD(CURDATE(), INTERVAL -1 DAY)," 19:00:00") AS DATETIME) AND CURRENT_TIMESTAMP() ORDER BY clnk_dt DESC

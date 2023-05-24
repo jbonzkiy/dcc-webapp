@@ -1,0 +1,70 @@
+body, html {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.custom-btn:hover{color:#42B4E6 !important;cursor: pointer;}
+
+input[type=time]::-webkit-outer-spin-button,
+input[type=time]::-webkit-inner-spin-button {
+    /* display: none; <- Crashes Chrome on hover */
+    -webkit-appearance: none;
+    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}
+
+input[type=time] {
+    -moz-appearance:textfield; /* Firefox */
+}
+.trans-blur{backdrop-filter: blur(10px);}
+.center-element{
+    left: 50%;
+    bottom: 50%;
+    /*height: auto;width: 270px;*/
+    transform: translate(-50%, -50%);
+    z-index: 9999;position: absolute;
+    /*background: rgba(255,255,255,0.3);*/
+}
+
+.center-loading{
+    left: 50%;
+    bottom: 50%;
+    transform: translate(-50%, 47%);
+    z-index: 9999;position: absolute;
+}
+.center-login{
+    left: 50%;
+    bottom: 50%;
+    transform: translate(-50%, 0%);
+    z-index: 9999;position: absolute;
+}
+.err-input{border:1px solid #9e1a1a !important;}
+textarea.no-resize{resize: none;}
+.cursor-pointer{cursor: pointer;}
+
+#frmPanel.jqx-panel, #MainSplitter.jqx-reset, #secondSplitter.jqx-reset{border:none !important;}
+.custombtn{color:#fff;}
+.custombtn:hover{color:#ECBE25;text-decoration:none;}
+.custombtn2{border:1px solid #000;}
+#NestedSplitter fieldset{
+    /*border:1px solid #282923;*/
+}
+#NestedSplitter fieldset legend{
+    font-size: 1vw;
+}
+.notifyjs-zindextop-base{z-index: 9999;}
+.border-radius-none{border-radius: 0 !important;}
+
+.custom-fieldset{
+    border: 1px solid #CED4DA;
+    padding:5px 10px;
+}
+.custom-fieldset legend{
+    padding: 0 5px;
+    font-size:12px;
+    width:auto;
+}
+.display-none{display: none !important;}
